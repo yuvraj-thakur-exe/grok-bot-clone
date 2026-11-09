@@ -41,6 +41,10 @@ node_modules/
 .orbit/runs/
 .orbit/context-pack.md
 .orbit/context-pack.md.manifest.json
+.orbit/*.json
+.orbit/*.jsonl
+.orbit/*.log
+.orbit/voice_cache/
 .DS_Store
 Thumbs.db
 

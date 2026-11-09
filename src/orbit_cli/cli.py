@@ -52,6 +52,19 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--allow-workspace-write", action="store_true", help="Explicitly permit tasks marked workspace-write.")
     run.add_argument("--validate-only", action="store_true")
 
+    daemon = sub.add_parser("daemon", help="Manage the sand-local-exec daemon for workspace execution.")
+    daemon_sub = daemon.add_subparsers(dest="daemon_action", required=True)
+    d_start = daemon_sub.add_parser("start", help="Start the sand daemon in foreground.")
+    d_start.add_argument("--host", default="127.0.0.1")
+    d_start.add_argument("--port", type=int, default=3888)
+    d_start.add_argument("--workspace", default=".")
+
+    d_status = daemon_sub.add_parser("status", help="Check status of the sand daemon.")
+    d_status.add_argument("--workspace", default=".")
+
+    d_stop = daemon_sub.add_parser("stop", help="Stop the active sand daemon.")
+    d_stop.add_argument("--workspace", default=".")
+
     return parser
 
 
@@ -91,6 +104,18 @@ def main(argv: list[str] | None = None) -> int:
             result = asyncio.run(execute_manifest(args.manifest, args.root, args.max_parallel, args.allow_workspace_write))
             _json_print(result)
             return 0 if all(x["status"] in {"passed", "skipped"} for x in result["results"]) else 2
+
+        if args.command == "daemon":
+            from .daemon import get_daemon_status, stop_daemon
+            from antigravity_platform.runtime_bridge.antigravity_bridge import start_daemon
+
+            if args.daemon_action == "start":
+                start_daemon(args.host, args.port, args.workspace)
+            elif args.daemon_action == "status":
+                _json_print(get_daemon_status(args.workspace))
+            elif args.daemon_action == "stop":
+                _json_print(stop_daemon(args.workspace))
+            return 0
 
         parser.error("Unknown command.")
     except (ValueError, FileNotFoundError, NotADirectoryError, PermissionError, OSError) as exc:
