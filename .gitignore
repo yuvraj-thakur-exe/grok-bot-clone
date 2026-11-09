@@ -1,0 +1,59 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Acquired upstream repositories (inspection-only)
+/upstream/
+
+# Python/local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Build and package outputs
+/dist/
+/build/
+coverage/
+*.log
+
+# Historical archives and snapshots
+/_archives/
+/_history_versions/
+
+# Heavy binaries and large installer executables (>50MB)
+*.exe
+*.zip
+*.node
+node_modules/
+/logs/*.log
+
+# Raw reverse engineering target and sandbox directory
+/grok bot rea/
+
+# Local toolkit runs and context packs
+.orbit/runs/
+.orbit/context-pack.md
+.orbit/context-pack.md.manifest.json
+.DS_Store
+Thumbs.db
+
+# External 500 GB volume and local source-intake (never commit personal data)
+/01-upstream-checkouts/
+/02-workspaces/
+/03-models/
+/04-data-memory/
+/05-artifacts/
+/06-evaluations/
+/07-logs-cache/
+/08-backups/
+/09-quarantine/
+/10-source-intake/
+/reports/repo-audits/
+/source-intake/

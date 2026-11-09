@@ -1,0 +1,70 @@
+policy_version: 1
+status: proposed
+install_defaults:
+  trust_remote_skills: false
+  execute_scripts_during_install: false
+  auto_update: false
+  activate_without_review: false
+required_manifest_fields:
+- name
+- version
+- source_url
+- immutable_revision
+- content_sha256
+- license_expression
+- declared_tools
+- network_hosts
+- supported_agent_harnesses
+- permissions
+- review_status
+checks:
+- parse_frontmatter
+- schema_validate
+- validate_paths_inside_skill_root
+- reject_symlink_escape
+- scan_secrets
+- scan_malware
+- record_license_and_notices
+- inspect_embedded_scripts
+- execute_scripts_in_sandbox_only
+- verify_checksum_after_download
+- record_review_and_owner
+blocked_states:
+- NOASSERTION
+- LICENSE_REVIEW_REQUIRED
+- QUARANTINED
+- REVOKED
+version: 1.0.0-draft
+default_trust_state: discovered
+trust_lifecycle:
+- discovered
+- fetched_quarantined
+- reviewed
+- validated
+- enabled
+- revoked
+mandatory_fields:
+- name
+- description
+- canonical_source
+- immutable_revision
+- content_sha256
+- license_expression_or_unknown
+- attribution
+- required_tools
+- filesystem_permissions
+- network_permissions
+- secret_permissions
+- dependencies
+- supported_runtimes
+- tests
+- review_status
+install_rules:
+- Discovered catalogue entries cannot execute.
+- Fetched skills remain in quarantine and cannot execute.
+- Unknown or ambiguous license blocks redistribution and production activation.
+- Missing permissions declaration blocks execution.
+- Each skill version is immutable and addressed by content digest.
+- User enablement is explicit, workspace-scoped and agent-scoped.
+- Untrusted scripts execute only in disposable sandbox with deny-by-default egress.
+- Run static review and isolated tests; scanner output is not a safety certification.

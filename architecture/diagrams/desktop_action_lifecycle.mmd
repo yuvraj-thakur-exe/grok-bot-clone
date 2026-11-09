@@ -1,0 +1,30 @@
+sequenceDiagram
+  participant A as ORBIT Agent
+  participant G as Policy Gateway
+  participant B as Desktop Broker
+  participant N as Local Node
+  participant D as agent-desktop
+  participant OS as Native App / OS
+  A->>G: Request observation
+  G->>G: Tenant + device + lease check
+  G->>B: Forward request
+  B->>N: Authenticated WSS request
+  N->>N: Local session + allowlist check
+  N->>D: Snapshot via fixed argv
+  D->>OS: Accessibility read
+  OS-->>D: Accessibility tree
+  D-->>N: Structured snapshot
+  N-->>B: Redacted observation
+  B-->>G: Observation
+  G-->>A: Snapshot + completeness
+  A->>G: One typed action against snapshot ref
+  G->>G: Recompute semantic risk / approval
+  G->>B: Approved leased action
+  B->>N: Authenticated request
+  N->>D: Execute once
+  D->>OS: Semantic action
+  OS-->>D: Delivery/result evidence
+  D-->>N: Structured disposition
+  N-->>G: Action receipt
+  G-->>A: Delivery receipt
+  A->>G: Fresh verification observation

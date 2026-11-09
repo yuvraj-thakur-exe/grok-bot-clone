@@ -1,0 +1,14 @@
+flowchart TD
+  A[Discover upstream or skill] --> B[Pin exact revision]
+  B --> C[Acquire to quarantine]
+  C --> D[Verify URL, commit, hashes]
+  D --> E[Review license, notices and trademarks]
+  E --> F[Scan dependencies, scripts and telemetry]
+  F --> G[Review permissions and threat model]
+  G --> H[Run isolated tests]
+  H --> I{All gates pass?}
+  I -- No --> X[Block, reject or request changes]
+  I -- Yes --> J[Human-reviewed source decision]
+  J --> K[Adapter or narrow import]
+  K --> L[Conformance tests and SBOM]
+  L --> M[Versioned release with rollback]

@@ -1,0 +1,25 @@
+{
+  "name": "@orbit/contracts",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "ORBIT core contracts: task contract, canonical events, receipt, policy, engine adapter types",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  }
+}

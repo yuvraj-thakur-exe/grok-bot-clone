@@ -1,0 +1,41 @@
+policy_version: 1
+status: proposed
+release_blocking: true
+source_of_truth: "docs/06-security/THIRD_PARTY_COMPONENT_REGISTER.yaml"
+required_evidence:
+  - exact_version_or_commit
+  - sha256_or_image_digest
+  - root_and_nested_license_files
+  - spdx_expression_or_noassertion
+  - attribution_and_notice_requirements
+  - transitive_dependency_inventory
+  - security_scan
+  - redistribution_and_modification_review
+  - reviewer_and_expiry
+classes:
+  A:
+    description: "Permissive and verified for the intended use after notice review"
+    may_ship_after: [technical_review, security_review, license_review]
+  B:
+    description: "Conditional terms: legal review is required"
+    may_ship_after: [technical_review, security_review, license_review, legal_approval]
+  C:
+    description: "Reference-only or external service; no source redistribution"
+    may_ship_after: [service_security_review, privacy_review, contract_review]
+  D:
+    description: "Unknown, incompatible, untrusted or unacceptable"
+    may_ship_after: []
+block_conditions:
+  - missing_license_evidence
+  - no_immutable_source_identity
+  - missing_required_notice
+  - unapproved_license_class
+  - checksum_or_signature_failure
+  - untracked_vendored_source
+  - expired_exception
+  - missing_sbom
+exceptions:
+  require_exact_component_version: true
+  require_expiry_date: true
+  require_human_approver: true
+  blanket_exceptions_allowed: false

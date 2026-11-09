@@ -1,0 +1,27 @@
+flowchart LR
+  subgraph Untrusted[Untrusted inputs]
+    M[Model output]
+    UI[Desktop/UI text]
+    REPO[Repository and downloaded files]
+  end
+  subgraph Cloud[ORBIT trusted control plane]
+    GW[Typed policy gateway]
+    AP[Approval service]
+    BR[Device broker + leases]
+    DB[(Durable policy/audit state)]
+  end
+  subgraph Local[User-owned local boundary]
+    NODE[Local Desktop Node]
+    LP[Local policy + pause control]
+    DR[Pinned driver executable]
+    OS[Logged-in OS accessibility session]
+  end
+  M --> GW
+  UI --> M
+  REPO --> M
+  GW <--> AP
+  GW --> BR
+  BR <--> NODE
+  NODE --> LP --> DR --> OS
+  GW --> DB
+  NODE --> DB

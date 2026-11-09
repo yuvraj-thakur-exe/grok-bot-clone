@@ -1,0 +1,374 @@
+version: 0.7.0-draft
+note: Role definitions are virtual work charters, not a statement of real employees or legal officers.
+human_accountable_owner: executive.founder_ceo_human
+roles:
+- id: executive.founder-ceo-human
+  title: Founder / CEO (Human)
+  charter_path: roles/executive/founder-ceo-human.md
+  type: human_owner
+  status: defined_not_instantiated
+  mission: company strategy, final accountability, budgets, hiring, external commitments, legal and release approvals
+  review_partners:
+  - CTO
+  - Product
+  - COO
+  - Security
+  - Finance
+  - Legal advisor
+  external_side_effects: human_approval_required
+- id: executive.cto-principal-architect
+  title: CTO / Principal Architect
+  charter_path: roles/executive/cto-principal-architect.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: technical strategy, architecture, engineering quality, cross-team integration and technical risk
+  review_partners:
+  - Security
+  - QA
+  - Product
+  - SRE
+  external_side_effects: human_approval_required
+- id: executive.cpo-product-lead
+  title: Chief Product Officer / Product Lead
+  charter_path: roles/executive/cpo-product-lead.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: user problems, PRD, scope, roadmap and acceptance criteria
+  review_partners:
+  - Founder
+  - Design
+  - CTO
+  - QA
+  external_side_effects: human_approval_required
+- id: executive.coo-delivery-lead
+  title: COO / Delivery Lead
+  charter_path: roles/executive/coo-delivery-lead.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: execution cadence, milestone dependencies, task allocation and project status
+  review_partners:
+  - Founder
+  - CTO
+  - Product
+  - QA
+  - SRE
+  external_side_effects: human_approval_required
+- id: ai.chief-ai-research-officer
+  title: Chief AI Research Officer
+  charter_path: roles/ai/chief-ai-research-officer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: model evaluation, research quality, agent intelligence and experiments
+  review_partners:
+  - CTO
+  - AI Engineer
+  - Data/RAG
+  - QA
+  external_side_effects: human_approval_required
+- id: ai.ai-ml-engineer
+  title: AI/ML Engineer
+  charter_path: roles/ai/ai-ml-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: inference adapters, model routing, structured outputs, context and memory mechanisms
+  review_partners:
+  - AI Research
+  - Backend
+  - Security
+  - QA
+  external_side_effects: human_approval_required
+- id: ai.agent-runtime-engineer
+  title: Agent Runtime / Orchestration Engineer
+  charter_path: roles/ai/agent-runtime-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: planning, execution loop, durable tasks, tool use, delegation and recovery
+  review_partners:
+  - CTO
+  - Backend
+  - Security
+  - QA
+  external_side_effects: human_approval_required
+- id: ai.data-rag-engineer
+  title: Data / RAG Engineer
+  charter_path: roles/ai/data-rag-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: ingestion, parsing, embeddings, indexing, retrieval and evidence provenance
+  review_partners:
+  - AI Research
+  - Backend
+  - Security
+  - Product
+  external_side_effects: human_approval_required
+- id: engineering.backend-engineer
+  title: Backend Engineer
+  charter_path: roles/engineering/backend-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: API, persistence, auth, workflow state, tool gateway and contracts
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - SRE
+  external_side_effects: human_approval_required
+- id: engineering.frontend-engineer
+  title: Frontend Engineer
+  charter_path: roles/engineering/frontend-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: workspace UI, streaming, artifacts, dynamic UI rendering and accessibility
+  review_partners:
+  - Product
+  - UX
+  - Backend
+  - QA
+  external_side_effects: human_approval_required
+- id: engineering.browser-automation-engineer
+  title: Browser Automation Engineer
+  charter_path: roles/engineering/browser-automation-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: BrowserDriver, Playwright contexts, navigation, downloads, auth and verification
+  review_partners:
+  - Security
+  - Sandbox
+  - QA
+  - Product
+  external_side_effects: human_approval_required
+- id: engineering.desktop-computer-use-engineer
+  title: Desktop / Computer-Use Engineer
+  charter_path: roles/engineering/desktop-computer-use-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: Local Desktop Node, pairing, native accessibility, desktop session broker and OS compatibility
+  review_partners:
+  - Security
+  - SRE
+  - QA
+  - CTO
+  external_side_effects: human_approval_required
+- id: engineering.sandbox-runtime-engineer
+  title: Sandbox / Runtime Engineer
+  charter_path: roles/engineering/sandbox-runtime-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: isolated environments, filesystem/command APIs, egress, resource quotas and lifecycle
+  review_partners:
+  - Security
+  - SRE
+  - Backend
+  - QA
+  external_side_effects: human_approval_required
+- id: quality.security-privacy-lead
+  title: Security & Privacy Lead
+  charter_path: roles/quality/security-privacy-lead.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: threat model, identity, permissions, secrets, privacy, isolation and security incident readiness
+  review_partners:
+  - Founder
+  - CTO
+  - SRE
+  - Legal advisor
+  - QA
+  external_side_effects: human_approval_required
+- id: quality.qa-agent-evaluation-engineer
+  title: QA / Agent Evaluation Engineer
+  charter_path: roles/quality/qa-agent-evaluation-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: test strategy, regression datasets, independent acceptance and agent quality measurement
+  review_partners:
+  - Product
+  - CTO
+  - Security
+  - SRE
+  external_side_effects: human_approval_required
+- id: quality.devops-sre-engineer
+  title: DevOps / SRE Engineer
+  charter_path: roles/quality/devops-sre-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: CI/CD, release pipelines, observability, deployment, reliability, backup and recovery
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: design.ux-product-designer
+  title: UX / Product Designer
+  charter_path: roles/design/ux-product-designer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: information architecture, design system, brand, accessibility and usability
+  review_partners:
+  - Product
+  - Frontend
+  - Founder
+  - Legal/IP
+  external_side_effects: human_approval_required
+- id: design.technical-writer
+  title: Technical Writer
+  charter_path: roles/design/technical-writer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: developer docs, API references, user guides, release notes and runbooks
+  review_partners:
+  - Owning engineer
+  - Product
+  - QA
+  - SRE
+  external_side_effects: human_approval_required
+- id: business.opensource-community-lead
+  title: Open Source / Developer Relations Lead
+  charter_path: roles/business/opensource-community-lead.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: contributors, community, issues, docs and developer ecosystem
+  review_partners:
+  - Founder
+  - CTO
+  - Legal/IP
+  - Technical Writer
+  external_side_effects: human_approval_required
+- id: business.legal-ip-compliance-analyst
+  title: Legal / IP / OSS Compliance Analyst (Advisory)
+  charter_path: roles/business/legal-ip-compliance-analyst.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: license inventory, trademark research, notices, IP provenance and counsel preparation
+  review_partners:
+  - Founder
+  - Security
+  - OSS Lead
+  - Qualified Counsel
+  external_side_effects: human_approval_required
+- id: business.finance-commercial-analyst
+  title: Finance / Commercial Analyst
+  charter_path: roles/business/finance-commercial-analyst.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: provider spend, cloud budgets, unit economics, purchase analysis and runway scenarios
+  review_partners:
+  - Founder
+  - CTO
+  - COO
+  external_side_effects: human_approval_required
+- id: business.customer-success-researcher
+  title: Customer Success / User Research Analyst (Later-stage)
+  charter_path: roles/business/customer-success-researcher.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: feedback analysis, onboarding friction, support trends and user evidence
+  review_partners:
+  - Product
+  - Founder
+  - Security
+  - Support human owner
+  external_side_effects: human_approval_required
+- id: engineering.repository-operations-engineer
+  title: Repository Operations / Upstream Integration Engineer
+  charter_path: roles/engineering/repository-operations-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: Pinned upstream acquisition, repository inventories, worktrees, selective imports, provenance and upstream
+    synchronization.
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: engineering.integration-connector-engineer
+  title: Integration / Connector Engineer
+  charter_path: roles/engineering/integration-connector-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: OAuth connectors, MCP tools, webhooks, connector scopes, event normalization and provider adapters.
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: ai.model-runtime-engineer
+  title: Local Model Runtime / Inference Engineer
+  charter_path: roles/ai/model-runtime-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: Ollama, llama.cpp, model catalogues, quantization, resource budgets, model provenance and runtime benchmarks.
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: quality.benchmark-performance-engineer
+  title: Benchmark / Performance Engineer
+  charter_path: roles/quality/benchmark-performance-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: Frozen competitor/task benchmark, latency, RAM/disk/CPU, cost-per-success, regression and reproducible
+    reports.
+  review_partners:
+  - CTO
+  - Security
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: engineering.mobile-companion-engineer
+  title: Mobile Companion Engineer
+  charter_path: roles/engineering/mobile-companion-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: mobile companion, notifications, voice entry, device pairing, user takeover and secure cross-device continuity
+  review_partners:
+  - CTO
+  - Frontend
+  - Security
+  - QA
+  - SRE
+  external_side_effects: human_approval_required
+- id: engineering.voice-multimodal-engineer
+  title: Voice & Multimodal Engineer
+  charter_path: roles/engineering/voice-multimodal-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: speech input/output, transcription, diarization, audio/video inputs, consent and retention
+  review_partners:
+  - AI Research
+  - Model Runtime
+  - Security
+  - QA
+  - Product
+  external_side_effects: human_approval_required
+- id: engineering.home-device-integration-engineer
+  title: Home & Device Integration Engineer
+  charter_path: roles/engineering/home-device-integration-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: home automation and IoT connectors with device discovery, least privilege, safety classes and confirmations
+  review_partners:
+  - Security
+  - Integration
+  - Backend
+  - QA
+  - Founder
+  external_side_effects: human_approval_required
+- id: quality.data-governance-engineer
+  title: Data Governance & Privacy Engineer
+  charter_path: roles/quality/data-governance-engineer.md
+  type: ai_assisted_role
+  status: defined_not_instantiated
+  mission: memory lineage, access control, retention, export, deletion propagation, consent records and cross-context
+    leakage tests
+  review_partners:
+  - Security
+  - Data/RAG
+  - Backend
+  - Product
+  - Legal/IP
+  external_side_effects: human_approval_required

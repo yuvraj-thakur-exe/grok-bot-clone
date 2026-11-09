@@ -1,0 +1,861 @@
+{
+  "version": "1.0.0-draft",
+  "snapshot_date": "2026-11-08",
+  "repositories": [
+    {
+      "id": "openclaw",
+      "url": "https://github.com/openclaw/openclaw.git",
+      "web": "https://github.com/openclaw/openclaw",
+      "ref": "main",
+      "commit": "7283c5182497e1ac5f95668de9f39ad3a9df3b11",
+      "observed_license": "MIT",
+      "scope": "gateway_runtime_channels_plugins_provider_adapters",
+      "adoption": "optional_external_runtime_and_selective_plugin_sdk_reuse",
+      "caveats": [
+        "large_monorepo_review_by_package_required",
+        "in_process_native_plugins_are_trusted_code_not_sandboxed",
+        "preserve_LICENSE_THIRD_PARTY_NOTICES_and_nested_licenses"
+      ]
+    },
+    {
+      "id": "awesome_openclaw_skills",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills.git",
+      "web": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "ref": "main",
+      "commit": "5492fcd98f7c52c69e1b2fa58790faf4fc90ce13",
+      "observed_license": "MIT",
+      "scope": "skill_discovery_index_only",
+      "adoption": "discovery_only",
+      "caveats": [
+        "index_repository_license_does_not_license_linked_skill_sources",
+        "fetch_each_skill_from_its_canonical_source",
+        "security_filtering_is_not_a_guarantee_of_safety"
+      ]
+    },
+    {
+      "id": "hermes_agent_self_evolution",
+      "url": "https://github.com/NousResearch/hermes-agent-self-evolution.git",
+      "web": "https://github.com/NousResearch/hermes-agent-self-evolution",
+      "ref": "main",
+      "commit": "0a929e3aa20e15cf04dc7c28492a7d41a5139125",
+      "observed_license": "MIT",
+      "license_evidence": "README_and_pyproject_license_metadata; root_LICENSE_file_not_present_at_snapshot",
+      "scope": "offline_skill_prompt_tool_description_optimization",
+      "adoption": "research_and_offline_evaluation_only",
+      "caveats": [
+        "confirm_license_with_rightsholder_before_redistribution",
+        "never_allow_unreviewed_live_self_modification",
+        "Darwinian_Evolver_subcomponent_is_AGPL_v3_and_external_CLI_only_per_upstream_plan"
+      ]
+    },
+    {
+      "id": "hermes_agent",
+      "url": "https://github.com/NousResearch/hermes-agent.git",
+      "web": "https://github.com/NousResearch/hermes-agent",
+      "ref": "main",
+      "commit": "27afd192c2215d1e7363c38a2db77d0ab3f9db49",
+      "observed_license": "MIT",
+      "scope": "optional_external_agent_runtime",
+      "adoption": "optional_backend_adapter",
+      "caveats": [
+        "do_not_merge_second_gateway_into_ORBIT_control_plane",
+        "preserve_LICENSE_and_package_notices",
+        "evaluate_runtime_and_channel_overlap_before_enabling"
+      ]
+    },
+    {
+      "id": "openmausbot",
+      "url": "https://github.com/milind-soni/OpenMausBot.git",
+      "web": "https://github.com/milind-soni/OpenMausBot",
+      "ref": "main",
+      "commit": "3f81576655ca45af91bfaaa63dc37251222828eb",
+      "observed_license": "Apache-2.0_except_enterprise",
+      "scope": "multi_agent_desktop_product_shell_and_local_harness",
+      "adoption": "preferred_product_shell_candidate_subject_to_repository_audit",
+      "exclude_paths": [
+        "enterprise/"
+      ],
+      "caveats": [
+        "enterprise_directory_is_source_available_under_separate_restrictive_license",
+        "preserve_LICENSE_NOTICE_LICENSING_md_and_third_party",
+        "product_name_and_mascot_are_trademarks_do_not_reuse",
+        "inspect_plaintext_local_credential_storage_and_replace_with_ORBIT_secret_vault"
+      ]
+    },
+    {
+      "id": "pydantic_ai",
+      "url": "https://github.com/pydantic/pydantic-ai.git",
+      "web": "https://github.com/pydantic/pydantic-ai",
+      "ref": "main",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "observed_license": "MIT",
+      "scope": "typed_python_agent_framework_realtime_voice_model_and_tool_interfaces",
+      "adoption": "candidate_for_python_specialist_workers_not_second_global_orchestrator",
+      "caveats": [
+        "inspect_optional_dependencies_and_nested_licenses",
+        "keep_ORBIT_policy_and_task_state_outside_agent_framework"
+      ]
+    },
+    {
+      "id": "ollama",
+      "url": "https://github.com/ollama/ollama.git",
+      "web": "https://github.com/ollama/ollama",
+      "ref": "main",
+      "commit": "d63b702609c4300a2ca07be2bdb0adb9834725e5",
+      "observed_license": "MIT",
+      "scope": "local_model_serving_runtime",
+      "adoption": "recommended_local_model_provider_adapter",
+      "caveats": [
+        "model_weights_have_separate_licenses_and_terms",
+        "inference_speed_depends_on_ram_vram_cpu_and_model_quantization",
+        "do_not_download_large_models_without_user_choice"
+      ]
+    },
+    {
+      "id": "llama_cpp",
+      "url": "https://github.com/ggml-org/llama.cpp.git",
+      "web": "https://github.com/ggml-org/llama.cpp",
+      "ref": "master",
+      "commit": "f477f795cb071baf5b8af6488378366a72034ac4",
+      "observed_license": "MIT",
+      "scope": "quantized_local_llm_inference_and_gguf_support",
+      "adoption": "benchmark_as_optional_low_level_local_inference_backend",
+      "caveats": [
+        "models_have_separate_licenses",
+        "compile_flags_and_hardware_acceleration_must_be_benchmarked",
+        "do_not_assume_16gb_ram_is_sufficient_for_every_model"
+      ]
+    },
+    {
+      "id": "docling",
+      "url": "https://github.com/docling-project/docling.git",
+      "web": "https://github.com/docling-project/docling",
+      "ref": "main",
+      "commit": "1d9a79c85028d4a2917e8026de338158f5d9fa88",
+      "observed_license": "MIT",
+      "scope": "document_parsing_layout_table_and_multimodal_ingestion",
+      "adoption": "recommended_document_ingestion_adapter_candidate",
+      "caveats": [
+        "review_optional_models_and_weights_separately",
+        "document_parser_outputs_are_untrusted_and_need_source_provenance"
+      ]
+    },
+    {
+      "id": "faster_whisper",
+      "url": "https://github.com/SYSTRAN/faster-whisper.git",
+      "web": "https://github.com/SYSTRAN/faster-whisper",
+      "ref": "master",
+      "commit": "846467d436117e44d54ad74f555d85c75834edb0",
+      "observed_license": "MIT",
+      "scope": "speech_to_text_transcription_worker",
+      "adoption": "optional_local_transcription_adapter",
+      "caveats": [
+        "speech_models_have_separate_licenses",
+        "review_audio_retention_and_voice_consent",
+        "benchmark_cpu_and_gpu_performance"
+      ]
+    },
+    {
+      "id": "graphiti",
+      "url": "https://github.com/getzep/graphiti.git",
+      "web": "https://github.com/getzep/graphiti",
+      "ref": "main",
+      "commit": "024b83679e48e41d59a7d1714ac0870aff2e4676",
+      "observed_license": "Apache-2.0",
+      "scope": "temporal_knowledge_graph_memory",
+      "adoption": "experimental_memory_graph_adapter_after_basic_memory_acl",
+      "caveats": [
+        "graph_backend_and_model_dependencies_need_separate_review",
+        "ORBIT_remains_source_of_truth_for_consent_acl_and_deletion"
+      ]
+    },
+    {
+      "id": "mcp_python_sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk.git",
+      "web": "https://github.com/modelcontextprotocol/python-sdk",
+      "ref": "main",
+      "commit": "77001c96f9507be0f4d009b83210a384a5e08bda",
+      "observed_license": "MIT",
+      "scope": "python_model_context_protocol_clients_and_servers",
+      "adoption": "recommended_python_worker_tool_interop_sdk",
+      "caveats": [
+        "MCP_tool_annotations_are_not_authorization",
+        "validate_every_call_through_ORBIT_policy_gateway"
+      ]
+    },
+    {
+      "id": "openai_agents_python",
+      "url": "https://github.com/openai/openai-agents-python.git",
+      "web": "https://github.com/openai/openai-agents-python",
+      "ref": "main",
+      "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "observed_license": "MIT",
+      "scope": "python_agent_handoffs_guardrails_tracing_and_tool_execution",
+      "adoption": "comparison_candidate_for_python_specialist_agent_workflows",
+      "caveats": [
+        "provider_capabilities_and_model_compatibility_must_be_tested",
+        "avoid_parallel_global_orchestration_state"
+      ]
+    },
+    {
+      "id": "composio",
+      "url": "https://github.com/ComposioHQ/composio.git",
+      "web": "https://github.com/ComposioHQ/composio",
+      "ref": "next",
+      "commit": "e970677aa69f4526009bb535a58d006ca7368e9a",
+      "observed_license": "MIT",
+      "scope": "connected_app_toolkits_auth_and_tool_discovery",
+      "adoption": "recommended_connector_catalogue_and_oauth_proof_of_concept",
+      "caveats": [
+        "self_host_and_cloud_feature_boundaries_must_be_checked",
+        "every_toolkit_and_dependency_requires_exact_version_license_review",
+        "ORBIT_retains_scope_minimization_and_action_approval"
+      ]
+    },
+    {
+      "id": "openhands_software_agent_sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk.git",
+      "web": "https://github.com/OpenHands/software-agent-sdk",
+      "ref": "main",
+      "commit": "51ad22388a154d48353fac7a82cfd5255dbeefc1",
+      "observed_license": "MIT",
+      "scope": "coding_agent_worker_sdk_and_ephemeral_workspaces",
+      "adoption": "recommended_coding_worker_proof_of_concept",
+      "caveats": [
+        "bind_each_task_to_disposable_workspace",
+        "do_not_inherit_personal_account_credentials",
+        "inspect_container_and_cloud_execution_options"
+      ]
+    },
+    {
+      "id": "opensandbox",
+      "url": "https://github.com/opensandbox-group/OpenSandbox.git",
+      "web": "https://github.com/opensandbox-group/OpenSandbox",
+      "ref": "main",
+      "commit": "5a85d1d24ad15a78dce1e1ae59503b87fc58cdde",
+      "observed_license": "Apache-2.0",
+      "scope": "sandbox_api_sdk_and_runtime",
+      "adoption": "evaluate_after_docker_baseline",
+      "caveats": [
+        "sandbox_control_plane_not_model_accessible",
+        "verify_network_egress_and_credential_vault_behavior",
+        "firecracker_requires_compatible_host_infrastructure"
+      ]
+    },
+    {
+      "id": "stagehand",
+      "url": "https://github.com/browserbase/stagehand.git",
+      "web": "https://github.com/browserbase/stagehand",
+      "ref": "main",
+      "commit": "310957518a931c1a84c5968b13282cc30acd1be9",
+      "observed_license": "MIT",
+      "scope": "typescript_browser_agent_sdk",
+      "adoption": "recommended_browser_driver_benchmark",
+      "caveats": [
+        "review_optional_hosted_browser_service_data_terms",
+        "keep_browser_policy_and_approval_in_ORBIT",
+        "benchmark_against_playwright_and_agent_browser"
+      ]
+    },
+    {
+      "id": "browser_use",
+      "url": "https://github.com/browser-use/browser-use.git",
+      "web": "https://github.com/browser-use/browser-use",
+      "ref": "main",
+      "commit": "b49a68e4060acb226da8f784194fef301c53a6d7",
+      "observed_license": "MIT",
+      "scope": "python_browser_agent_driver",
+      "adoption": "alternative_browser_driver_for_python_workers",
+      "caveats": [
+        "review_optional_cloud_service_separately",
+        "do_not_run_multiple_uncontrolled_browser_backends"
+      ]
+    },
+    {
+      "id": "mem0",
+      "url": "https://github.com/mem0ai/mem0.git",
+      "web": "https://github.com/mem0ai/mem0",
+      "ref": "main",
+      "commit": "f1791daa86d469249c9b002f62644d58a1eb96a0",
+      "observed_license": "Apache-2.0",
+      "scope": "agent_memory_extraction_and_retrieval",
+      "adoption": "recommended_memory_adapter_proof_of_concept",
+      "caveats": [
+        "ORBIT_owns_consent_scope_provenance_retention_and_deletion",
+        "prevent_cross_agent_memory_leakage",
+        "review_cloud_vs_self_hosted_data_flow"
+      ]
+    },
+    {
+      "id": "letta_code",
+      "url": "https://github.com/letta-ai/letta-code.git",
+      "web": "https://github.com/letta-ai/letta-code",
+      "ref": "main",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "observed_license": "Apache-2.0",
+      "scope": "stateful_agent_and_continual_memory_patterns",
+      "adoption": "alternative_memory_and_agent_backend_research",
+      "caveats": [
+        "compare_with_mem0_before_selection",
+        "keep_ORBIT_user_memory_authority",
+        "do_not_duplicate_task_state_or_gateway"
+      ]
+    },
+    {
+      "id": "langgraph",
+      "url": "https://github.com/langchain-ai/langgraph.git",
+      "web": "https://github.com/langchain-ai/langgraph",
+      "ref": "main",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "observed_license": "MIT",
+      "scope": "stateful_graph_workflows_and_interrupts",
+      "adoption": "workflow_orchestration_proof_of_concept",
+      "caveats": [
+        "do_not_compete_with_temporal_for_durable_workflow_ownership",
+        "document_checkpoint_and_replay_semantics"
+      ]
+    },
+    {
+      "id": "dspy",
+      "url": "https://github.com/stanfordnlp/dspy.git",
+      "web": "https://github.com/stanfordnlp/dspy",
+      "ref": "main",
+      "commit": "efcb1e4232b90705a414e4b4e7cf47b503764c53",
+      "observed_license": "MIT",
+      "scope": "prompt_tool_description_and_skill_evaluation_optimization",
+      "adoption": "recommended_offline_self_improvement_foundation",
+      "caveats": [
+        "optimize_offline_only",
+        "holdout_eval_and_human_PR_required",
+        "not_model_weight_training_by_default"
+      ]
+    },
+    {
+      "id": "temporal",
+      "url": "https://github.com/temporalio/temporal.git",
+      "web": "https://github.com/temporalio/temporal",
+      "ref": "main",
+      "commit": "74c71f963b99f366f2adf8c503ecd785b0d8b4dc",
+      "observed_license": "MIT",
+      "scope": "durable_workflow_execution_retry_timer_and_recovery",
+      "adoption": "P1_durable_workflow_engine_candidate",
+      "caveats": [
+        "avoid_duplicate_retry_owners",
+        "review_operational_infrastructure_cost",
+        "ORBIT_business_task_state_remains_canonical"
+      ]
+    },
+    {
+      "id": "opentelemetry_js",
+      "url": "https://github.com/open-telemetry/opentelemetry-js.git",
+      "web": "https://github.com/open-telemetry/opentelemetry-js",
+      "ref": "main",
+      "commit": "ee94b842fd734e23064539c5f8069e0af0e92b9a",
+      "observed_license": "Apache-2.0",
+      "scope": "javascript_tracing_metrics_and_instrumentation",
+      "adoption": "recommended_observability_baseline",
+      "caveats": [
+        "redact_prompts_secrets_and_personal_content",
+        "set_trace_retention_and_access_policy"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "url": "https://github.com/run-llama/llama_index.git",
+      "web": "https://github.com/run-llama/llama_index",
+      "ref": "main",
+      "commit": "444fdf0684707de62ebb447d658dba137dd9cb99",
+      "observed_license": "MIT",
+      "scope": "document_ingestion_rag_and_retrieval",
+      "adoption": "knowledge_ingestion_adapter_candidate",
+      "caveats": [
+        "preserve_source_citations_and_document_acl",
+        "do_not_blend_personal_and_project_scopes",
+        "review_each_package_and_optional_model_provider"
+      ]
+    },
+    {
+      "id": "qdrant",
+      "url": "https://github.com/qdrant/qdrant.git",
+      "web": "https://github.com/qdrant/qdrant",
+      "ref": "master",
+      "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+      "observed_license": "Apache-2.0",
+      "scope": "vector_storage_and_similarity_search",
+      "adoption": "optional_vector_store_after_postgres_memory_baseline",
+      "caveats": [
+        "vector_index_is_not_authoritative_record",
+        "apply_tenant_and_memory_namespace_filters",
+        "review_backup_encryption_and_deletion_propagation"
+      ]
+    },
+    {
+      "id": "playwright",
+      "url": "https://github.com/microsoft/playwright.git",
+      "web": "https://github.com/microsoft/playwright",
+      "ref": "main",
+      "commit": "07c7069cdbb1f5c7331d3f4d2abd864dcfde745a",
+      "observed_license": "Apache-2.0",
+      "scope": "cross_browser_automation_testing_and_browser_driver",
+      "adoption": "recommended_browser_baseline_candidate",
+      "caveats": [
+        "preserve_APACHE_LICENSE_and_NOTICE",
+        "keep_browser_session_and_network_policy_under_ORBIT_control",
+        "benchmark_accessibility_and_deterministic_action_contracts"
+      ]
+    },
+    {
+      "id": "markitdown",
+      "url": "https://github.com/microsoft/markitdown.git",
+      "web": "https://github.com/microsoft/markitdown",
+      "ref": "main",
+      "commit": "ed178952a6672abdfd35b5f9e76a80b6cefc086e",
+      "observed_license": "MIT",
+      "scope": "document_and_office_file_to_markdown_conversion",
+      "adoption": "lightweight_document_ingestion_alternative_to_docling",
+      "caveats": [
+        "compare_with_docling_on_tables_scanned_docs_and_layout",
+        "extracted_text_is_untrusted_and_requires_provenance",
+        "preserve_per_file_source_locations"
+      ]
+    },
+    {
+      "id": "chroma",
+      "url": "https://github.com/chroma-core/chroma.git",
+      "web": "https://github.com/chroma-core/chroma",
+      "ref": "main",
+      "commit": "1a3ac2c7c623adbd03ed2508dc27b98cdf26016d",
+      "observed_license": "Apache-2.0",
+      "scope": "vector_search_and_embedding_storage",
+      "adoption": "alternative_vector_store_to_qdrant",
+      "caveats": [
+        "select_one_primary_vector_store_after_benchmark",
+        "keep_POSTGRES_metadata_and_acl_as_source_of_truth",
+        "review_server_auth_and_tenant_isolation"
+      ]
+    },
+    {
+      "id": "text_embeddings_inference",
+      "url": "https://github.com/huggingface/text-embeddings-inference.git",
+      "web": "https://github.com/huggingface/text-embeddings-inference",
+      "ref": "main",
+      "commit": "da9a9ce190444ef4326e1fbab15d298f0a1016c7",
+      "observed_license": "Apache-2.0",
+      "scope": "embedding_model_inference_service",
+      "adoption": "optional_local_embedding_worker",
+      "caveats": [
+        "model_weights_and_tokenizer_terms_separate",
+        "benchmark_cpu_gpu_and_quantization",
+        "keep_user_data_out_of_hosted_inference_without_approval"
+      ]
+    },
+    {
+      "id": "transformers",
+      "url": "https://github.com/huggingface/transformers.git",
+      "web": "https://github.com/huggingface/transformers",
+      "ref": "main",
+      "commit": "a6f5c8676b158c367dc3389f68dde7a97fb619d6",
+      "observed_license": "Apache-2.0",
+      "scope": "model_architecture_tokenization_and_inference_library",
+      "adoption": "research_and_optional_local_model_adapter_dependencies",
+      "caveats": [
+        "individual_model_weights_have_independent_licenses",
+        "do_not_train_or_download_without_compute_and_cost_budget",
+        "avoid_embedding_entire_framework_when_runtime_api_is_enough"
+      ]
+    },
+    {
+      "id": "sherpa_onnx",
+      "url": "https://github.com/k2-fsa/sherpa-onnx.git",
+      "web": "https://github.com/k2-fsa/sherpa-onnx",
+      "ref": "master",
+      "commit": "347ec768a01ca53e766780f7759b14e145b643e6",
+      "observed_license": "Apache-2.0",
+      "scope": "offline_speech_to_text_text_to_speech_vad_and_diarization",
+      "adoption": "compare_with_faster_whisper_for_local_voice_pipeline",
+      "caveats": [
+        "model_files_and_voice_assets_have_separate_terms",
+        "benchmark_platform_and_accelerator_support",
+        "require_user_voice_consent_and_retention_policy"
+      ]
+    },
+    {
+      "id": "semantic_kernel",
+      "url": "https://github.com/microsoft/semantic-kernel.git",
+      "web": "https://github.com/microsoft/semantic-kernel",
+      "ref": "main",
+      "commit": "df1cb33d0d32699c8d6a2e5b3ea7e5f8990d86d5",
+      "observed_license": "MIT",
+      "scope": "multi_language_agent_and_plugin_sdk",
+      "adoption": "comparison_candidate_for_dotnet_python_and_java_integrations",
+      "caveats": [
+        "avoid_adding_another_global_orchestration_authority",
+        "review_plugin_trust_and_connector_permissions",
+        "benchmark_against_pydantic_ai_and_agents_sdk"
+      ]
+    },
+    {
+      "id": "home_assistant",
+      "url": "https://github.com/home-assistant/core.git",
+      "web": "https://github.com/home-assistant/core",
+      "ref": "dev",
+      "commit": "c97172ccafa1672d9854d9b862598d4640999b0d",
+      "observed_license": "Apache-2.0",
+      "scope": "local_first_home_automation_platform_and_device_integrations",
+      "adoption": "external_home_automation_connector_only_initially",
+      "caveats": [
+        "do_not_embed_or_fork_the_full_home_assistant_runtime_for_MVP",
+        "user_must_authorize_each_home_instance_and_scope",
+        "high_impact_lock_security_energy_actions_need_explicit_confirmations"
+      ]
+    },
+    {
+      "id": "microsoft_agent_framework",
+      "url": "https://github.com/microsoft/agent-framework.git",
+      "web": "https://github.com/microsoft/agent-framework",
+      "ref": "main",
+      "commit": "924a6e50ec0336f3c965ee8b1151c54085888b6e",
+      "observed_license": "MIT",
+      "scope": "python_dotnet_agent_and_multi_agent_workflow_framework",
+      "adoption": "benchmark_candidate_for_specialist_worker_runtime",
+      "caveats": [
+        "compare_against_Pydantic_AI_OpenAI_Agents_and_LangGraph",
+        "ORBIT_owns_durable_task_and_approval_state",
+        "avoid_multiple_uncoordinated_agent_managers"
+      ]
+    },
+    {
+      "id": "vllm",
+      "url": "https://github.com/vllm-project/vllm.git",
+      "web": "https://github.com/vllm-project/vllm",
+      "ref": "main",
+      "commit": "d76fe936a1c4bb40abaf1b06aba37d849e95bdb2",
+      "observed_license": "Apache-2.0",
+      "scope": "high_throughput_gpu_llm_inference_and_serving",
+      "adoption": "optional_gpu_model_serving_candidate_compare_with_sglang",
+      "caveats": [
+        "requires_compatible_gpu_and_driver_stack_for_primary_performance_path",
+        "model_weights_and_tokenizers_have_separate_license_terms",
+        "benchmark_memory_throughput_latency_and_operational_cost_before_selection",
+        "do_not_install_or_run_unreviewed_model_code"
+      ]
+    },
+    {
+      "id": "sglang",
+      "url": "https://github.com/sgl-project/sglang.git",
+      "web": "https://github.com/sgl-project/sglang",
+      "ref": "main",
+      "commit": "cbbc6b67f48008a8b739f4667d7b14abb89088cf",
+      "observed_license": "Apache-2.0",
+      "scope": "high_performance_llm_and_multimodal_model_serving",
+      "adoption": "alternative_gpu_serving_candidate_to_vllm_not_both_by_default",
+      "caveats": [
+        "compare_against_vllm_on_supported_hardware_and_real_orbit_workloads",
+        "model_weights_and_tokenizers_are_separately_licensed",
+        "review_third_party_kernels_and_container_images",
+        "do_not_enable_external_network_access_without_policy"
+      ]
+    },
+    {
+      "id": "promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo.git",
+      "web": "https://github.com/promptfoo/promptfoo",
+      "ref": "main",
+      "commit": "2a6fdf9b2e1600ffa2a204e70e9fea7cb0c14cff",
+      "observed_license": "MIT",
+      "scope": "prompt_agent_rag_evaluation_and_llm_red_team_test_harness",
+      "adoption": "recommended_evaluation_and_ci_proof_of_concept",
+      "caveats": [
+        "run_against_owned_or_explicitly_authorized_targets_only",
+        "red_team_plugins_and_test_inputs_are_untrusted_data",
+        "protect_eval_datasets_and_trace_outputs",
+        "compare_with_internal_evaluation_contract_and_garak"
+      ]
+    },
+    {
+      "id": "haystack",
+      "url": "https://github.com/deepset-ai/haystack.git",
+      "web": "https://github.com/deepset-ai/haystack",
+      "ref": "main",
+      "commit": "0ad74747ffd7d9f9b092db97ba2e222080992c2e",
+      "observed_license": "Apache-2.0",
+      "scope": "modular_rag_retrieval_and_agent_pipeline_framework",
+      "adoption": "alternative_rag_pipeline_candidate_benchmark_against_llamaindex",
+      "caveats": [
+        "do_not_run_as_a_second_global_orchestrator",
+        "review_component_and_integration_dependencies_and_nested_licenses",
+        "source_provenance_acl_and_deletion_are_orbit_owned",
+        "choose_one_primary_rag_pipeline_after_quality_cost_tests"
+      ]
+    },
+    {
+      "id": "duckdb",
+      "url": "https://github.com/duckdb/duckdb.git",
+      "web": "https://github.com/duckdb/duckdb",
+      "ref": "main",
+      "commit": "d4eea3f208d42ca4ee522aca23f5ea76f902b0ca",
+      "observed_license": "MIT",
+      "scope": "embedded_local_analytics_and_columnar_query_engine",
+      "adoption": "optional_local_analytics_and_benchmark_data_engine",
+      "caveats": [
+        "not_a_replacement_for_transactional_task_or_identity_database",
+        "review_extensions_and_third_party_dependencies_separately",
+        "avoid_loading_sensitive_user_data_without_acl_and_retention_policy",
+        "benchmark_file_locking_and_concurrent_access_for_orbit_use"
+      ]
+    },
+    {
+      "id": "garak",
+      "url": "https://github.com/NVIDIA/garak.git",
+      "web": "https://github.com/NVIDIA/garak",
+      "ref": "main",
+      "commit": "892779207cbc38f65a738ef9cbdfbc1e83aa0b55",
+      "observed_license": "Apache-2.0",
+      "scope": "llm_security_red_team_and_failure_probe_toolkit",
+      "adoption": "recommended_pre_release_security_evaluation_candidate",
+      "caveats": [
+        "only_probe_models_and_endpoints_owned_or_explicitly_authorized",
+        "use_isolated_non_production_test_credentials_and_data",
+        "red_team_findings_require_triage_not_automatic_block_or_ignore",
+        "review_probe_dependencies_and_model_endpoint_costs"
+      ]
+    },
+    {
+      "id": "graphrag",
+      "url": "https://github.com/microsoft/graphrag.git",
+      "web": "https://github.com/microsoft/graphrag",
+      "ref": "main",
+      "commit": "34b2b67ae4601ad0b47bcd179fbe3f2a23aa0857",
+      "observed_license": "MIT",
+      "scope": "graph_based_retrieval_augmented_generation_and_knowledge_graph_extraction",
+      "adoption": "experimental_research_rag_adapter_after_baseline_rag",
+      "caveats": [
+        "use_for_graph_enrichment_not_as_global_agent_orchestrator",
+        "benchmark_entity_resolution_graph_quality_cost_and_latency",
+        "keep_source_acl_provenance_retention_and_delete_authority_in_ORBIT",
+        "review_llm_prompts_and_extraction_outputs_as_untrusted_data"
+      ]
+    },
+    {
+      "id": "guardrails",
+      "url": "https://github.com/guardrails-ai/guardrails.git",
+      "web": "https://github.com/guardrails-ai/guardrails",
+      "ref": "main",
+      "commit": "06d0ff2c5f9bcb493d976b76f885e37e41ce845d",
+      "observed_license": "Apache-2.0",
+      "scope": "typed_output_validation_and_guardrail_pipeline",
+      "adoption": "optional_output_validation_adapter_candidate",
+      "caveats": [
+        "never_treat_framework_validators_as_complete_security_boundary",
+        "review_external_hub_validators_and_dependencies_individually",
+        "keep_policy_authorization_and_human_approval_in_ORBIT",
+        "test_for_refusal_bypass_and_false_positive_rates"
+      ]
+    },
+    {
+      "id": "milvus",
+      "url": "https://github.com/milvus-io/milvus.git",
+      "web": "https://github.com/milvus-io/milvus",
+      "ref": "master",
+      "commit": "686b129ca584fe2e8ae88b06ead95ffa03bad56a",
+      "observed_license": "Apache-2.0",
+      "scope": "distributed_vector_database_and_ann_search",
+      "adoption": "scale_out_alternative_vector_backend_to_qdrant_chroma",
+      "caveats": [
+        "do_not_run_alongside_multiple_vector_stores_without_benchmark_reason",
+        "keep_postgres_orbit_acl_and_metadata_source_of_truth",
+        "benchmark_resource_cost_and_operational_complexity_before_adoption",
+        "review_all_container_images_and_nested_third_party_components"
+      ]
+    },
+    {
+      "id": "google_adk",
+      "url": "https://github.com/google/adk-python.git",
+      "web": "https://github.com/google/adk-python",
+      "ref": "main",
+      "commit": "dd7161f7a2b88cd7ae482cc2acd8423675ac027c",
+      "observed_license": "Apache-2.0",
+      "scope": "code_first_python_agent_development_evaluation_and_deployment",
+      "adoption": "compare_as_python_specialist_agent_framework_not_global_task_authority",
+      "caveats": [
+        "compare_agent_tool_state_and_evaluation_contracts_against_pydantic_ai_and_microsoft_agent_framework",
+        "ORBIT_owns_identity_task_authorization_memory_consent_and_approval",
+        "review_model_provider_and_optional_package_terms"
+      ]
+    },
+    {
+      "id": "openai_codex",
+      "url": "https://github.com/openai/codex.git",
+      "web": "https://github.com/openai/codex",
+      "ref": "main",
+      "commit": "c9b4267c370a755da12ec1c8648c2451163212b7",
+      "observed_license": "Apache-2.0",
+      "scope": "terminal_coding_agent_cli_and_Rust_runtime_patterns",
+      "adoption": "study_cli_sdk_worktree_patch_and_sandbox_interfaces_for_coding_worker",
+      "caveats": [
+        "not_a_second_ORBIT_task_or_identity_authority",
+        "review_NOTICE_and_nested_third_party_components",
+        "execute_only_inside_disposable_task_workspace_with_explicit_file_and_network_policy"
+      ]
+    },
+    {
+      "id": "gemini_cli",
+      "url": "https://github.com/google-gemini/gemini-cli.git",
+      "web": "https://github.com/google-gemini/gemini-cli",
+      "ref": "main",
+      "commit": "62bab5b232c15b925d31e655ce844ab939c882b7",
+      "observed_license": "Apache-2.0",
+      "scope": "terminal_agent_cli_plugins_tools_and_evaluation_patterns",
+      "adoption": "compare_cli_runtime_and_tool_extensions_as_optional_coding_worker_backend",
+      "caveats": [
+        "keep_provider_auth_and_usage_terms_separate",
+        "inspect_packages_and_third_party_notices",
+        "ORBIT_policy_gateway_remains_authoritative"
+      ]
+    },
+    {
+      "id": "opensearch",
+      "url": "https://github.com/opensearch-project/OpenSearch.git",
+      "web": "https://github.com/opensearch-project/OpenSearch",
+      "ref": "main",
+      "commit": "0b131ddecfe5be4cef617acda803e8c824c8c875",
+      "observed_license": "Apache-2.0",
+      "scope": "distributed_lexical_and_hybrid_search_platform",
+      "adoption": "optional_search_backend_when_postgres_fts_and_qdrant_are_insufficient",
+      "caveats": [
+        "avoid_running_multiple_search_stacks_without_benchmark_evidence",
+        "review_plugin_and_distribution_notices",
+        "keep_authorization_filters_enforced_before_returning_results"
+      ]
+    },
+    {
+      "id": "swe_agent",
+      "url": "https://github.com/SWE-agent/SWE-agent.git",
+      "web": "https://github.com/SWE-agent/SWE-agent",
+      "ref": "main",
+      "commit": "3ea751c087f32b16e039a2233dd6eefecef325d5",
+      "observed_license": "MIT",
+      "scope": "issue_to_code_patch_agent_and_software_engineering_task_evaluation",
+      "adoption": "coding_worker_baseline_and_issue_repair_benchmark_candidate",
+      "caveats": [
+        "pin_snapshot_is_older_than_other_v10_sources_recheck_upstream_security_and_maintenance_before_adoption",
+        "only_run_inside_disposable_sandbox_and_nonproduction_branch",
+        "do_not_enable_offensive_cybersecurity_modes_for_unapproved_targets"
+      ]
+    },
+    {
+      "id": "faiss",
+      "url": "https://github.com/facebookresearch/faiss.git",
+      "web": "https://github.com/facebookresearch/faiss",
+      "ref": "main",
+      "commit": "29782a03747addd1122bf040b6c3488c8d669fe9",
+      "observed_license": "MIT",
+      "scope": "vector_similarity_search_and_approximate_nearest_neighbor_indexing",
+      "adoption": "benchmark_library_option_for_local_vector_retrieval_not_default_database",
+      "caveats": [
+        "compare_with_qdrant_chroma_and_milvus_on_real_orbit_data",
+        "review_gpu_and_native_binary_build_requirements",
+        "ORBIT_controls_metadata_acl_tenant_isolation_and_deletion"
+      ]
+    },
+    {
+      "id": "opengrokbot",
+      "url": "https://github.com/Z4YT0N/OpenGrokBot.git",
+      "web": "https://github.com/Z4YT0N/OpenGrokBot",
+      "ref": "main",
+      "commit": "86e45d2023e6921a79ad9bfcdc5d25ac0a593bdc",
+      "observed_license": "MIT",
+      "scope": "multi_agent_company_chat_electron_desktop_and_server_harness",
+      "adoption": "preferred_grok_bot_shell_and_team_persona_chat_candidate",
+      "caveats": [
+        "preserve_LICENSE_and_author_attribution",
+        "integrate_behind_orbit_workspace_and_canonical_task_authority",
+        "evaluate_persona_and_group_chat_runtime_against_orbit_role_registry"
+      ]
+    },
+    {
+      "id": "omnivoice",
+      "url": "https://github.com/k2-fsa/OmniVoice.git",
+      "web": "https://github.com/k2-fsa/OmniVoice",
+      "ref": "master",
+      "commit": "08be0b4ccbac3e13e374e86fbfead4b4cac343e2",
+      "observed_license": "Apache-2.0",
+      "scope": "multimodal_conversational_voice_and_realtime_speech_synthesis",
+      "adoption": "preferred_voice_and_speech_runtime_candidate",
+      "caveats": [
+        "preserve_Apache_license_and_author_notices",
+        "optimize_for_realtime_local_or_server_inference"
+      ]
+    },
+    {
+      "id": "agent_desktop",
+      "url": "https://github.com/vercel-labs/agent-desktop.git",
+      "web": "https://github.com/vercel-labs/agent-desktop",
+      "ref": "main",
+      "commit": "b43ac4f6e892ef608f8851428613c4009f0e84c7",
+      "observed_license": "Apache-2.0",
+      "scope": "accessibility_tree_desktop_automation_cross_platform",
+      "adoption": "preferred_desktop_accessibility_driver_candidate",
+      "caveats": [
+        "review_platform_native_accessibility_apis",
+        "isolate_os_side_effects_behind_approval_gates"
+      ]
+    },
+    {
+      "id": "librechat",
+      "url": "https://github.com/LibreChat-AI/LibreChat.git",
+      "web": "https://github.com/LibreChat-AI/LibreChat",
+      "ref": "main",
+      "commit": "f4154b649efa37e1345ccc517a4d8d1ed2178c82",
+      "observed_license": "MIT",
+      "scope": "multi_provider_chat_mcp_agent_management_ui",
+      "adoption": "reference_model_gateway_and_mcp_ui_candidate",
+      "caveats": [
+        "evaluate_agent_management_contracts",
+        "do_not_duplicate_orbit_task_state_machine"
+      ]
+    },
+    {
+      "id": "onyx",
+      "url": "https://github.com/onyx-dot-app/onyx.git",
+      "web": "https://github.com/onyx-dot-app/onyx",
+      "ref": "main",
+      "commit": "434308d0e3bdf3e7eb49554b38af447c25edcdfd",
+      "observed_license": "MIT",
+      "scope": "deep_research_agentic_rag_and_document_indexing",
+      "adoption": "deep_research_and_enterprise_rag_candidate",
+      "caveats": [
+        "study_connector_and_indexing_pipeline",
+        "reuse_only_modular_search_rag_components"
+      ]
+    },
+    {
+      "id": "searxng",
+      "url": "https://github.com/searxng/searxng.git",
+      "web": "https://github.com/searxng/searxng",
+      "ref": "master",
+      "commit": "3a3dd15bfafcb645a1b45c2c6c0798a8f786aaaf",
+      "observed_license": "AGPL-3.0",
+      "scope": "self_hosted_privacy_preserving_web_metasearch_engine",
+      "adoption": "isolated_external_service_adapter_only",
+      "caveats": [
+        "AGPL_license_requires_strict_service_boundary",
+        "run_as_isolated_container_never_import_source"
+      ]
+    },
+    {
+      "id": "novnc",
+      "url": "https://github.com/novnc/noVNC.git",
+      "web": "https://github.com/novnc/noVNC",
+      "ref": "master",
+      "commit": "e8b5024d4603587b29ffede4fbd28b1fa2939829",
+      "observed_license": "MPL-2.0",
+      "scope": "html5_vnc_client_for_live_computer_viewer_and_control",
+      "adoption": "preferred_live_computer_viewer_component",
+      "caveats": [
+        "standalone_client_library",
+        "embed_behind_secure_websocket_proxy"
+      ]
+    }
+  ]
+}

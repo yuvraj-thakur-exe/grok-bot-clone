@@ -1,0 +1,12 @@
+flowchart LR
+  User[User / Team] --> Client[ORBIT Web UI]
+  Admin[Workspace Admin] --> Client
+  Client --> Control[ORBIT Control Plane]
+  Control --> Models[Hosted or Local Model Providers]
+  Control --> Workflow[Durable Workflow Runtime]
+  Workflow --> Workers[Isolated Execution Workers]
+  Workers --> Web[Public Websites]
+  Workers --> Git[Authorized GitHub Repositories]
+  Workers --> Storage[(Private Artifact Storage)]
+  Control --> Data[(PostgreSQL / pgvector)]
+  Control --> Telemetry[Observability Backend]

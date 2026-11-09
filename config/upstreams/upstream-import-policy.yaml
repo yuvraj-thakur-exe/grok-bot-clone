@@ -1,0 +1,49 @@
+version: 2
+baseline: ORBIT v1.0.0-draft
+import_policy:
+  default_state: quarantine
+  require_exact_commit: true
+  require_file_sha256: true
+  require_root_and_nested_license_review: true
+  require_security_review: true
+  require_build_and_test_review: true
+  require_notice_preservation: true
+  require_human_approval_before_application_merge: true
+  source_copy_destination: 10-source-intake
+  never_copy_paths:
+  - .git
+  - node_modules
+  - .venv
+  - venv
+  - dist
+  - build
+  - coverage
+  - enterprise
+  protected_repositories:
+    openmausbot:
+      excluded_paths:
+      - enterprise/
+      branding_restrictions:
+      - product_name
+      - mascot
+      - logo
+      - screenshots_and_trade_dress
+  forbidden_secret_files:
+  - .env
+  - .env.local
+  - id_rsa
+  - id_ed25519
+  - '*.pem'
+  - '*.p12'
+  - '*.pfx'
+  permissions:
+    no_host_wide_permissions: true
+    no_credentials_in_model_context: true
+    no_unreviewed_install_scripts: true
+    plugin_isolation_required_for_untrusted_code: true
+require_reviewed_manifest_sha256_before_apply: true
+require_clean_feature_worktree_before_apply: true
+refuse_existing_target_paths: true
+auto_git_add_commit_merge_push: false
+source_apply_destination: explicit_target_path_in_clean_orbit_feature_worktree
+provenance_manifest: docs/source-provenance/<repo-id>-<change-id>.json

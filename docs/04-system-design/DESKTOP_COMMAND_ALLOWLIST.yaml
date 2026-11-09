@@ -1,0 +1,90 @@
+version: 1
+status: proposed
+policy_version: desktop-v1
+notes:
+  - This is an ORBIT allowlist, not a full mirror of upstream agent-desktop commands.
+  - Enabling a command requires implementation, schema validation, threat review and tests.
+  - All commands must be executed through the Local Desktop Node and policy gateway.
+commands:
+  - name: status
+    class: read_only
+    enabled_in_mvp: true
+  - name: permissions
+    class: read_only
+    enabled_in_mvp: true
+  - name: list-apps
+    class: read_only
+    enabled_in_mvp: true
+  - name: list-windows
+    class: read_only
+    enabled_in_mvp: true
+  - name: snapshot
+    class: read_only_sensitive
+    enabled_in_mvp: true
+    limits: { max_nodes: 2000, max_text_chars: 12000, max_depth: 12 }
+  - name: find
+    class: read_only_sensitive
+    enabled_in_mvp: true
+    limits: { max_results: 50 }
+  - name: get
+    class: read_only_sensitive
+    enabled_in_mvp: true
+  - name: is
+    class: read_only_sensitive
+    enabled_in_mvp: true
+  - name: click
+    class: mutation
+    enabled_in_mvp: false
+    approval: semantic-risk-based
+  - name: set-value
+    class: mutation
+    enabled_in_mvp: false
+    approval: semantic-risk-based
+  - name: check
+    class: mutation
+    enabled_in_mvp: false
+    approval: semantic-risk-based
+  - name: uncheck
+    class: mutation
+    enabled_in_mvp: false
+    approval: semantic-risk-based
+  - name: scroll
+    class: mutation
+    enabled_in_mvp: false
+    approval: capability-based
+restricted_by_default:
+  - screenshot
+  - clipboard-get
+  - clipboard-set
+  - type
+  - press
+  - mouse-click
+  - mouse-move
+  - drag
+  - launch
+  - close-app
+  - focus-window
+  - move-window
+  - resize-window
+  - minimize
+  - maximize
+  - restore
+  - notification-action
+  - dismiss-notification
+  - open-system-surface
+  - batch
+  - trace
+  - cursor-overlay
+  - key-down
+  - key-up
+  - mouse-down
+  - mouse-up
+never_accept_from_model:
+  - arbitrary_executable_path
+  - arbitrary_cli_arguments
+  - shell_command
+  - raw_powershell
+  - raw_os_api_invocation
+  - driver_update_command
+  - permission_bypass
+  - privileged_execution

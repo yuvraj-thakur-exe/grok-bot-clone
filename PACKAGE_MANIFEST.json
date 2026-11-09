@@ -1,0 +1,2004 @@
+{
+  "package": "ORBIT Engineering Blueprint and IDE Agent Pack",
+  "version": "1.0.0-draft",
+  "prepared_date": "2026-11-08",
+  "status": "coordinated_reuse_first_documentation_and_operations_pack",
+  "runtime_implementation_included": false,
+  "file_count_including_manifest": 321,
+  "inventory_entry_count_excluding_manifest": 320,
+  "file_type_counts_including_manifest": {
+    "markdown": 265,
+    "markdown_config": 1,
+    "mermaid": 14,
+    "yaml": 15,
+    "json": 11,
+    "python_scripts": 10,
+    "shell_scripts": 1,
+    "powershell_scripts": 2,
+    "typescript": 0,
+    "other_files": 2
+  },
+  "virtual_role_charter_count": 30,
+  "api_contract_path_count": 27,
+  "pinned_upstream_revision_count": 50,
+  "pinned_upstream_revisions": [
+    {
+      "id": "openclaw",
+      "url": "https://github.com/openclaw/openclaw.git",
+      "ref": "main",
+      "commit": "7283c5182497e1ac5f95668de9f39ad3a9df3b11",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "awesome_openclaw_skills",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills.git",
+      "ref": "main",
+      "commit": "5492fcd98f7c52c69e1b2fa58790faf4fc90ce13",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "hermes_agent_self_evolution",
+      "url": "https://github.com/NousResearch/hermes-agent-self-evolution.git",
+      "ref": "main",
+      "commit": "0a929e3aa20e15cf04dc7c28492a7d41a5139125",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "hermes_agent",
+      "url": "https://github.com/NousResearch/hermes-agent.git",
+      "ref": "main",
+      "commit": "27afd192c2215d1e7363c38a2db77d0ab3f9db49",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "openmausbot",
+      "url": "https://github.com/milind-soni/OpenMausBot.git",
+      "ref": "main",
+      "commit": "3f81576655ca45af91bfaaa63dc37251222828eb",
+      "observed_license": "Apache-2.0_except_enterprise"
+    },
+    {
+      "id": "pydantic_ai",
+      "url": "https://github.com/pydantic/pydantic-ai.git",
+      "ref": "main",
+      "commit": "0f7648a1b0685389ea368ea4f7b754b393cea8c7",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "ollama",
+      "url": "https://github.com/ollama/ollama.git",
+      "ref": "main",
+      "commit": "d63b702609c4300a2ca07be2bdb0adb9834725e5",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "llama_cpp",
+      "url": "https://github.com/ggml-org/llama.cpp.git",
+      "ref": "master",
+      "commit": "f477f795cb071baf5b8af6488378366a72034ac4",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "docling",
+      "url": "https://github.com/docling-project/docling.git",
+      "ref": "main",
+      "commit": "1d9a79c85028d4a2917e8026de338158f5d9fa88",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "faster_whisper",
+      "url": "https://github.com/SYSTRAN/faster-whisper.git",
+      "ref": "master",
+      "commit": "846467d436117e44d54ad74f555d85c75834edb0",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "graphiti",
+      "url": "https://github.com/getzep/graphiti.git",
+      "ref": "main",
+      "commit": "024b83679e48e41d59a7d1714ac0870aff2e4676",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "mcp_python_sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk.git",
+      "ref": "main",
+      "commit": "77001c96f9507be0f4d009b83210a384a5e08bda",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "openai_agents_python",
+      "url": "https://github.com/openai/openai-agents-python.git",
+      "ref": "main",
+      "commit": "27c75c5f9c5fd957d28c04fb7e9eeacaad4630a9",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "composio",
+      "url": "https://github.com/ComposioHQ/composio.git",
+      "ref": "next",
+      "commit": "e970677aa69f4526009bb535a58d006ca7368e9a",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "openhands_software_agent_sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk.git",
+      "ref": "main",
+      "commit": "51ad22388a154d48353fac7a82cfd5255dbeefc1",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "opensandbox",
+      "url": "https://github.com/opensandbox-group/OpenSandbox.git",
+      "ref": "main",
+      "commit": "5a85d1d24ad15a78dce1e1ae59503b87fc58cdde",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "stagehand",
+      "url": "https://github.com/browserbase/stagehand.git",
+      "ref": "main",
+      "commit": "310957518a931c1a84c5968b13282cc30acd1be9",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "browser_use",
+      "url": "https://github.com/browser-use/browser-use.git",
+      "ref": "main",
+      "commit": "b49a68e4060acb226da8f784194fef301c53a6d7",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "mem0",
+      "url": "https://github.com/mem0ai/mem0.git",
+      "ref": "main",
+      "commit": "f1791daa86d469249c9b002f62644d58a1eb96a0",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "letta_code",
+      "url": "https://github.com/letta-ai/letta-code.git",
+      "ref": "main",
+      "commit": "9176d8c0b16f408e9240422a98379a423e2176c3",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "langgraph",
+      "url": "https://github.com/langchain-ai/langgraph.git",
+      "ref": "main",
+      "commit": "e5e37b5d70dbfd93c7006bd90a658c6179a95946",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "dspy",
+      "url": "https://github.com/stanfordnlp/dspy.git",
+      "ref": "main",
+      "commit": "efcb1e4232b90705a414e4b4e7cf47b503764c53",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "temporal",
+      "url": "https://github.com/temporalio/temporal.git",
+      "ref": "main",
+      "commit": "74c71f963b99f366f2adf8c503ecd785b0d8b4dc",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "opentelemetry_js",
+      "url": "https://github.com/open-telemetry/opentelemetry-js.git",
+      "ref": "main",
+      "commit": "ee94b842fd734e23064539c5f8069e0af0e92b9a",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "llamaindex",
+      "url": "https://github.com/run-llama/llama_index.git",
+      "ref": "main",
+      "commit": "444fdf0684707de62ebb447d658dba137dd9cb99",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "qdrant",
+      "url": "https://github.com/qdrant/qdrant.git",
+      "ref": "master",
+      "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "playwright",
+      "url": "https://github.com/microsoft/playwright.git",
+      "ref": "main",
+      "commit": "07c7069cdbb1f5c7331d3f4d2abd864dcfde745a",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "markitdown",
+      "url": "https://github.com/microsoft/markitdown.git",
+      "ref": "main",
+      "commit": "ed178952a6672abdfd35b5f9e76a80b6cefc086e",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "chroma",
+      "url": "https://github.com/chroma-core/chroma.git",
+      "ref": "main",
+      "commit": "1a3ac2c7c623adbd03ed2508dc27b98cdf26016d",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "text_embeddings_inference",
+      "url": "https://github.com/huggingface/text-embeddings-inference.git",
+      "ref": "main",
+      "commit": "da9a9ce190444ef4326e1fbab15d298f0a1016c7",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "transformers",
+      "url": "https://github.com/huggingface/transformers.git",
+      "ref": "main",
+      "commit": "a6f5c8676b158c367dc3389f68dde7a97fb619d6",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "sherpa_onnx",
+      "url": "https://github.com/k2-fsa/sherpa-onnx.git",
+      "ref": "master",
+      "commit": "347ec768a01ca53e766780f7759b14e145b643e6",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "semantic_kernel",
+      "url": "https://github.com/microsoft/semantic-kernel.git",
+      "ref": "main",
+      "commit": "df1cb33d0d32699c8d6a2e5b3ea7e5f8990d86d5",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "home_assistant",
+      "url": "https://github.com/home-assistant/core.git",
+      "ref": "dev",
+      "commit": "c97172ccafa1672d9854d9b862598d4640999b0d",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "microsoft_agent_framework",
+      "url": "https://github.com/microsoft/agent-framework.git",
+      "ref": "main",
+      "commit": "924a6e50ec0336f3c965ee8b1151c54085888b6e",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "vllm",
+      "url": "https://github.com/vllm-project/vllm.git",
+      "ref": "main",
+      "commit": "d76fe936a1c4bb40abaf1b06aba37d849e95bdb2",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "sglang",
+      "url": "https://github.com/sgl-project/sglang.git",
+      "ref": "main",
+      "commit": "cbbc6b67f48008a8b739f4667d7b14abb89088cf",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo.git",
+      "ref": "main",
+      "commit": "2a6fdf9b2e1600ffa2a204e70e9fea7cb0c14cff",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "haystack",
+      "url": "https://github.com/deepset-ai/haystack.git",
+      "ref": "main",
+      "commit": "0ad74747ffd7d9f9b092db97ba2e222080992c2e",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "duckdb",
+      "url": "https://github.com/duckdb/duckdb.git",
+      "ref": "main",
+      "commit": "d4eea3f208d42ca4ee522aca23f5ea76f902b0ca",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "garak",
+      "url": "https://github.com/NVIDIA/garak.git",
+      "ref": "main",
+      "commit": "892779207cbc38f65a738ef9cbdfbc1e83aa0b55",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "graphrag",
+      "url": "https://github.com/microsoft/graphrag.git",
+      "ref": "main",
+      "commit": "34b2b67ae4601ad0b47bcd179fbe3f2a23aa0857",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "guardrails",
+      "url": "https://github.com/guardrails-ai/guardrails.git",
+      "ref": "main",
+      "commit": "06d0ff2c5f9bcb493d976b76f885e37e41ce845d",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "milvus",
+      "url": "https://github.com/milvus-io/milvus.git",
+      "ref": "master",
+      "commit": "686b129ca584fe2e8ae88b06ead95ffa03bad56a",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "google_adk",
+      "url": "https://github.com/google/adk-python.git",
+      "ref": "main",
+      "commit": "dd7161f7a2b88cd7ae482cc2acd8423675ac027c",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "openai_codex",
+      "url": "https://github.com/openai/codex.git",
+      "ref": "main",
+      "commit": "c9b4267c370a755da12ec1c8648c2451163212b7",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "gemini_cli",
+      "url": "https://github.com/google-gemini/gemini-cli.git",
+      "ref": "main",
+      "commit": "62bab5b232c15b925d31e655ce844ab939c882b7",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "opensearch",
+      "url": "https://github.com/opensearch-project/OpenSearch.git",
+      "ref": "main",
+      "commit": "0b131ddecfe5be4cef617acda803e8c824c8c875",
+      "observed_license": "Apache-2.0"
+    },
+    {
+      "id": "swe_agent",
+      "url": "https://github.com/SWE-agent/SWE-agent.git",
+      "ref": "main",
+      "commit": "3ea751c087f32b16e039a2233dd6eefecef325d5",
+      "observed_license": "MIT"
+    },
+    {
+      "id": "faiss",
+      "url": "https://github.com/facebookresearch/faiss.git",
+      "ref": "main",
+      "commit": "29782a03747addd1122bf040b6c3488c8d669fe9",
+      "observed_license": "MIT"
+    }
+  ],
+  "source_material": {
+    "docs/source-material/USER_PROVIDED_DOCUMENTATION_BLUEPRINT.md": {
+      "sha256": "bb6f5f33375401c9db6246da235faabd28b4344dccef8266008c951e90f8232b",
+      "byte_for_byte_preserved": true
+    },
+    "docs/source-material/USER_PROVIDED_ORBIT_MASTER_BRIEF.md": {
+      "sha256": "a944b184123f67b02484e9f5143dcbc88c0e531578abba8be1e75a23d1448ebf",
+      "byte_for_byte_preserved": true
+    }
+  },
+  "validation_scope": [
+    "JSON/YAML parse",
+    "Markdown fences and local links",
+    "current document baseline",
+    "source provenance hashes",
+    "50 upstream lock consistency",
+    "clone directory/lock ID consistency",
+    "19 isolated repository operation regression tests",
+    "archive integrity after creation and extraction"
+  ],
+  "limitations": [
+    "No actual ORBIT application repository was supplied or modified.",
+    "Upstream repositories are pinned for inspection and are not bundled.",
+    "Physical 500 GB drive is not formatted, mounted, encrypted or initialized by this pack.",
+    "Runtime builds and live integrations are not claimed."
+  ],
+  "files": [
+    {
+      "path": ".agent/rules/orbit.md",
+      "size_bytes": 2772,
+      "sha256": "ee40b0b4b42ae744bfbfdb721973e4edfa2ef74f083a394af41a174f6db259f8"
+    },
+    {
+      "path": ".cursor/rules/orbit.mdc",
+      "size_bytes": 2655,
+      "sha256": "443cb5420bde462c2431ff3fc5fddc0e03e2aeeefa140f41c94f5b5755081819"
+    },
+    {
+      "path": ".env.example",
+      "size_bytes": 2141,
+      "sha256": "dfbcc1911b6b8571bb57c38c30bd644c61a2d6504cad9eeca7732c3f540b345b"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "size_bytes": 2793,
+      "sha256": "6b5ec111795d4e4bb641e37d2b77359a70167943d1320617d6c2d32f1713bd06"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 564,
+      "sha256": "6ebc4560d8427e8e3156870cbadcb46de4b27bde9f21b9b2ef93d92acef2c64e"
+    },
+    {
+      "path": "AGENTS.md",
+      "size_bytes": 7610,
+      "sha256": "97bf15623c31eb0682ee3cbfd7c8ed26a5ea3b691606268c883d1c1ac4296539"
+    },
+    {
+      "path": "ANTIGRAVITY.md",
+      "size_bytes": 2790,
+      "sha256": "496e9a730581949926a9975702b70d542a27e3ca59c32bead4344275282e0faf"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 2349,
+      "sha256": "e758001f70e8018708b758b454cc9fdc2585a68f408330ff538619b1d2acd713"
+    },
+    {
+      "path": "CLAUDE.md",
+      "size_bytes": 2780,
+      "sha256": "290892f150f902ece614ab7324a18a0f6c60731a30244198f34cb221bc3837af"
+    },
+    {
+      "path": "CODEX.md",
+      "size_bytes": 2784,
+      "sha256": "6c88a1a50595fbd955999513d794a4772886fd943cb51bcb799b78518bdf28c8"
+    },
+    {
+      "path": "CODING_AGENT_MASTER_PROMPT.md",
+      "size_bytes": 13816,
+      "sha256": "4c145a2d483fce65a55139a4037dc8b6022d8f12dd6b5e8f5cc1b56380a3307f"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size_bytes": 2219,
+      "sha256": "9171b791757f7dd7acdee8030ed94ed50acc32d02ae1ace83c9327cb134b2d38"
+    },
+    {
+      "path": "GEMINI.md",
+      "size_bytes": 2789,
+      "sha256": "9f5cb4ef1078c81c0bd14681b7b90721f9478a466a36de8551cea9038969e29d"
+    },
+    {
+      "path": "LICENSE-PROPOSAL.md",
+      "size_bytes": 1501,
+      "sha256": "2ebd3c07e554250d697f0dde387d6802859bbb942624849c2c3942cf8ad426e6"
+    },
+    {
+      "path": "LICENSE_COMPLIANCE_RELEASE_CHECKLIST.md",
+      "size_bytes": 2729,
+      "sha256": "6c0aeaf417457566e31fbe17460b32ea2f1ac0995e4682d87c0f8963476be2ee"
+    },
+    {
+      "path": "ORBIT_ENGINEERING_BLUEPRINT.md",
+      "size_bytes": 18889,
+      "sha256": "c21367d694c5083874b5b140029dbce38ce6d62b8809b22e9bf1d878f56bb3dc"
+    },
+    {
+      "path": "PACKAGE_VALIDATION.md",
+      "size_bytes": 2735,
+      "sha256": "83d30c6d58a2abaaefa9e94129589ac4b1bd7c335e40dcbfacb470f8a3dbfc6c"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 7555,
+      "sha256": "83f22bef08d550d731754c58f0e560cb3e414fd0b7be7625f43eb4fd22939974"
+    },
+    {
+      "path": "RUN_FIRST_IN_IDE_AGENT.md",
+      "size_bytes": 8617,
+      "sha256": "3f48df55f396bebc1dd399bd86f395e632988625715363d0e2b0466cc66e9878"
+    },
+    {
+      "path": "SECURITY.md",
+      "size_bytes": 1701,
+      "sha256": "03851cbff3a19b045813b6c7d9b84efdf9be40cd26dc42208a8b8849684f6791"
+    },
+    {
+      "path": "architecture/diagrams/deployment.mmd",
+      "size_bytes": 681,
+      "sha256": "dc34e598fe40fbd1d8d2a2c54dbf4a526bf509ff4c99e9b31a85c8a9f704e134"
+    },
+    {
+      "path": "architecture/diagrams/desktop_action_lifecycle.mmd",
+      "size_bytes": 955,
+      "sha256": "73d50a7432c24ead84a02073fa19559ade7e1833c3d8066ce1785dc02e814e19"
+    },
+    {
+      "path": "architecture/diagrams/desktop_node.mmd",
+      "size_bytes": 546,
+      "sha256": "50aa792772d93f20ec0bf1cea16692ff2bcbf0f821a5772be4937d4836a77778"
+    },
+    {
+      "path": "architecture/diagrams/desktop_trust_boundary.mmd",
+      "size_bytes": 639,
+      "sha256": "d2d62fc3fef4a619c0e488af24cd9c473d487807925221eb4007b734931cc44f"
+    },
+    {
+      "path": "architecture/diagrams/orbit_v03_execution_stack.mmd",
+      "size_bytes": 835,
+      "sha256": "f0e4abf5d1ace92aa8487fe628dac37ffef0ce97079c50255cdd911c0c859006"
+    },
+    {
+      "path": "architecture/diagrams/orbit_v03_supply_chain.mmd",
+      "size_bytes": 469,
+      "sha256": "d5acd143cf0cbfea49922e582c52d732e27d31b9329b0427a7d260607061567a"
+    },
+    {
+      "path": "architecture/diagrams/orbit_v05_reuse_layers.mmd",
+      "size_bytes": 659,
+      "sha256": "13a38908e5bf47b68c5bc0d2ab920604d181fccb4035b77cd574d7ff4b975e19"
+    },
+    {
+      "path": "architecture/diagrams/orbit_v06_repo_import.mmd",
+      "size_bytes": 621,
+      "sha256": "616c8ea0b5059f4e6390eec4d7f7f795ed7e1c1a000a52c77f8bd57980d812fd"
+    },
+    {
+      "path": "architecture/diagrams/orbit_v06_storage_map.mmd",
+      "size_bytes": 478,
+      "sha256": "941c331a788c566decfbff4b626ba2aee31eed5f7496e12b366c51e3e904a622"
+    },
+    {
+      "path": "architecture/diagrams/personal_work_context_boundaries.mmd",
+      "size_bytes": 416,
+      "sha256": "07622131ce5be1b775f146eb0cdacaa06851da10c75d5de085a9e3a0d6fcb203"
+    },
+    {
+      "path": "architecture/diagrams/research_pipeline.mmd",
+      "size_bytes": 558,
+      "sha256": "c7dfca29f579a960f711ea351aa070491df49c8782c7c6ac138739eb9b80cec8"
+    },
+    {
+      "path": "architecture/diagrams/system_context.mmd",
+      "size_bytes": 516,
+      "sha256": "a96b45a80d95a455d5f66066dff4662cdf4001a94f0881861eed8ee09a07fcb0"
+    },
+    {
+      "path": "architecture/diagrams/task_lifecycle.mmd",
+      "size_bytes": 548,
+      "sha256": "240192c49ea2efa28479a879168e20513a1437eb3b70850701bfed9be799a29f"
+    },
+    {
+      "path": "architecture/diagrams/upstream_import_trust.mmd",
+      "size_bytes": 564,
+      "sha256": "60da62f75ff359aae127939a7215a36e53fbcf79647e9fdcac2bdba228118090"
+    },
+    {
+      "path": "config/branding/orbit-brand-config.json",
+      "size_bytes": 818,
+      "sha256": "a6b83a41615c8ddd8d628eebb4a5356b282fd52996882892a368890cbf0411b6"
+    },
+    {
+      "path": "config/legal/license-policy.yaml",
+      "size_bytes": 1407,
+      "sha256": "7c61d0eea9d588b9480c00a3911873b6c10a44dbc021f459fef92a8df804a8af"
+    },
+    {
+      "path": "config/skills/skill-source-policy.yaml",
+      "size_bytes": 1736,
+      "sha256": "b533db220a85d9e8d9801db5f62d3bb59cb120042ba84a3e0f55a60c9e082ef3"
+    },
+    {
+      "path": "config/storage/orbit-storage-budget.yaml",
+      "size_bytes": 2093,
+      "sha256": "b59e7195a9b8a988889b48755c18bdccb031b26f3af58df0ba2597b51eb8aaf7"
+    },
+    {
+      "path": "config/upstreams/upstream-import-policy.yaml",
+      "size_bytes": 1328,
+      "sha256": "883b3acfa231b22cb624e504de194e027741757cae1ea50a36f847a09a2aa70d"
+    },
+    {
+      "path": "config/upstreams/upstream-lock.json",
+      "size_bytes": 31790,
+      "sha256": "d2148a07beb42991b2d08a862f732bff6e4e10cc12c683a0e328f1568c47dfe5"
+    },
+    {
+      "path": "config/upstreams/upstream-lock.yaml",
+      "size_bytes": 27573,
+      "sha256": "ecd1a0eb271775f74c1a407ae1bd75bf4fe366863f42cdc1f771bd681d42e7e9"
+    },
+    {
+      "path": "config/upstreams/upstream-reuse-register.json",
+      "size_bytes": 27688,
+      "sha256": "f9afdd4a77824fe505155a76afd42e8d2e6611e1019ede34676f37474c1eab18"
+    },
+    {
+      "path": "docs/00-foundation/AI_WORKFORCE_GOVERNANCE.md",
+      "size_bytes": 2724,
+      "sha256": "b60cd4960a39b4ac79c0337f6b2ebca0541a933777e6613e654b5768efcbcb2b"
+    },
+    {
+      "path": "docs/00-foundation/ASSUMPTIONS_AND_CONSTRAINTS.md",
+      "size_bytes": 1635,
+      "sha256": "4aceb2697d5af26206848807e530323bbb6b82cee12dbf0f9b25b45fa5b5dec8"
+    },
+    {
+      "path": "docs/00-foundation/BRAND_AND_IDENTITY.md",
+      "size_bytes": 3687,
+      "sha256": "13d7641b43a852bab7853866d4edf9517c80d1bb99999a86cde604eec531b20e"
+    },
+    {
+      "path": "docs/00-foundation/COMPANY_OPERATING_MODEL.md",
+      "size_bytes": 9834,
+      "sha256": "69e84ae45761639c00d8f9f67c225fa4fb5a66e200babbcbf4a69bf62ee07518"
+    },
+    {
+      "path": "docs/00-foundation/GLOSSARY.md",
+      "size_bytes": 1239,
+      "sha256": "1d24b307ef165602a4c0f09cd6030e272b32cd3b59810c07f002f26c0cf32266"
+    },
+    {
+      "path": "docs/00-foundation/OBJECTIVES_AND_METRICS.md",
+      "size_bytes": 1325,
+      "sha256": "c93161d59df05aaae5410411eade6542bb6c5781f51129e7f32eb7d36a43ab7a"
+    },
+    {
+      "path": "docs/00-foundation/ORGANIZATION_CHART.md",
+      "size_bytes": 2437,
+      "sha256": "cf5d213a152b689aa421a9962bb478b2f98624016eea36456820e8eb82d9c93a"
+    },
+    {
+      "path": "docs/00-foundation/PROJECT_CHARTER.md",
+      "size_bytes": 2023,
+      "sha256": "b25cd815c8331a11779aa6d80f6f3f94cda7652487db4094f4ad4e586b4f1ede"
+    },
+    {
+      "path": "docs/00-foundation/PROJECT_SCOPE.md",
+      "size_bytes": 1212,
+      "sha256": "773da90c658ebdc1d9a1fc43b632fd4d3b128ea10cf0e87e0c600bc32dc47747"
+    },
+    {
+      "path": "docs/00-foundation/PROJECT_VISION.md",
+      "size_bytes": 1267,
+      "sha256": "605e59e919829533536de6c5ec96eafbe793b2f11d26d3c91912b11d86d1c545"
+    },
+    {
+      "path": "docs/00-foundation/STAKEHOLDER_REGISTER.md",
+      "size_bytes": 1051,
+      "sha256": "7e90d121d93415ffdb536b5a23891919a0d2b92ec9ba7cca33d45df0e6521594"
+    },
+    {
+      "path": "docs/01-product/ACCEPTANCE_CRITERIA.md",
+      "size_bytes": 2238,
+      "sha256": "1e19e50fbe7808639e32ca20695836f53f25eb0423e188e7ca2edd71bbb5eecb"
+    },
+    {
+      "path": "docs/01-product/FEATURE_PRIORITIZATION.md",
+      "size_bytes": 2655,
+      "sha256": "179a78977fc03c4a5a59517ffc82b0ab9d8898827e48caf16c819226ec2ce72f"
+    },
+    {
+      "path": "docs/01-product/FEATURE_SPECIFICATIONS.md",
+      "size_bytes": 3834,
+      "sha256": "29ffdf701a7eb87b35e5a2f6528d2400241510a1ffdcd38b0e1f6992e8926e4a"
+    },
+    {
+      "path": "docs/01-product/MVP_DEFINITION.md",
+      "size_bytes": 2555,
+      "sha256": "502f2fcd54a4ea8e759a0786d2ee149d7ecc1cfc4e324c20e3ccb56bba6ad3ae"
+    },
+    {
+      "path": "docs/01-product/NFR.md",
+      "size_bytes": 2389,
+      "sha256": "a9870a86411667d52342034b8f53b16335d1978f3c9be34bbb77e7104f1dada9"
+    },
+    {
+      "path": "docs/01-product/PRD.md",
+      "size_bytes": 6180,
+      "sha256": "6ddd145bd659171f89923da0d3d3bfbbb90d43e1a91ad4672c905ead838997e7"
+    },
+    {
+      "path": "docs/01-product/PRODUCT_REQUIREMENTS.md",
+      "size_bytes": 3585,
+      "sha256": "8299fe12b8f159ac3dd7ef573ac916e11aa6fe8246ab42858b2d1272b8a41c9b"
+    },
+    {
+      "path": "docs/01-product/USER_PERSONAS.md",
+      "size_bytes": 929,
+      "sha256": "24170471f9b0e6906fcd78ace4e2e6a307665878dfcdd313cdb6d5d471c220ec"
+    },
+    {
+      "path": "docs/01-product/USER_STORIES.md",
+      "size_bytes": 896,
+      "sha256": "77d802287222580df9419f0af0142799ce5f386a5613a9e1ec45601510968613"
+    },
+    {
+      "path": "docs/01-product/USE_CASES.md",
+      "size_bytes": 1453,
+      "sha256": "93f153618ac02c96abee5752943646d630f318f72b0663e48d32c69e2c25565c"
+    },
+    {
+      "path": "docs/02-research/AGENT_DESKTOP_REFERENCE_ANALYSIS.md",
+      "size_bytes": 9343,
+      "sha256": "7567c9a3659e6ba0b4d28cde7d040d78e25b20c8f6aa765ab80ccb2aabb96c45"
+    },
+    {
+      "path": "docs/02-research/COMPETITIVE_PRODUCT_SURFACE_V04.md",
+      "size_bytes": 7961,
+      "sha256": "24baf49de2bc5f11142ca74c2e09b8361655cc038a86e5e1debb9500c1fad5b4"
+    },
+    {
+      "path": "docs/02-research/COMPETITOR_RESEARCH.md",
+      "size_bytes": 3980,
+      "sha256": "369300939e7ce0d26079c0d8b92378f7887cf753494c4ccb7e2dde7a85f50283"
+    },
+    {
+      "path": "docs/02-research/EXTENDED_REFERENCE_STACK_RESEARCH.md",
+      "size_bytes": 10258,
+      "sha256": "f5cd2c52b0654ac465d00cfeaef032445475aa21c3c6e6023e209d851f67aaf3"
+    },
+    {
+      "path": "docs/02-research/OPEN_SOURCE_COMPONENT_RADAR_V04.md",
+      "size_bytes": 6616,
+      "sha256": "f72387afd01b8604d583fe4f509cc033dbb9153bb5fd4190ce825652bfe01b6d"
+    },
+    {
+      "path": "docs/02-research/ORBIT_REPOSITORY_OPERATIONS_ANALYSIS_V10.md",
+      "size_bytes": 3136,
+      "sha256": "3ece9ec38dc23fc29624366675e496cfe033941e19acdc4d3768b800d3ee24c7"
+    },
+    {
+      "path": "docs/02-research/REFERENCE_ECOSYSTEM_ANALYSIS.md",
+      "size_bytes": 11059,
+      "sha256": "5fc649237527ae26d9093d714284f1808b178c65943aec919a17d002e1d4538f"
+    },
+    {
+      "path": "docs/02-research/REFERENCE_INTEGRATION_SCORECARD.md",
+      "size_bytes": 3237,
+      "sha256": "029dc2d79fd739dbfcb96f65eaca7ed5c4809535847a315bd192c9095bb48512"
+    },
+    {
+      "path": "docs/02-research/REFERENCE_RESEARCH_EVIDENCE.md",
+      "size_bytes": 6305,
+      "sha256": "b7e27cdb4c75de3dee008083a9d2cff1e958af127d84e56a3c766896b422ebd6"
+    },
+    {
+      "path": "docs/02-research/REPOSITORY_OPERATIONS_ANALYSIS.md",
+      "size_bytes": 17989,
+      "sha256": "4ce0e14f7ff542f82dc755413fe660a9f83ce3863c9513561b273410052f39b8"
+    },
+    {
+      "path": "docs/02-research/RESEARCH_FINDINGS_AND_LIMITATIONS.md",
+      "size_bytes": 4715,
+      "sha256": "5ab428c6cc4383258a4b05678dcb2aeb865809e882d4c0f9da7fb1273364b9ff"
+    },
+    {
+      "path": "docs/02-research/RESEARCH_METHOD.md",
+      "size_bytes": 1498,
+      "sha256": "353219b0086d583c58f30473aaa8256326f83941479f518b7918e23251c06562"
+    },
+    {
+      "path": "docs/02-research/RESEARCH_REFERENCES.md",
+      "size_bytes": 2988,
+      "sha256": "59ed391994cd38a704c0a5c799a27e8b05011ef443de78670d7882fc0e963770"
+    },
+    {
+      "path": "docs/02-research/REUSE_FIRST_REPOSITORY_AUDIT_V04.md",
+      "size_bytes": 12707,
+      "sha256": "4404f2373ec125cf94f2d4a9c5d4f29ff8a6a48ced6be234bda09d75114580d7"
+    },
+    {
+      "path": "docs/02-research/SEARCH_PROVIDER_RESEARCH.md",
+      "size_bytes": 2927,
+      "sha256": "429944428658af6fd6f5e76d5280430b7c30387143b946150dc091808bbdcb24"
+    },
+    {
+      "path": "docs/02-research/TECHNICAL_FEASIBILITY.md",
+      "size_bytes": 3059,
+      "sha256": "93ddad630bd5ec4e5c79ea8cd5bd3987536a55c1f6eb2acb441a31a32ba88f9b"
+    },
+    {
+      "path": "docs/02-research/TECHNOLOGY_RESEARCH.md",
+      "size_bytes": 3167,
+      "sha256": "77f5fb137f7816330499f36e6b79ca064d1c2b2fabb78005976a8de66624bc63"
+    },
+    {
+      "path": "docs/02-research/USER_RESEARCH_PLAN.md",
+      "size_bytes": 1739,
+      "sha256": "b8e838e38ed9b6b75c015dddeaa1ee95ee5b6a62518645b032cf049a2dd01abd"
+    },
+    {
+      "path": "docs/02-research/V05_SOURCE_DECISION_MATRIX.md",
+      "size_bytes": 6325,
+      "sha256": "632b0ea7935980e232026254cd9705ff2385514b93757cce3cbb58739ddea2f7"
+    },
+    {
+      "path": "docs/02-research/V06_OPEN_SOURCE_EXPANSION_RADAR.md",
+      "size_bytes": 3482,
+      "sha256": "4ca861384d83e57348ad55830d4ab1a7f63eb88f896eb0c90b5feafff54512d4"
+    },
+    {
+      "path": "docs/02-research/V07_REPOSITORY_FILE_LEVEL_ADOPTION_MAP.md",
+      "size_bytes": 14250,
+      "sha256": "aa0af8dcc64ad08f73585e579efe4c10053eb491c796c8d91082f82d1462d779"
+    },
+    {
+      "path": "docs/02-research/V08_OPEN_SOURCE_EXTENSION_REVIEW.md",
+      "size_bytes": 5190,
+      "sha256": "c0209b110cfd1df9489cfd0a77cae8f7b4928d841f0791ff2cfc952a99bbb0c2"
+    },
+    {
+      "path": "docs/02-research/V09_SOURCE_MAP_AND_FILE_LEVEL_REUSE.md",
+      "size_bytes": 5818,
+      "sha256": "01497c045c4df5220a023dfe390b2cb5a38d4af07fcfb149d96b1909ea034bed"
+    },
+    {
+      "path": "docs/02-research/V10_OPEN_SOURCE_DECISIONS_AND_EXCLUSIONS.md",
+      "size_bytes": 2237,
+      "sha256": "6334d2e244337c21c61a997b83150a88007bffd54f0eb604b00fdf8413ff9f62"
+    },
+    {
+      "path": "docs/02-research/V10_OPEN_SOURCE_FILE_LEVEL_ADOPTION_MAP.md",
+      "size_bytes": 7426,
+      "sha256": "be805d6e76af3e81c82ac669f150b8a93d4a610f9e45a13ebcbec7d21aa1cae3"
+    },
+    {
+      "path": "docs/03-architecture/ACP_AND_EXTERNAL_AGENT_BACKENDS.md",
+      "size_bytes": 2063,
+      "sha256": "2ce317a19c7f655bf1e4ce0c396896515fcdda7669cbe2ef67c0e7095cb189b5"
+    },
+    {
+      "path": "docs/03-architecture/ARCHITECTURE_DECISION_RECORDS.md",
+      "size_bytes": 7240,
+      "sha256": "8290edc561ed51c24e1315f74f9fd06f00b97d1c42bdfa32530bbfb6960eaea2"
+    },
+    {
+      "path": "docs/03-architecture/DATA_FLOW.md",
+      "size_bytes": 1374,
+      "sha256": "f89d6974fbcd0d1cab0b29861cdc63b713ce655340a1a24b2881f5653c1be8c8"
+    },
+    {
+      "path": "docs/03-architecture/DESKTOP_COMPUTER_USE_ARCHITECTURE.md",
+      "size_bytes": 7013,
+      "sha256": "811b75f6b69a0ab9c5fbb7177211d0762b89eb7cc3edf3b205966617cba0fccc"
+    },
+    {
+      "path": "docs/03-architecture/DESKTOP_SUPPORT_MATRIX.md",
+      "size_bytes": 2382,
+      "sha256": "b43ad6cafa5eb9f76b81f200e0191a66ae1adfe91181e0a8e5a65bfe41608994"
+    },
+    {
+      "path": "docs/03-architecture/EXECUTION_ENVIRONMENTS_AND_BACKENDS.md",
+      "size_bytes": 2375,
+      "sha256": "3296bf58523eef08bed061566720e372b6dca1680937b10c8a0cd4b78328b3fe"
+    },
+    {
+      "path": "docs/03-architecture/EXPANDED_REFERENCE_ARCHITECTURE.md",
+      "size_bytes": 2685,
+      "sha256": "ede98ffe8443a1b458b999b1ee010317e91f40a604fa078b8ac65467e3fac16c"
+    },
+    {
+      "path": "docs/03-architecture/GENERATIVE_UI_ARCHITECTURE.md",
+      "size_bytes": 2407,
+      "sha256": "ec75ca81e425926fd383c7272f0ac87e4674020dd1a134904ffe16cccb761578"
+    },
+    {
+      "path": "docs/03-architecture/HIGH_LEVEL_DESIGN.md",
+      "size_bytes": 1968,
+      "sha256": "72b954847f0607fbab54736f368610a63928c6da7a3a50084778135ea323ebf2"
+    },
+    {
+      "path": "docs/03-architecture/INTEGRATION_ARCHITECTURE.md",
+      "size_bytes": 2654,
+      "sha256": "48c025e3517ab4a7592e4207d8560a71d10852a0266f45a5c83e57b70df45659"
+    },
+    {
+      "path": "docs/03-architecture/LOW_LEVEL_DESIGN.md",
+      "size_bytes": 1661,
+      "sha256": "395e5205f2045b450a3383fbbcd28686ff819d82d38fb8239f590dafbd119663"
+    },
+    {
+      "path": "docs/03-architecture/ORBIT_MULTI_AGENT_PERSONAL_OPERATING_SYSTEM_V04.md",
+      "size_bytes": 8259,
+      "sha256": "271a541815b03f4c20670a7dd6634096fcafa585e6e72a15e98df1742b830aa1"
+    },
+    {
+      "path": "docs/03-architecture/ORBIT_REFERENCE_ADAPTER_CONTRACTS.md",
+      "size_bytes": 5444,
+      "sha256": "e73329f52d7b93580f36a6344a580d4073f26f91d99f720765ae0a286c36392a"
+    },
+    {
+      "path": "docs/03-architecture/SCALABILITY_AND_FAILURES.md",
+      "size_bytes": 2117,
+      "sha256": "a4256ef16e4f9afaff714039184b1f3e931c81e10eba288ea01a8f2f08593b93"
+    },
+    {
+      "path": "docs/03-architecture/SEQUENCE_DIAGRAMS.md",
+      "size_bytes": 1413,
+      "sha256": "6e91adf44ff781e406b5b2c8c6a71a709a6e3a7950e3ccb024fc7fe474b8106f"
+    },
+    {
+      "path": "docs/03-architecture/SYSTEM_ARCHITECTURE.md",
+      "size_bytes": 5611,
+      "sha256": "579fbc57775c6ba802f159afaaaaae9669218dfd9b02daad38e4e7ad35a04a6b"
+    },
+    {
+      "path": "docs/03-architecture/TECHNICAL_REQUIREMENTS.md",
+      "size_bytes": 2127,
+      "sha256": "4856bfabd09b5731be3aa69623ea6d1d042401d35a436740b9d0e3aa7d3d7180"
+    },
+    {
+      "path": "docs/03-architecture/TECH_STACK.md",
+      "size_bytes": 2526,
+      "sha256": "0d4016c5c60ca8096c1b5ac89f0903287f09cda7cbdf41d3b90e2fb9a3342121"
+    },
+    {
+      "path": "docs/03-architecture/UPSTREAM_RUNTIME_ADAPTERS_V04.md",
+      "size_bytes": 6424,
+      "sha256": "94796e4d09eda0674f6b99f2af60a20317faa005405a543b2d501a55a4f19820"
+    },
+    {
+      "path": "docs/03-architecture/V05_TARGET_ARCHITECTURE.md",
+      "size_bytes": 4283,
+      "sha256": "93c0cdee5f9d5eb46f3f8a96f2ef7a5b20867d08aaef38dfb918c7529ee48a5e"
+    },
+    {
+      "path": "docs/03-architecture/V06_ORBIT_PERSONAL_AGENT_PLATFORM.md",
+      "size_bytes": 4428,
+      "sha256": "bf48512d651edeb3db25c40eb3d95ad38146b2cce11f4efc9003c3f5137cbfd6"
+    },
+    {
+      "path": "docs/03-architecture/V07_AGENT_RUNTIME_SELECTION.md",
+      "size_bytes": 2453,
+      "sha256": "f902bfc1380af92ae6f76a8bef173b7d0808cc544a8761d9b113d7f1b99bdc32"
+    },
+    {
+      "path": "docs/03-architecture/V10_INTEGRATED_PERSONAL_WORK_OPERATING_SYSTEM.md",
+      "size_bytes": 4360,
+      "sha256": "aa1f37dcccb77453bbaaaa72d336bbdf0fb0e2c1d9c6759c165b30432b2ff0b4"
+    },
+    {
+      "path": "docs/04-system-design/AGENT_BACKEND_CONTRACTS.md",
+      "size_bytes": 1502,
+      "sha256": "4805b3035111718d6a13ab41cbcd4cd24042e4379602a8d1f7d9f4f3fa677d43"
+    },
+    {
+      "path": "docs/04-system-design/API_CONTRACTS.yaml",
+      "size_bytes": 29182,
+      "sha256": "6ae61bc186c06c249a23b46482e94aa886fa9ece6a39984edda13dd9ae95c0d1"
+    },
+    {
+      "path": "docs/04-system-design/API_DESIGN.md",
+      "size_bytes": 3490,
+      "sha256": "2e84c467de01b69d0e83fd90c232711f660789d9b3fc13a220ceb96dcb3909a3"
+    },
+    {
+      "path": "docs/04-system-design/AUTHENTICATION_AND_AUTHORIZATION.md",
+      "size_bytes": 2242,
+      "sha256": "7b84b19460f9afc80e037c5b7a2c63c3ed9f95f1ed30fe0ff08a7aa788a6c5c0"
+    },
+    {
+      "path": "docs/04-system-design/DATABASE_SCHEMA.md",
+      "size_bytes": 13341,
+      "sha256": "ccd603402c1d73e785f8c09a4e81c125eb6899df4cbeed31d10de2cf149acfd6"
+    },
+    {
+      "path": "docs/04-system-design/DESKTOP_COMMAND_ALLOWLIST.yaml",
+      "size_bytes": 2102,
+      "sha256": "1b2f9a6190af15c7c7630331a78eedec13133bcbd0ff3c7f8459f23fe0984132"
+    },
+    {
+      "path": "docs/04-system-design/DESKTOP_CONTROL_API_AND_DATA_CONTRACT.md",
+      "size_bytes": 6555,
+      "sha256": "6f5838b5a051e0949cdc64561bbd6571f08610b642f9282a363aaade9702691e"
+    },
+    {
+      "path": "docs/04-system-design/DESKTOP_DRIVER_ERROR_MAPPING.md",
+      "size_bytes": 2622,
+      "sha256": "fea6051fcd86022e7b9477f2a484a1f0bcb1aa917f2a08a5fd0b42b719a98ce2"
+    },
+    {
+      "path": "docs/04-system-design/ERD.md",
+      "size_bytes": 2599,
+      "sha256": "e79fc88e105d90d5dbc54ed241bee2314fe1aded566440a7f1e103f8fef54fc5"
+    },
+    {
+      "path": "docs/04-system-design/ERROR_HANDLING_AND_CONFIG.md",
+      "size_bytes": 1870,
+      "sha256": "292c5e3574b7ad71c0b25bbbfa7db4cbf694ccd3571c04665728923bc1afef6d"
+    },
+    {
+      "path": "docs/04-system-design/GITHUB_AND_REPOSITORY_AGENT.md",
+      "size_bytes": 3289,
+      "sha256": "c2b1e38716bce412472ec9019c69cd19df22b388f15ed38ad2b961aca1d0e492"
+    },
+    {
+      "path": "docs/04-system-design/LOCAL_DEV_ROUTING.md",
+      "size_bytes": 1295,
+      "sha256": "faf4633bece7ad8f759fdaa5028f08fc15b724c79051c1e115e00fe99f990a08"
+    },
+    {
+      "path": "docs/04-system-design/ORBIT_UI_SPEC.schema.json",
+      "size_bytes": 1479,
+      "sha256": "d79cdf93082800b21a827afe17e35a09a817f4e36260e5d69b528825b4fdb5be"
+    },
+    {
+      "path": "docs/04-system-design/QUEUE_AND_WORKER_DESIGN.md",
+      "size_bytes": 2615,
+      "sha256": "43149ec67c375348281066d69bd63315adaa5d3a93610e7c9258c54b610f7e0c"
+    },
+    {
+      "path": "docs/04-system-design/REPOSITORY_CODE_REUSE_AND_IMPORT_SPEC.md",
+      "size_bytes": 6460,
+      "sha256": "0b7ad1671eacf8f64274ed7a790de7703d2fcf3b959882cc35e1fafbcbc01ef9"
+    },
+    {
+      "path": "docs/04-system-design/SKILL_MANIFEST.schema.json",
+      "size_bytes": 3250,
+      "sha256": "1ca889995c13ba89dfcf58a1ded250346da326f7cebd5b7a36904a0dfaa257e8"
+    },
+    {
+      "path": "docs/04-system-design/SKILL_REGISTRY_AND_INSTALLATION.md",
+      "size_bytes": 2217,
+      "sha256": "8c9111fa02a46e1fe84bcc69883ed9747759a10dfda4ab854db864396784fdda"
+    },
+    {
+      "path": "docs/04-system-design/STORAGE_AND_FILES.md",
+      "size_bytes": 1929,
+      "sha256": "857a733383bbacbc7f4df7327818c4860302f5b4330cf4c01aa0d8c5a3c73db3"
+    },
+    {
+      "path": "docs/04-system-design/UPSTREAM_REUSE_WORKFLOW_V04.md",
+      "size_bytes": 5756,
+      "sha256": "f92baee630d68231fe1decebf5f7973a1dd79d4220facf48ba8e42d291b2226d"
+    },
+    {
+      "path": "docs/04-system-design/V05_REUSE_AND_ADAPTATION_PLAYBOOK.md",
+      "size_bytes": 4488,
+      "sha256": "002e92227203f049a0ed8d7c86608b6015f16bffc93a669133a52f7b1c5a925b"
+    },
+    {
+      "path": "docs/04-system-design/V07_UPSTREAM_IMPORT_PIPELINE.md",
+      "size_bytes": 2940,
+      "sha256": "04dfa9c5ecd3998ad7cfbdb539230bca6f0a34570d7ba653804c1a254ae27255"
+    },
+    {
+      "path": "docs/05-ai-system/AGENT_COMPANY_ORCHESTRATION.md",
+      "size_bytes": 2147,
+      "sha256": "cf28c267d8960bbf47958ec1ff72301cefe38a7698bc69f28ecf32936e2bcbc5"
+    },
+    {
+      "path": "docs/05-ai-system/AGENT_EXECUTION.md",
+      "size_bytes": 2729,
+      "sha256": "ddf6c44f451b5b3a15d5f34c0b62538b45944f21081db1517ec49bd4fbb8d444"
+    },
+    {
+      "path": "docs/05-ai-system/AI_EVALUATION.md",
+      "size_bytes": 2130,
+      "sha256": "33d00a4ca8ea340ca10ff42320e18076355f8486c89d47f57e82180c64e65a1d"
+    },
+    {
+      "path": "docs/05-ai-system/AI_SYSTEM_REQUIREMENTS.md",
+      "size_bytes": 1639,
+      "sha256": "daa6628142ec5024c20d7ed56a33e09152e9bb720fca5cd5b5fad7464617de5a"
+    },
+    {
+      "path": "docs/05-ai-system/DESKTOP_AGENT_LOOP.md",
+      "size_bytes": 4116,
+      "sha256": "9d0b0185d7f022c51092340a21520bfc99d0d323137aadd5200caba7d3d216d7"
+    },
+    {
+      "path": "docs/05-ai-system/MCP_AND_PLUGIN_ECOSYSTEM.md",
+      "size_bytes": 3398,
+      "sha256": "c61de9d930cafd0d425ee6252077a47754e715eea6eec93d061447787735e512"
+    },
+    {
+      "path": "docs/05-ai-system/MEMORY_AND_RAG.md",
+      "size_bytes": 2208,
+      "sha256": "79df838e6a93cb6597042145527d9c016baf3d5c0660f8ca45ba333dae336d9e"
+    },
+    {
+      "path": "docs/05-ai-system/MODEL_FALLBACK_AND_COST.md",
+      "size_bytes": 1224,
+      "sha256": "35aa684c78ccc27a56ae73d6f71b42494db3fcf67e494266e3c70c11d60de6d1"
+    },
+    {
+      "path": "docs/05-ai-system/MODEL_ROUTING.md",
+      "size_bytes": 2029,
+      "sha256": "449666f778145bb8dfdf7fc73d5623ac11a52754abd7387d052f076d62c372df"
+    },
+    {
+      "path": "docs/05-ai-system/MULTI_AGENT_COORDINATION.md",
+      "size_bytes": 2063,
+      "sha256": "612a4ae6e7909071dd232b83d7bf5f79756b2eabaf1f17efa5d956ad198a8790"
+    },
+    {
+      "path": "docs/05-ai-system/PERSONAL_LIFE_AND_WORK_AUTOMATION_V04.md",
+      "size_bytes": 6023,
+      "sha256": "bae83d105475750d91f0e02a4b392e27c2b0ed45f380a852e1d288bba6beb104"
+    },
+    {
+      "path": "docs/05-ai-system/PROMPT_ARCHITECTURE.md",
+      "size_bytes": 1395,
+      "sha256": "e6c10acbbe293125cca602b310e6d62f9c55282b821dd4a7a76a12232737026b"
+    },
+    {
+      "path": "docs/05-ai-system/RESEARCH_ENGINE.md",
+      "size_bytes": 2134,
+      "sha256": "e61b719be1521d7ace16155da08840cae2a1b16732442bd4cab62e2acf9f39be"
+    },
+    {
+      "path": "docs/05-ai-system/SKILLS_AND_ROUTINES.md",
+      "size_bytes": 1966,
+      "sha256": "1e9ceddc76b425a300e579d7b38c630fa27442af6db5a5635f40cbc0e09284f2"
+    },
+    {
+      "path": "docs/05-ai-system/TOOL_REGISTRY_AND_POLICY.md",
+      "size_bytes": 2386,
+      "sha256": "a722967b8546bf125dd2dcacd85c630b281818da2cd9d9bef0e764c94e8f874c"
+    },
+    {
+      "path": "docs/05-ai-system/V05_PERSONAL_LIFE_WORK_AGENT_MODEL.md",
+      "size_bytes": 4032,
+      "sha256": "c856a6395e2b51e37ae5fa8ed9404f5f20cadfc46274277070b413abce7b94dc"
+    },
+    {
+      "path": "docs/05-ai-system/V07_HUMAN_LIFE_AND_WORK_AUTOMATION.md",
+      "size_bytes": 5175,
+      "sha256": "40eba55ebb3de672ac3c75be87be81cfae7763d86bbbda1cb520adebd325f85f"
+    },
+    {
+      "path": "docs/06-security/APPROVAL_POLICY.md",
+      "size_bytes": 2191,
+      "sha256": "c85413de41aac406d78e558f04653de5ed76cda8e840254a7207a342db3727e6"
+    },
+    {
+      "path": "docs/06-security/BRAND_TRADEMARK_AND_ATTRIBUTION_POLICY.md",
+      "size_bytes": 1734,
+      "sha256": "88fb6f3a0064f3268cdc713c9ca622d0f900a5cc9cb50dea6e406f5ba2bf512e"
+    },
+    {
+      "path": "docs/06-security/BROWSER_AND_SANDBOX_SECURITY.md",
+      "size_bytes": 2456,
+      "sha256": "4618cf4f5bcc16e40eb38f85b5ca4208f3135ac925a10b37d8f701d1efc481c9"
+    },
+    {
+      "path": "docs/06-security/DATA_RETENTION_AND_DELETION.md",
+      "size_bytes": 2108,
+      "sha256": "6d607fabbf193c5deebc014850fee8f5d23aa1b295af1ffc0b3ddded279b47b3"
+    },
+    {
+      "path": "docs/06-security/DEPENDENCY_POLICY.yaml",
+      "size_bytes": 998,
+      "sha256": "8a5a7de46ba569e495d00b4139d582a590de699f80d238bb378601941f281f23"
+    },
+    {
+      "path": "docs/06-security/DESKTOP_CONTROL_SECURITY.md",
+      "size_bytes": 5549,
+      "sha256": "b3cefaddcbf1a41261d6fadd6f03248e587a572d9bd3f573cf95fdf80c24befb"
+    },
+    {
+      "path": "docs/06-security/DESKTOP_DATA_CLASSIFICATION.md",
+      "size_bytes": 1819,
+      "sha256": "3d6e6be47341e81f2501033db0b1eb55b41e6f9101de069bc1b921bf66ccc71e"
+    },
+    {
+      "path": "docs/06-security/INCIDENT_RESPONSE.md",
+      "size_bytes": 1637,
+      "sha256": "58d4dce7036732d6f997c0912ed804ae79631517677c0caa10fe05a64d17cf39"
+    },
+    {
+      "path": "docs/06-security/LICENSE_APPROVAL_WORKFLOW_AND_EXCEPTIONS.md",
+      "size_bytes": 3572,
+      "sha256": "6b50b2f86a5064f701bcb38f157aa5d8903a8895866d496533913552823ff397"
+    },
+    {
+      "path": "docs/06-security/LICENSE_COMPLIANCE_RELEASE_CHECKLIST.md",
+      "size_bytes": 1997,
+      "sha256": "0c4affbcef1f5becdab69d8734bae873a0133904134bdc804ef6a276201041a8"
+    },
+    {
+      "path": "docs/06-security/LICENSE_EXCEPTION_TEMPLATE.yaml",
+      "size_bytes": 363,
+      "sha256": "f446eeb5bd6b2d480eba6268153f1dfc68ae06fe02128d2dd345d51e1e169388"
+    },
+    {
+      "path": "docs/06-security/OPEN_SOURCE_LICENSE_COMPLIANCE.md",
+      "size_bytes": 6842,
+      "sha256": "6cb29c42b4be8cc9f9640e22cdbff1a8b79820cf1b2f28d7bd7f8ce4172bdaed"
+    },
+    {
+      "path": "docs/06-security/SECRET_MANAGEMENT_AND_PRIVACY.md",
+      "size_bytes": 2305,
+      "sha256": "29ec435f7c0172b93d2982082a7f94d37543bd3038108acd7abfb826d81258a1"
+    },
+    {
+      "path": "docs/06-security/SECURITY_REQUIREMENTS.md",
+      "size_bytes": 1501,
+      "sha256": "20619936d727864aee0772a5b14ae2b4e726920caa5c855e6ff885b27a2e739e"
+    },
+    {
+      "path": "docs/06-security/SECURITY_TEST_PLAN.md",
+      "size_bytes": 1795,
+      "sha256": "9da59cfe9e848ae5b9b2e949a23775a4a9c392e98970cb255893fd24955c9d87"
+    },
+    {
+      "path": "docs/06-security/SOFTWARE_SUPPLY_CHAIN_GOVERNANCE.md",
+      "size_bytes": 2179,
+      "sha256": "8117e7ca229a1a22804c30b02a78c3feebecba53772d35946bd3f78672bdcdae"
+    },
+    {
+      "path": "docs/06-security/THIRD_PARTY_CODE_REUSE_AND_SKILL_TRUST_V04.md",
+      "size_bytes": 5029,
+      "sha256": "d4c18a67a34e6f61ebc795f09cad591054e96d531c3e55a64c218362c79de0fc"
+    },
+    {
+      "path": "docs/06-security/THIRD_PARTY_COMPONENT_REGISTER.yaml",
+      "size_bytes": 23198,
+      "sha256": "e3e9bc4fc4d92e2091a8778d728d1dc1cec6bdd9ee74b7d444da587826fad8f1"
+    },
+    {
+      "path": "docs/06-security/THIRD_PARTY_NOTICES_TEMPLATE.md",
+      "size_bytes": 701,
+      "sha256": "c50fdb984e8eadefae3796b4efbd4ea60571dd07911a699fc92be74800fb251a"
+    },
+    {
+      "path": "docs/06-security/THREAT_MODEL.md",
+      "size_bytes": 3610,
+      "sha256": "99a891caa1edfbcc4e273638669064f3d07612df7c5ece95bc59dd88a05025c9"
+    },
+    {
+      "path": "docs/06-security/TRUST_BOUNDARIES.md",
+      "size_bytes": 2087,
+      "sha256": "cc5617155d2136829039a799b8176c01c73ce7beb2f30b3f4f5969a99b336085"
+    },
+    {
+      "path": "docs/06-security/V05_SUPPLY_CHAIN_AND_SKILL_SECURITY.md",
+      "size_bytes": 3110,
+      "sha256": "25fd1db6a8ba5894d2221fbd17672668cd2c38615ab25c176a1062c351fdb7d2"
+    },
+    {
+      "path": "docs/07-design/ACCESSIBILITY_AND_RESPONSIVE.md",
+      "size_bytes": 1643,
+      "sha256": "990e81e158e182314aea9dd2626b975ec3ceacf6f0c07a7151527a81653309b1"
+    },
+    {
+      "path": "docs/07-design/BRAND_ASSET_REGISTER.yaml",
+      "size_bytes": 1065,
+      "sha256": "ce3fcfb8fe5e79031f78940d407d1ed09d3662fd047af9ff5600dd2dbb57f391"
+    },
+    {
+      "path": "docs/07-design/DESIGN_SYSTEM.md",
+      "size_bytes": 2084,
+      "sha256": "f1753fa5d0cb88906aac3d6e83489d63d69f4a829f899c1328a6578724a19d79"
+    },
+    {
+      "path": "docs/07-design/DESKTOP_ACTIVITY_PANEL.md",
+      "size_bytes": 1856,
+      "sha256": "f7120ec95de3d9e8c3cfa3e89645b8db13ee790f1bff3e9b82b3739fd026b5ad"
+    },
+    {
+      "path": "docs/07-design/REBRANDING_EXECUTION_SPEC.md",
+      "size_bytes": 3807,
+      "sha256": "ddc1334e81fdc87e2a96ff478edc56eed614ecd7b4b4286cf9bd7f83c6d25897"
+    },
+    {
+      "path": "docs/07-design/SCREEN_SPECIFICATIONS.md",
+      "size_bytes": 1771,
+      "sha256": "e95665572afb08c2340ee8235a7128c745360f5f32a803963e7094c360086df6"
+    },
+    {
+      "path": "docs/07-design/UX_AND_INFORMATION_ARCHITECTURE.md",
+      "size_bytes": 1938,
+      "sha256": "5436e9a88e6b1d230ab8c1e7005e578de8ac0f2e27280adc8c8f9a7a31bc9bf2"
+    },
+    {
+      "path": "docs/08-development/AGENT_DESKTOP_INTEGRATION_GUIDE.md",
+      "size_bytes": 4009,
+      "sha256": "2fba11654b90a6b854764b5f3ea20e5def8fea0fa2ed6c8cb3cfd2ee0f6934be"
+    },
+    {
+      "path": "docs/08-development/AGENT_TEAM_ROLE_CHARTERS.md",
+      "size_bytes": 5615,
+      "sha256": "3b6196ade5aef118bc550e9624ee88094ed1a176e6bc908623a655df8c20d25b"
+    },
+    {
+      "path": "docs/08-development/ANTIGRAVITY_AGENT_GUIDE.md",
+      "size_bytes": 1220,
+      "sha256": "7a64603e1a843945eda2be64fb434d3f0906c1abf0f282de163da0d1e1eb4f95"
+    },
+    {
+      "path": "docs/08-development/CLAUDE_CODE_AGENT_GUIDE.md",
+      "size_bytes": 799,
+      "sha256": "465dcac263dc4ddeeb911298995c3b6dc3c0a7a9b178a86027543554cf2c0021"
+    },
+    {
+      "path": "docs/08-development/CODEX_AGENT_GUIDE.md",
+      "size_bytes": 1022,
+      "sha256": "fac993557e3138eba75270692b38be2c764724149ed4daece585f88cafcd55d4"
+    },
+    {
+      "path": "docs/08-development/CODING_STANDARDS.md",
+      "size_bytes": 1731,
+      "sha256": "ae8c80bbe2e130ee3582ca5ed5390a06954bd85549f900a1ceeeb1acb6883b48"
+    },
+    {
+      "path": "docs/08-development/COMPANY_OPERATING_CADENCE.md",
+      "size_bytes": 1673,
+      "sha256": "a204834d03e6f7b4ac7503618187530422c71ab846bbdde20367780f7929ef98"
+    },
+    {
+      "path": "docs/08-development/DESKTOP_NODE_REFERENCE_IMPLEMENTATION.md",
+      "size_bytes": 4471,
+      "sha256": "36b447e726a119c3138f76e6cfc62121162d4ae6513bcc15f8e8da76c3d0c339"
+    },
+    {
+      "path": "docs/08-development/DEVELOPMENT_WORKFLOW.md",
+      "size_bytes": 1769,
+      "sha256": "6242f25936f12228f58b2cec1496b65d458a1ebe7f1b1e78b3993c3f7bcde1f7"
+    },
+    {
+      "path": "docs/08-development/ENVIRONMENT_SETUP.md",
+      "size_bytes": 1469,
+      "sha256": "f21d638a86664b1503fe34ec7a108fd2cf70e76f8f0876b490abd086cb2ba40b"
+    },
+    {
+      "path": "docs/08-development/FOUNDING_TEAM_AND_DEPARTMENT_CHARTER.md",
+      "size_bytes": 4752,
+      "sha256": "bb46f782e634ae686d7f1835ee4a38f8a5b378eb61cf25b0f2d1447f8d6cf1e8"
+    },
+    {
+      "path": "docs/08-development/GIT_AND_RELEASE_WORKFLOW.md",
+      "size_bytes": 1069,
+      "sha256": "b50822dbccd2387d34b88ee923c3bb02a332f1c4616b86280b3f5b9691441592"
+    },
+    {
+      "path": "docs/08-development/IDE_AGENT_PERMISSION_PROFILE.md",
+      "size_bytes": 2277,
+      "sha256": "2e8b30388e02b5dd7311973a51a76270523f16e7375becf9447c9ce53063ec74"
+    },
+    {
+      "path": "docs/08-development/IDE_AGENT_START_CHECKLIST.md",
+      "size_bytes": 2861,
+      "sha256": "a0228666bee890cdb13bf752fd986b077148697af30dc0a45248dd6143b9fdf4"
+    },
+    {
+      "path": "docs/08-development/REPOSITORY_OPERATIONS_RUNBOOK.md",
+      "size_bytes": 1723,
+      "sha256": "dd980b06d69d6b209f069f51c45256f1f7beace61f8a5e9ab7dff2c78a70a52b"
+    },
+    {
+      "path": "docs/08-development/REPOSITORY_STRUCTURE.md",
+      "size_bytes": 1497,
+      "sha256": "0467aa8df76d93bec43827ccb4d15d96b15534714ff16cae6c9b0336e59af4da"
+    },
+    {
+      "path": "docs/08-development/REQUIREMENTS_TRACEABILITY.md",
+      "size_bytes": 6172,
+      "sha256": "6730fa0af7004437313e3cebaae5d1488940fa601d0930f275846ddea4f80097"
+    },
+    {
+      "path": "docs/08-development/V07_CTO_REPOSITORY_EXECUTION_BOARD.md",
+      "size_bytes": 2950,
+      "sha256": "07a2ab33a9b6f127c7e61ce8d03afcd64b46ccce6934458f6f6a544fc41c641a"
+    },
+    {
+      "path": "docs/08-development/V08_CTO_AND_TEAM_EXECUTION_PLAN.md",
+      "size_bytes": 6183,
+      "sha256": "07f6bbbc6c8918a55c7ae1e492bed4a5c00d10f4277d480a50ae97b3ccb6666d"
+    },
+    {
+      "path": "docs/08-development/V09_CTO_EXECUTION_AND_TEAM_ASSIGNMENTS.md",
+      "size_bytes": 5020,
+      "sha256": "c6789928d79045a2b14de994afa9c45a598980f537d87d27d46698f16d03c35b"
+    },
+    {
+      "path": "docs/08-development/V10_CTO_IMPLEMENTATION_WARROOM.md",
+      "size_bytes": 6795,
+      "sha256": "1e681c448a9da8f98ff933d0c9c5ead29a2a636e331d86958373ef66807fbc89"
+    },
+    {
+      "path": "docs/09-quality/AGENT_EVALUATION_AND_TEAM_METRICS.md",
+      "size_bytes": 2053,
+      "sha256": "5449803695deab4c50e3a48857738ab6581ef62656fc9a928732ac3b100beeed"
+    },
+    {
+      "path": "docs/09-quality/COMPETITIVE_PARITY_AND_EVALUATION_V04.md",
+      "size_bytes": 5582,
+      "sha256": "37feba76daaaacb228d26256206685b89ae9864ddb51edf1e48ae7bd28df7298"
+    },
+    {
+      "path": "docs/09-quality/DEFINITION_OF_DONE.md",
+      "size_bytes": 1625,
+      "sha256": "93634b34ac5903dbc1964a3e27a306a97635f085185653ec5bfa00656dca5306"
+    },
+    {
+      "path": "docs/09-quality/DESKTOP_AUTOMATION_TEST_MATRIX.md",
+      "size_bytes": 4272,
+      "sha256": "c510eaa63c58d1ac9dfcf9f55855802ca42d99ba7d6b0c3b668b9f78b954a2bf"
+    },
+    {
+      "path": "docs/09-quality/REFERENCE_INTEGRATION_CONFORMANCE_MATRIX.md",
+      "size_bytes": 4198,
+      "sha256": "a1ab1d3184295c9672fb1fdb7dc1088aeab397c0ac19765592bda4a57f4788ba"
+    },
+    {
+      "path": "docs/09-quality/TEST_CASES.md",
+      "size_bytes": 2153,
+      "sha256": "5035ef1a9083ba283bb632fee1d858d709fb5f10ec8f277a62a5649482b8aee5"
+    },
+    {
+      "path": "docs/09-quality/TEST_STRATEGY.md",
+      "size_bytes": 2390,
+      "sha256": "9356213358e0f9616e8c47cf303c4299a9e56c27c07eceae4ce30dd99ef0bc31"
+    },
+    {
+      "path": "docs/09-quality/V05_BENCHMARKS_AND_ACCEPTANCE.md",
+      "size_bytes": 3314,
+      "sha256": "7e9cf2e1e8ae5880bba5be6a804b142340f4a35b17fc117fa7f60ce1a9cbc7ef"
+    },
+    {
+      "path": "docs/09-quality/V06_COMPETITOR_PARITY_AND_BENCHMARKS.md",
+      "size_bytes": 3794,
+      "sha256": "6e018b18a52a696ad79fe73592b1cf37ff4f500db0fdf4856381fa74a341e02d"
+    },
+    {
+      "path": "docs/09-quality/V07_COMPETITOR_EVALUATION_SUITE.md",
+      "size_bytes": 4245,
+      "sha256": "2837aa0d0ee7819f0c5e8c0dcd269ba618ecccb663cdbe2c4be90efb44cac172"
+    },
+    {
+      "path": "docs/09-quality/V10_COMPETITIVE_PARITY_BENCHMARKS.md",
+      "size_bytes": 3056,
+      "sha256": "d450207f4d1c893ec467445331779c4d31d6868053396a1b3b781021311ab843"
+    },
+    {
+      "path": "docs/10-infrastructure/500GB_DRIVE_SETUP_WINDOWS.md",
+      "size_bytes": 2613,
+      "sha256": "c3907d73a678d559a40fb8b79ba3b6db89f13d3f7c7d27a546b475705ebd71fc"
+    },
+    {
+      "path": "docs/10-infrastructure/500GB_STORAGE_ARCHITECTURE.md",
+      "size_bytes": 6810,
+      "sha256": "1814b2f394a772ad06c5c053650c58795c30cd67ec0d4663263b25dd10a791ff"
+    },
+    {
+      "path": "docs/10-infrastructure/BACKUP_AND_RECOVERY.md",
+      "size_bytes": 1033,
+      "sha256": "3022fd0523febc07e9199df888eeb64a2e71c8a8c308de8bf550cc87582c1c00"
+    },
+    {
+      "path": "docs/10-infrastructure/CI_CD_AND_SUPPLY_CHAIN.md",
+      "size_bytes": 2568,
+      "sha256": "ab657ce4b148a4d76692f8a7aeec6384114c8776795c199f148687056ababbef"
+    },
+    {
+      "path": "docs/10-infrastructure/DEPLOYMENT_ARCHITECTURE.md",
+      "size_bytes": 1829,
+      "sha256": "8a14bca6da67ce44637d887bbd10802da29a81d8a2a14329c1400aacfd43d5fd"
+    },
+    {
+      "path": "docs/10-infrastructure/DESKTOP_NODE_DEPLOYMENT.md",
+      "size_bytes": 2840,
+      "sha256": "b9495aeff1c221a78d6fa4227cd7a963deea51767cef9533f81f1f14195abe9f"
+    },
+    {
+      "path": "docs/10-infrastructure/SANDBOX_RUNTIME_SECURITY.md",
+      "size_bytes": 2424,
+      "sha256": "db691b45a8d3b0e12f3ef233281f46f598c4b4a2c1d79040fc625f64625433a4"
+    },
+    {
+      "path": "docs/10-infrastructure/V10_500GB_STORAGE_OPERATIONS.md",
+      "size_bytes": 3573,
+      "sha256": "32418bbb65f8f729a4e147c3672cd0482c16731e9d2b69232c1f7215ae9d62c2"
+    },
+    {
+      "path": "docs/11-operations/DESKTOP_NODE_RUNBOOK.md",
+      "size_bytes": 2397,
+      "sha256": "62989c3c90f3ec20b8066dbdabb5cfe7f431874a6daa4e3f4ca78f1fd50b35a5"
+    },
+    {
+      "path": "docs/11-operations/OBSERVABILITY.md",
+      "size_bytes": 2385,
+      "sha256": "3ddb1e432a54ff2fb567d480a41b969c6ff2dac7575fd73ab7e9b2f7ca1bd730"
+    },
+    {
+      "path": "docs/11-operations/PERFORMANCE_BENCHMARKS.md",
+      "size_bytes": 2392,
+      "sha256": "b0965be4f83815609c89fad5acccae914fd0abed53cb8c69cd021a9d8d050962"
+    },
+    {
+      "path": "docs/11-operations/RECOVERY_DRILL.md",
+      "size_bytes": 1078,
+      "sha256": "d98e266965a30b37448e78b87364eda7b1974301017fc63d946749c8301bc192"
+    },
+    {
+      "path": "docs/11-operations/RUNBOOKS.md",
+      "size_bytes": 1259,
+      "sha256": "706d19722512790361d7002c1ea14d42eed7429c92aa18e1785fdb09de593d50"
+    },
+    {
+      "path": "docs/12-project-management/DECISION_LOG.md",
+      "size_bytes": 1798,
+      "sha256": "fa10e03d4de01cfe69d08490a1912875bba203b79569455ba22a64543e31ff9f"
+    },
+    {
+      "path": "docs/12-project-management/DESKTOP_INTEGRATION_PLAN.md",
+      "size_bytes": 2697,
+      "sha256": "fd2546ebb2ec946154c197008b36aa6d063aa3a11d46cd467b4547a5f5884bf2"
+    },
+    {
+      "path": "docs/12-project-management/EXECUTIVE_DECISION_LOG.md",
+      "size_bytes": 1892,
+      "sha256": "1b306853df9384ecf7cc026517df821b7e8d58cb0b1c6d84c83ab878b914e36f"
+    },
+    {
+      "path": "docs/12-project-management/INTEGRATION_REGISTER_AND_PRIORITIZATION.md",
+      "size_bytes": 3701,
+      "sha256": "c313f6bed6f7fb94f7a94899865e66a399bb95d922dcbd7ba40128e4aecd7940"
+    },
+    {
+      "path": "docs/12-project-management/RISK_REGISTER.md",
+      "size_bytes": 5311,
+      "sha256": "9adc2d6cb4bdf1db1099aebf5056db16de925bbbbd1f369bb790f66401631262"
+    },
+    {
+      "path": "docs/12-project-management/ROADMAP.md",
+      "size_bytes": 2826,
+      "sha256": "dce013b0b8ce81d9fe9b3c4e7effbd7c677101f99af5275651cecc7a2e91f5fe"
+    },
+    {
+      "path": "docs/12-project-management/V03_INTEGRATION_WORKSTREAMS.md",
+      "size_bytes": 3661,
+      "sha256": "91744e42c89c3337845ca6f8996b755002b4102e8f3ff7fb7f93098a0df91a37"
+    },
+    {
+      "path": "docs/12-project-management/V04_CTO_TEAM_EXECUTION_PLAN.md",
+      "size_bytes": 7351,
+      "sha256": "af1b1719f2baa85c782e78911d4fc14c08e4ef4d139454dcb7956490f628c213"
+    },
+    {
+      "path": "docs/12-project-management/V05_IMPLEMENTATION_PLAN.md",
+      "size_bytes": 3456,
+      "sha256": "5671baaf97eff688a560bf6312a02ccc655e62981deda2b4648dfeb9882c28ac"
+    },
+    {
+      "path": "docs/12-project-management/V05_REUSE_AND_BUILD_WORKSTREAMS.md",
+      "size_bytes": 3614,
+      "sha256": "f41ff30a43656def2326d195e1b713c8bf65164f4651c612e4a4d644791ecf6a"
+    },
+    {
+      "path": "docs/12-project-management/V06_CTO_AND_TEAM_EXECUTION_PLAN.md",
+      "size_bytes": 8228,
+      "sha256": "c12630bc5fdf596117c4a9cb07dbf0d98fe30a2f2ec4c59a7f0fc1d089795e13"
+    },
+    {
+      "path": "docs/12-project-management/V08_REPOSITORY_ADOPTION_DECISION_LOG.md",
+      "size_bytes": 2494,
+      "sha256": "9c901c24b526aaf46124cbf8a002ec51bfe30e7e64362048d39de191e4dc6d09"
+    },
+    {
+      "path": "docs/12-project-management/V09_ADOPTION_BACKLOG.yaml",
+      "size_bytes": 2148,
+      "sha256": "3c85d7ee388fa1a405401c656e4d416504592a72317c6fe5b993d1705b641bae"
+    },
+    {
+      "path": "docs/12-project-management/WORK_BREAKDOWN_STRUCTURE.md",
+      "size_bytes": 1988,
+      "sha256": "b7e14530b1b044b10ebebfcb4f564609d1ff0d4f0d27619b9afcdb0228ba2c36"
+    },
+    {
+      "path": "docs/13-guides/DESKTOP_NODE_QUICKSTART.md",
+      "size_bytes": 1536,
+      "sha256": "e207587c5c0090482fa72ae40fc7c110e4ff5132c90a6a155205cb1d1cb2bb5f"
+    },
+    {
+      "path": "docs/13-guides/FEATURE_STATUS.md",
+      "size_bytes": 3014,
+      "sha256": "8589615fec68f228dc9f78c74828894af735c7980aaffc92dca5b05fe536b520"
+    },
+    {
+      "path": "docs/13-guides/IDE_AGENT_START_HERE.md",
+      "size_bytes": 1909,
+      "sha256": "7347b7c4032aae923d853a82783fd7fac1acc05acfc78e4f2b5e04b5afd4b556"
+    },
+    {
+      "path": "docs/13-guides/LOCAL_INSTALL_AND_DEPLOYMENT.md",
+      "size_bytes": 1366,
+      "sha256": "38942f072aab539aac5acbb004cb38eb30b5e4aba7cdb5ecb0a19b1792a3ac98"
+    },
+    {
+      "path": "docs/13-guides/OPEN_QUESTIONS.md",
+      "size_bytes": 2357,
+      "sha256": "814918a407e3953182a4c74b078b7ea0ec1718abd7c62f7a6e366d27838205c6"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_COMPANY_AND_AGENT_TEAM_START.md",
+      "size_bytes": 1487,
+      "sha256": "d6b940d9f0950c6ece4241ca3c95c85e2a52fa452737a50c61378a1a9dd51cfb"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_V04_START_HERE.md",
+      "size_bytes": 3753,
+      "sha256": "461b10aa74d4e1fd820f44ff4adfd2a15a8725c73601462b37bc2ae019b97650"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_V05_START_HERE.md",
+      "size_bytes": 2895,
+      "sha256": "ab0ad48ed72c7b1e4edb6f77a827fbd3e5890e7b5a265849ef2fb926a5beba09"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_V06_START_HERE.md",
+      "size_bytes": 2934,
+      "sha256": "2ebf9e25540f9597557ad72723e1c0dd84592f062fac21cbeac0ae27a0d0c029"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_V07_START_HERE.md",
+      "size_bytes": 2848,
+      "sha256": "34173c32b8eeac963afabc49f4361cab8694b94492a06e731ff23bbd41782349"
+    },
+    {
+      "path": "docs/13-guides/ORBIT_V08_START_HERE.md",
+      "size_bytes": 2598,
+      "sha256": "2f384c65f216f8af08061224101906fbe66fc845d2ecd5e60ca291e6f658a703"
+    },
+    {
+      "path": "docs/13-guides/REPO_OPERATIONS_COMMAND_REFERENCE.md",
+      "size_bytes": 4124,
+      "sha256": "d40c9b4776bd83b658c24038cc9048cd4b09453f35f74577898ceec6619f3d94"
+    },
+    {
+      "path": "docs/13-guides/USING_UPSTREAM_REPOSITORIES.md",
+      "size_bytes": 5126,
+      "sha256": "f92cd1f8d3c4e3e07385d66882c703c251f8d7bfc5b0af806e7e169fddd7af6e"
+    },
+    {
+      "path": "docs/13-guides/V08_REPOSITORY_OPERATIONS_ANALYSIS_AND_SOURCE_MODIFICATION.md",
+      "size_bytes": 17104,
+      "sha256": "36112189d9e06f779b2d25a19093344070e6a96c4f109bc7bcbe56f6f143f65d"
+    },
+    {
+      "path": "docs/13-guides/V09_REPO_CODE_REUSE_PLAYBOOK.md",
+      "size_bytes": 6716,
+      "sha256": "f39f7601ceffd81c9816e0b6079f5b9a5f2ec429736c7207245f5b19707af62f"
+    },
+    {
+      "path": "docs/13-guides/V09_START_HERE.md",
+      "size_bytes": 2225,
+      "sha256": "e8d57cb8c305a2828720cad39331ac294b68db4c83ee1b78ab65638b2df58067"
+    },
+    {
+      "path": "docs/13-guides/V10_REPOSITORY_OPERATIONS_AND_SOURCE_CODE_USE.md",
+      "size_bytes": 8330,
+      "sha256": "6ffa3aa7a099126e623f8caa817e9042a2eb3649421f9a6db469aa50a40bb5da"
+    },
+    {
+      "path": "docs/13-guides/V10_START_HERE.md",
+      "size_bytes": 2850,
+      "sha256": "261c2e12c449f74ecd7c1bfdedbef529c55f756ee5d5ac6ef91051c0e7296d6f"
+    },
+    {
+      "path": "docs/14-templates/ADR_TEMPLATE.md",
+      "size_bytes": 881,
+      "sha256": "a05e6b484ed95400088a5ed424a16e0c3d027c5e6a1851ccf9a20dfbb319ec8a"
+    },
+    {
+      "path": "docs/14-templates/FEATURE_SPEC_TEMPLATE.md",
+      "size_bytes": 689,
+      "sha256": "31c69a0a3a5d86fed1b1732740f1517f8268b596a0f30d07daaca9ba2d5812ae"
+    },
+    {
+      "path": "docs/14-templates/INCIDENT_TEMPLATE.md",
+      "size_bytes": 674,
+      "sha256": "54162f563243a524c3a6f1c83cfe9149a1d711987a5fd9f3add21227c54a594d"
+    },
+    {
+      "path": "docs/14-templates/RESEARCH_NOTE_TEMPLATE.md",
+      "size_bytes": 733,
+      "sha256": "498b02877437f963ae1b773f40ed3ff981c520f230e5c3760660afdacaa496c7"
+    },
+    {
+      "path": "docs/14-templates/UPSTREAM_ADOPTION_RECORD_TEMPLATE.md",
+      "size_bytes": 780,
+      "sha256": "dae81dac04cca116f736d7dd1d54ae250f29c1e01f787d369e6a5f2e3a2b09c6"
+    },
+    {
+      "path": "docs/INDEX.md",
+      "size_bytes": 5036,
+      "sha256": "f879a4626638abafba7c3023be66e625088f50af86adc7cd2d21d257404a68a3"
+    },
+    {
+      "path": "docs/source-material/SOURCE_PROVENANCE.md",
+      "size_bytes": 2637,
+      "sha256": "e06c48ab3aaebb0dedfc2da5d8fe07b39acb79d939e0e6e6747050ef1aca8c5f"
+    },
+    {
+      "path": "docs/source-material/USER_PROVIDED_DOCUMENTATION_BLUEPRINT.md",
+      "size_bytes": 25143,
+      "sha256": "bb6f5f33375401c9db6246da235faabd28b4344dccef8266008c951e90f8232b"
+    },
+    {
+      "path": "docs/source-material/USER_PROVIDED_ORBIT_MASTER_BRIEF.md",
+      "size_bytes": 35560,
+      "sha256": "a944b184123f67b02484e9f5143dcbc88c0e531578abba8be1e75a23d1448ebf"
+    },
+    {
+      "path": "examples/README.md",
+      "size_bytes": 525,
+      "sha256": "6c7dd49514ccc5be74c0bc360bfb8f8a416c22674642eca2d17782bc268d41dd"
+    },
+    {
+      "path": "examples/agent-desktop-mcp.json",
+      "size_bytes": 256,
+      "sha256": "caacc94162565f00b79315dc0d9d8c33536a1a27ad6e102b1ebef1016154bc95"
+    },
+    {
+      "path": "examples/brand/orbit-brand-tokens.json",
+      "size_bytes": 718,
+      "sha256": "032168edd8c75eb862c3d6f851f55bda6b4208febf82447fbd67fb5ffd88eae4"
+    },
+    {
+      "path": "examples/ci/supply-chain-gate.yml",
+      "size_bytes": 1104,
+      "sha256": "2bebeaf4993341b83c35492cb9f604d884d34e3e66dc01314e0c48a1ae93a9ee"
+    },
+    {
+      "path": "examples/generative-ui/orbit-ui-spec.example.json",
+      "size_bytes": 759,
+      "sha256": "c249d754e3136ee3b2cdb3571e2e808611d4c38b25a221debd95a8c49091d788"
+    },
+    {
+      "path": "examples/operations/storage-layout.example.json",
+      "size_bytes": 865,
+      "sha256": "fbb53b6951389dee3c545d4f6a082209b68904983e029c6900f6f982ff9959c7"
+    },
+    {
+      "path": "examples/skills/orbit-skill-manifest.example.yaml",
+      "size_bytes": 941,
+      "sha256": "7355088e025e42ff89b211c9550caaf95905ef2aee4cacaf325a53399294776b"
+    },
+    {
+      "path": "examples/skills/skills-lock.example.json",
+      "size_bytes": 617,
+      "sha256": "593e1765c31a06f01a4e957fd4ebbb27da35681965654eee48531cbe686ad9be"
+    },
+    {
+      "path": "roles/README.md",
+      "size_bytes": 1188,
+      "sha256": "aee8c6a05ee10a0ad1727377f537005631a8d5fe3d6ad2534e25d3f0dc1fb4f7"
+    },
+    {
+      "path": "roles/ROLE_REGISTRY.yaml",
+      "size_bytes": 12492,
+      "sha256": "f8c5dcc245f29ce6fc28626a4e6bec1ac9e012c0cf5cf82f99746d1e7f09203c"
+    },
+    {
+      "path": "roles/ai/agent-runtime-engineer.md",
+      "size_bytes": 2647,
+      "sha256": "12847c7184dd2b8a490de81e1a28a0bd03894a8e39f63610201950e9b689a7d5"
+    },
+    {
+      "path": "roles/ai/ai-ml-engineer.md",
+      "size_bytes": 2631,
+      "sha256": "6005c9ec4abe864ecf142b9947565348f1be74290b24278662b6010be4eb88be"
+    },
+    {
+      "path": "roles/ai/chief-ai-research-officer.md",
+      "size_bytes": 2662,
+      "sha256": "95c74c16108f1faedb417b00eb42cc089128695255a0a6784dbf8be08aa144cc"
+    },
+    {
+      "path": "roles/ai/data-rag-engineer.md",
+      "size_bytes": 2622,
+      "sha256": "adbd7c246e3d27d820cd7b32058d4f1b9143276058ad6393d5efc993d767a5b1"
+    },
+    {
+      "path": "roles/ai/model-runtime-engineer.md",
+      "size_bytes": 1897,
+      "sha256": "e2f46aac6ac4758ae63a5a2950cc38701de6d5cd62f1bbac7a482ef7981505ee"
+    },
+    {
+      "path": "roles/business/customer-success-researcher.md",
+      "size_bytes": 2648,
+      "sha256": "9a442df14ce8c02b2f54d7f54a10cabe3572d4456b38d9a3aaf1ac6bb148fe33"
+    },
+    {
+      "path": "roles/business/finance-commercial-analyst.md",
+      "size_bytes": 2554,
+      "sha256": "451b9e6cfc77b6e8b7986b9347f690fa3b497502eefa6301b6a26971d68f81f7"
+    },
+    {
+      "path": "roles/business/legal-ip-compliance-analyst.md",
+      "size_bytes": 2668,
+      "sha256": "592379abde4297fbbcc9ccfa177295e8a164a46d3c466fd6d7463e91200f5353"
+    },
+    {
+      "path": "roles/business/opensource-community-lead.md",
+      "size_bytes": 2621,
+      "sha256": "4fe7b30f72b5ada23eee014a02cc8b14737a94b4ac1f4fe77f65b46de1ef52b4"
+    },
+    {
+      "path": "roles/design/technical-writer.md",
+      "size_bytes": 2546,
+      "sha256": "fb07419a094207196195031f93c0bb8c4f76f5a68d1bd41d58d6c8578fb96ce3"
+    },
+    {
+      "path": "roles/design/ux-product-designer.md",
+      "size_bytes": 2590,
+      "sha256": "aa504471faf2c0d609f23913bb5b5831a80cc6b108c85c9f53b4417df91225b4"
+    },
+    {
+      "path": "roles/engineering/backend-engineer.md",
+      "size_bytes": 2585,
+      "sha256": "f161023e80ee9f5a877022e9af0a3dff1adf15a7fc7bc0a0d2e71860fb428dfa"
+    },
+    {
+      "path": "roles/engineering/browser-automation-engineer.md",
+      "size_bytes": 2642,
+      "sha256": "c6eafd52e8133b6e2143d5429c3a8ee54999355c06fc8a95bed15d297f5c397a"
+    },
+    {
+      "path": "roles/engineering/desktop-computer-use-engineer.md",
+      "size_bytes": 2686,
+      "sha256": "c4a06d6622b9c3d051b9800fbcdbeafb4005b6aad744d76cf81bb6b2c995efe8"
+    },
+    {
+      "path": "roles/engineering/frontend-engineer.md",
+      "size_bytes": 2621,
+      "sha256": "b0baaaeb6115a452fe1780f09970feb22ac07185abe57eec1e4cee5a89b73be2"
+    },
+    {
+      "path": "roles/engineering/home-device-integration-engineer.md",
+      "size_bytes": 1054,
+      "sha256": "2fb2d6a2f2c6549c40200e7ed3991e7a0bf00af83ccc9c1f600d25060a578044"
+    },
+    {
+      "path": "roles/engineering/integration-connector-engineer.md",
+      "size_bytes": 1862,
+      "sha256": "96adb3003292d73a505bc86ca303f96dfb850efae30b348f9b330d90af372bec"
+    },
+    {
+      "path": "roles/engineering/mobile-companion-engineer.md",
+      "size_bytes": 1129,
+      "sha256": "017a9cb288db613105e377d2ac3d8e5c90db21811a6877660143d52c77d7206f"
+    },
+    {
+      "path": "roles/engineering/repository-operations-engineer.md",
+      "size_bytes": 1910,
+      "sha256": "1678eb3367069bdfbefe270ab637b0b5954ce272f657900c6923e7d4b3f37191"
+    },
+    {
+      "path": "roles/engineering/sandbox-runtime-engineer.md",
+      "size_bytes": 2638,
+      "sha256": "1fe3ceea43bf96c024a750e05f7e4a7c2593400ca373ee10819ed5dd6f106d71"
+    },
+    {
+      "path": "roles/engineering/voice-multimodal-engineer.md",
+      "size_bytes": 990,
+      "sha256": "9d489f8281e0986e51ba94664d6f7fcacde51859536693b3c3476bdfc9b76432"
+    },
+    {
+      "path": "roles/executive/coo-delivery-lead.md",
+      "size_bytes": 2581,
+      "sha256": "3f0acf5e84bd1de0cee5432995f8916fa92e4041fd5a44ca908d2fa2e2182f0f"
+    },
+    {
+      "path": "roles/executive/cpo-product-lead.md",
+      "size_bytes": 2624,
+      "sha256": "83fb4be6204188b184004dbe8e1af28e9c71affcc1b4ced314efc3a93e1e0563"
+    },
+    {
+      "path": "roles/executive/cto-principal-architect.md",
+      "size_bytes": 2744,
+      "sha256": "f08bfdecb220b75de2c7d4f7bcd85af4763e4e1f1a354a293b4dff423efe6386"
+    },
+    {
+      "path": "roles/executive/founder-ceo-human.md",
+      "size_bytes": 2723,
+      "sha256": "056510148769cd63fb55f9a673cc057e987919b0336626ef2566902d168cd156"
+    },
+    {
+      "path": "roles/quality/benchmark-performance-engineer.md",
+      "size_bytes": 1859,
+      "sha256": "80a36af2c78641bb1561369c2f6cd2a09b2c6feb46fa84baaa66fc95a78c0334"
+    },
+    {
+      "path": "roles/quality/data-governance-engineer.md",
+      "size_bytes": 1003,
+      "sha256": "e864bd9e40600a6fc52f0d116291b01b0a532be9b1390ca4a1642c232f845ee1"
+    },
+    {
+      "path": "roles/quality/devops-sre-engineer.md",
+      "size_bytes": 2583,
+      "sha256": "d55ddc5b1c00325517c226c3c154992b27e9238bdbbdc4ac75a817f774c62d4f"
+    },
+    {
+      "path": "roles/quality/qa-agent-evaluation-engineer.md",
+      "size_bytes": 2673,
+      "sha256": "e954ae6ebcce7091544d08956af2dea75dc99cec0ad3f86ddcc3cfc9465bb96a"
+    },
+    {
+      "path": "roles/quality/security-privacy-lead.md",
+      "size_bytes": 2652,
+      "sha256": "970f53ed0edf2be03fb025609cc9d658cc24c5214d6d6b81fc32ed664947bb85"
+    },
+    {
+      "path": "scripts/apply_staged_source.py",
+      "size_bytes": 10553,
+      "sha256": "3fde746333bcfc8172ca5e6d21e1bfd91f8eb419213aba39148a244a753332e2"
+    },
+    {
+      "path": "scripts/audit_skill_package.py",
+      "size_bytes": 3807,
+      "sha256": "8522038816d8b4ddcef105f9fe4eda51cd2e2532df856313b294d669dff1d7c4"
+    },
+    {
+      "path": "scripts/clone_upstreams.ps1",
+      "size_bytes": 767,
+      "sha256": "f95c7574cc2020d7708298c30c169ec390443856871dd8c0b5752a57f7035c88"
+    },
+    {
+      "path": "scripts/clone_upstreams.sh",
+      "size_bytes": 15420,
+      "sha256": "f7efc6b5917aa157cc8a4b6aa93a5922ebe2cb2a26b438a4d304eeb00069d3c9"
+    },
+    {
+      "path": "scripts/create_orbit_app_worktree.py",
+      "size_bytes": 4890,
+      "sha256": "8daaa2d1ab8bb46631d9bbb9dff06fa0a156dc06800ef511ce1671587b8b244a"
+    },
+    {
+      "path": "scripts/create_upstream_worktree.py",
+      "size_bytes": 5633,
+      "sha256": "50b3a67569c4629222550c1ec2babb9b6266de11d89797e53dc6ae94e2383450"
+    },
+    {
+      "path": "scripts/import_upstream_path.py",
+      "size_bytes": 7968,
+      "sha256": "d55a6be7e27dced18b9973c20ecd59ae298648115394b240fa6ec21ea4fe6fa8"
+    },
+    {
+      "path": "scripts/init_orbit_storage.ps1",
+      "size_bytes": 3211,
+      "sha256": "8d16971704df56e8e4214f22645834880f82080503c97b707efe938b48050a39"
+    },
+    {
+      "path": "scripts/orbit_repo_ops.py",
+      "size_bytes": 2640,
+      "sha256": "fc371fee7cd6e14da1592516e865b37d622e47b6faa9c45df15442fd7e707203"
+    },
+    {
+      "path": "scripts/orbit_storage.py",
+      "size_bytes": 4902,
+      "sha256": "8658b01be4a247160a940346227bb80b053dab52842f9e86b235864cc35d2017"
+    },
+    {
+      "path": "scripts/repo_audit.py",
+      "size_bytes": 7314,
+      "sha256": "56a9b61df93042d1428be8209e6d51f3d8782b39ccb8dcd4e20683683d88c183"
+    },
+    {
+      "path": "scripts/validate_package.py",
+      "size_bytes": 8687,
+      "sha256": "f0cd27b61ab90b7c690b6fc8840ff65532540522b218f7927534ac726a078b00"
+    },
+    {
+      "path": "skills/orbit-desktop-control/SKILL.md",
+      "size_bytes": 2675,
+      "sha256": "bc440a85084b98177e1c2b107ba24b487403085ece6950a6e7943bf037affb1b"
+    },
+    {
+      "path": "skills/orbit-feature-implementation/SKILL.md",
+      "size_bytes": 991,
+      "sha256": "01dd58613cd3fd5ca038b913265f6a13004fcae640e144aefeaaf17211bb26e8"
+    },
+    {
+      "path": "skills/orbit-repository-audit/SKILL.md",
+      "size_bytes": 1242,
+      "sha256": "667d240427bcc3e169806413474feb835203507fe2413561c902c0da5cc43eeb"
+    },
+    {
+      "path": "tests/operations/test_repository_operations.py",
+      "size_bytes": 22995,
+      "sha256": "805739caf1e320d7c1b8540cd1ae5908c235b1e7a2a6ae997d34295616655c11"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+version: 0.9.0-draft
+snapshot_date: 2026-11-08
+policy: choose_one_owner_per_capability; no_unreviewed_source_merge
+workstreams:
+  - id: W0_EXISTING_APP_AUDIT
+    priority: P0
+    owner: CTO_Principal_Architect
+    tasks: [read_only_repo_audit, preserve_working_features, module_map, dependency_graph, build_baseline]
+    exit: founder_accepts_existing_code_and_reuse_map
+  - id: W1_PRODUCT_SHELL
+    priority: P0
+    owner: Product_Shell_Engineer
+    candidates: [openmausbot, openclaw]
+    decision: build_and_license_comparison_before_selection
+    exit: one_shell_selected_and_enterprise_excluded
+  - id: W2_AGENT_RUNTIME
+    priority: P0
+    owner: Agent_Runtime_Engineer
+    candidates: [openclaw, hermes_agent, openai_agents_python, pydantic_ai]
+    decision: one_runtime_adapter_for_mvp
+    exit: one_task_end_to_end
+  - id: W3_BROWSER_SANDBOX_CODING
+    priority: P1
+    owner: Computer_Use_Lead
+    candidates: [playwright, stagehand, browser_use, opensandbox, openhands_software_agent_sdk]
+    exit: sandboxed_worker_with_approval_and_evidence
+  - id: W4_MEMORY_RETRIEVAL
+    priority: P1
+    owner: Memory_RAG_Lead
+    candidates: [mem0, letta_code, graphiti, llamaindex, haystack, graphrag, qdrant, chroma, milvus]
+    decision: one_primary_memory_path_one_rag_path_one_vector_backend
+    exit: scoped_memory_with_consent_provenance_acl_and_delete
+  - id: W5_LOCAL_MODELS_VOICE
+    priority: P2
+    owner: Local_Model_Lead
+    candidates: [ollama, llama_cpp, vllm, sglang, faster_whisper, sherpa_onnx]
+    exit: hardware_benchmark_and_model_license_review
+  - id: W6_EVALUATION_SECURITY
+    priority: P0
+    owner: QA_Security_Leads
+    candidates: [promptfoo, garak, guardrails, dspy]
+    exit: red_team_and_regression_suite_for_owned_targets
+  - id: W7_CONNECTORS_LIFE_WORK
+    priority: P1
+    owner: Integrations_Lead
+    candidates: [composio, mcp_python_sdk, home_assistant, semantic_kernel]
+    exit: scoped_oauth_and_explicit_action_approval
+  - id: W8_STORAGE_AND_OPERATIONS
+    priority: P0
+    owner: SRE_Storage_Lead
+    target_gb: 500
+    free_reserve_gb: 60
+    exit: verified_disk_root_backup_restore_and_capacity_alerts

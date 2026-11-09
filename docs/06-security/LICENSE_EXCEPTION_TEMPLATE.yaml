@@ -1,0 +1,15 @@
+exception_id: "EXC-YYYY-NNN"
+component_id: "component-id-from-register"
+exact_version_or_digest: ""
+artifact_or_product_scope: ""
+requested_by: ""
+reason: ""
+license_or_security_issue: ""
+mitigations: []
+legal_review_reference: null
+security_review_reference: null
+approver: null
+approved_at: null
+expires_at: null
+removal_or_replacement_plan: ""
+status: "DRAFT"

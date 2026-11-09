@@ -1,0 +1,481 @@
+version: 1.0.0-draft
+research_date: '2026-11-08'
+policy: Research shortlist only. No component is approved for production or redistribution
+  solely by appearing here. Revalidate exact packages, nested licenses, notices, asset/model/data
+  terms, security posture and integration tests.
+components:
+- id: agent-desktop
+  repository: https://github.com/vercel-labs/agent-desktop
+  role: native desktop accessibility driver
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: optional local driver; preserve license/NOTICE; pin binary digest
+  notes: Not an agent or browser automation engine.
+- id: agent-browser
+  repository: https://github.com/vercel-labs/agent-browser
+  role: browser automation CLI/driver
+  observed_license: Apache-2.0 (README badge; root file to re-fetch at adoption)
+  status: researched_candidate
+  decision: evaluate behind BrowserDriver; verify exact root license and package contents
+  notes: Browser-level allowlist is not an OS firewall.
+- id: json-render
+  repository: https://github.com/vercel-labs/json-render
+  role: schema-constrained generative UI
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: evaluate package or patterns; preserve notices
+  notes: ORBIT owns catalog and action authorization.
+- id: agent-skills
+  repository: https://github.com/vercel-labs/agent-skills
+  role: skill examples/guidelines
+  observed_license: Unknown at repository root; some skill files declare MIT
+  status: blocked_pending_file_level_review
+  decision: do not copy whole collection; verify each file and nested license
+  notes: Missing root LICENSE at checked path.
+- id: skills-cli
+  repository: https://github.com/vercel-labs/skills
+  role: skill discovery/installation CLI
+  observed_license: MIT
+  status: researched_candidate
+  decision: optional; review telemetry, supply chain, lock behavior and supported
+    harnesses
+  notes: README discloses telemetry and security-audit requests with opt-out.
+- id: portless
+  repository: https://github.com/vercel-labs/portless
+  role: local dev hostname reverse proxy
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: optional DevEx tool only; never production ingress
+  notes: Local CA trust modification must be explicit and reversible.
+- id: openhands-agent-canvas
+  repository: https://github.com/OpenHands/OpenHands
+  role: self-hosted developer control center / agent backends
+  observed_license: MIT
+  status: researched_candidate
+  decision: adopt AgentBackend/ACP patterns; do not copy branding or UI
+  notes: Repository README currently describes Agent Canvas and local/remote/cloud
+    backends.
+- id: opensandbox
+  repository: https://github.com/opensandbox-group/OpenSandbox
+  role: sandbox lifecycle, runtime and egress controls
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: evaluate provider adapter after Docker baseline and isolation tests
+  notes: Firecracker is advanced and requires verified KVM-capable operations.
+- id: temporal
+  repository: https://temporal.io/
+  role: durable workflow orchestration candidate
+  observed_license: Product/service terms depend on use and distribution; inspect
+    SDK/server license separately
+  status: architecture_candidate
+  decision: compare with internal durable workflow needs and operational cost
+  notes: Do not treat docs as license clearance.
+- id: opentelemetry
+  repository: https://opentelemetry.io/
+  role: telemetry APIs/SDKs
+  observed_license: Project packages commonly Apache-2.0; verify each exact package
+  status: architecture_candidate
+  decision: use vendor-neutral instrumentation behind exporter abstraction
+  notes: Do not log sensitive prompt/browser/desktop payloads.
+- id: trivy
+  repository: https://github.com/aquasecurity/trivy
+  role: vulnerability and license scanner candidate
+  observed_license: Apache-2.0 (reverify exact release)
+  status: security_tool_candidate
+  decision: evaluate as one scanner in CI; unknown license findings require manual
+    review
+  notes: Scanner classification is a signal, not a legal determination.
+- id: openmausbot
+  repository: https://github.com/milind-soni/OpenMausBot
+  role: multi-agent desktop product shell and local harness
+  observed_license: Apache-2.0 except enterprise/ source-available
+  status: preferred_product_shell_candidate_pending_actual_repo_audit
+  decision: prototype only if existing ORBIT shell is insufficient; sparse-checkout
+    enterprise/ exclusion is mandatory
+  notes: Public OSS edition uses Apache-2.0; enterprise/ is under separate source-available
+    terms. Preserve LICENSE, NOTICE, LICENSING.md and third_party notices. No product
+    trademark/mascot rights. Audit CLI plaintext and packaged desktop OS-backed credential
+    paths; ORBIT must use approved vault.
+- id: openclaw
+  repository: https://github.com/openclaw/openclaw
+  role: gateway, channels, model/provider plugins and skills ecosystem
+  observed_license: MIT
+  status: optional_runtime_candidate
+  decision: use published SDK/client/protocol or external runtime adapter; selective
+    package reuse only after dependency review
+  notes: MIT repository metadata. Gateway/native extensions require separate trust;
+    in-process plugins are trusted code, not sandboxed. ORBIT retains policy/task
+    authority.
+- id: hermes-agent
+  repository: https://github.com/NousResearch/hermes-agent
+  role: optional external agent runtime
+  observed_license: MIT
+  status: optional_backend_candidate
+  decision: integrate behind AgentRuntimeAdapter or ACP/CLI; do not create a second
+    canonical control plane
+  notes: Evaluate channel, memory, skill, cron and provider overlap.
+- id: hermes-self-evolution
+  repository: https://github.com/NousResearch/hermes-agent-self-evolution
+  role: offline skill, prompt and tool-description optimization
+  observed_license: MIT declared in README and pyproject metadata; root LICENSE absent
+    at inspected snapshot
+  status: research_only_license_confirmation_required
+  decision: offline proof of concept only; no redistribution before root license evidence
+    or rights-holder confirmation
+  notes: AGPL-3 Darwinian Evolver listed as external CLI only by upstream plan; keep
+    out of ORBIT process without separate legal approval.
+- id: voltagent-awesome-openclaw-skills
+  repository: https://github.com/VoltAgent/awesome-openclaw-skills
+  role: curated skill discovery catalogue
+  observed_license: MIT for catalogue repository; linked skills retain their own licenses
+  status: discovery_only_untrusted
+  decision: ingest listing metadata only; fetch and review each canonical skill independently
+  notes: Security filtering is curation, not a safety certification or grant of rights
+    to linked skill source.
+- id: openhands-software-agent-sdk
+  repository: https://github.com/OpenHands/software-agent-sdk
+  role: software engineering agent SDK and Agent Server
+  observed_license: MIT
+  status: researched_candidate
+  decision: P1 proof of concept for coding worker in ephemeral workspace
+  notes: Scope credentials and workspace to one repo/task.
+- id: stagehand
+  repository: https://github.com/browserbase/stagehand
+  role: TypeScript browser observe/act/extract SDK
+  observed_license: MIT
+  status: researched_candidate
+  decision: benchmark against Playwright and agent-browser behind BrowserDriver; select
+    one baseline
+  notes: Browserbase hosted products are optional and require separate data/cost review.
+- id: browser-use
+  repository: https://github.com/browser-use/browser-use
+  role: Python autonomous browser agent library
+  observed_license: MIT
+  status: alternative_candidate
+  decision: compare only if Python task capabilities justify another browser runtime
+  notes: Hosted cloud APIs and open-source local library are different execution and
+    data paths.
+- id: mem0
+  repository: https://github.com/mem0ai/mem0
+  role: agent memory extraction and retrieval layer
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: P1 memory adapter proof; ORBIT remains authoritative memory governance
+    layer
+  notes: Keep memory scopes per agent/project and support source/expiry/correction/deletion.
+- id: letta-code
+  repository: https://github.com/letta-ai/letta-code
+  role: stateful agent and continual-memory runtime
+  observed_license: Apache-2.0
+  status: alternative_candidate
+  decision: compare with Mem0 only if persistent agent identity/runtime continuity
+    is needed
+  notes: Use current letta-code repository; older letta repository may be historical.
+- id: langgraph
+  repository: https://github.com/langchain-ai/langgraph
+  role: stateful graph-based agent workflow runtime
+  observed_license: MIT
+  status: alternative_candidate
+  decision: P2 workflow PoC; do not add alongside another orchestrator without explicit
+    decision
+  notes: Choose a single canonical durable state and retry owner.
+- id: dspy
+  repository: https://github.com/stanfordnlp/dspy
+  role: offline prompt and tool instruction optimization
+  observed_license: MIT
+  status: researched_candidate
+  decision: use as optimizer layer with holdout tests and human-approved promotion
+  notes: Prompt optimization is not training model weights.
+- id: temporal-server
+  repository: https://github.com/temporalio/temporal
+  role: durable workflow execution
+  observed_license: MIT repository metadata
+  status: researched_candidate
+  decision: P1 comparison for long-running routines/retries; verify SDK/server packages
+    individually
+  notes: Use only after measured proof-of-concept and operational estimate.
+- id: opentelemetry-js
+  repository: https://github.com/open-telemetry/opentelemetry-js
+  role: instrumentation and telemetry SDK
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: adopt vendor-neutral traces, metrics and logs after package-level license
+    review
+  notes: No raw secrets or private prompts in telemetry.
+- id: llamaindex
+  repository: https://github.com/run-llama/llama_index
+  role: document ingestion, parsing and source-aware RAG
+  observed_license: MIT
+  status: researched_candidate
+  decision: adapter candidate; preserve document ACLs and citation provenance
+  notes: Review exact LlamaIndex packages and optional integrations at adoption.
+- id: qdrant
+  repository: https://github.com/qdrant/qdrant
+  role: vector storage and similarity search
+  observed_license: Apache-2.0
+  status: researched_candidate
+  decision: optional vector index after PostgreSQL and memory baseline
+  notes: Vector index is not authoritative; enforce tenant/project filters and deletion
+    propagation.
+- id: pydantic-ai
+  repository: https://github.com/pydantic/pydantic-ai
+  role: typed Python agent framework
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: compare for typed specialist workers; ORBIT remains global control plane
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: ollama
+  repository: https://github.com/ollama/ollama
+  role: local model serving runtime
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: provider adapter candidate; model weights are separately licensed
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: llama.cpp
+  repository: https://github.com/ggml-org/llama.cpp
+  role: quantized local LLM inference
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: benchmark as low-level optional inference backend
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: docling
+  repository: https://github.com/docling-project/docling
+  role: document parsing and ingestion
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: use as parser worker; preserve source provenance and model terms
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: faster-whisper
+  repository: https://github.com/SYSTRAN/faster-whisper
+  role: speech transcription
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: local transcription candidate; audio retention and model terms reviewed
+    separately
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: graphiti
+  repository: https://github.com/getzep/graphiti
+  role: temporal knowledge graph memory
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: experimental adapter; ORBIT retains ACL, consent and deletion authority
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: mcp-python-sdk
+  repository: https://github.com/modelcontextprotocol/python-sdk
+  role: Python MCP client/server SDK
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: protocol tooling only; annotations are not authorization
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: openai-agents-python
+  repository: https://github.com/openai/openai-agents-python
+  role: Python agent handoff/guardrail SDK
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: benchmark as specialist runner; avoid a second global orchestration layer
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: composio
+  repository: https://github.com/ComposioHQ/composio
+  role: connected-app toolkit and auth SDK
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: connector catalogue candidate; review every toolkit and hosted-service
+    boundary
+  notes: Repository metadata/license checked at pinned revision; review exact nested
+    packages, model/data terms, notices and security before reuse.
+- id: playwright
+  repository: https://github.com/microsoft/playwright
+  role: cross-browser automation and testing
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: recommended browser baseline candidate; keep ORBIT browser and egress
+    policies authoritative
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: markitdown
+  repository: https://github.com/microsoft/markitdown
+  role: document/Office to Markdown conversion
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: lightweight alternative to Docling; benchmark output fidelity
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: chroma
+  repository: https://github.com/chroma-core/chroma
+  role: vector search database
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: alternative to Qdrant; select one store after multi-tenant/ACL evaluation
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: text-embeddings-inference
+  repository: https://github.com/huggingface/text-embeddings-inference
+  role: embedding inference worker
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: optional local embedding endpoint; model terms separate
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: transformers
+  repository: https://github.com/huggingface/transformers
+  role: model architectures, tokenizers and pipelines
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: research/model compatibility layer; individual weight licenses separate
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: sherpa-onnx
+  repository: https://github.com/k2-fsa/sherpa-onnx
+  role: offline ASR/TTS/VAD/diarization
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: compare with faster-whisper; models and voice assets separately reviewed
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: semantic-kernel
+  repository: https://github.com/microsoft/semantic-kernel
+  role: multi-language agent/plugin SDK
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: benchmark as specialist runtime; no second global orchestration authority
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: home-assistant
+  repository: https://github.com/home-assistant/core
+  role: local-first home automation platform
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: external connector first; confirm user consent and high-impact action
+    gates
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: microsoft-agent-framework
+  repository: https://github.com/microsoft/agent-framework
+  role: Python/.NET agent workflow framework
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: benchmark as specialist-worker runtime; ORBIT owns task/approval state
+  notes: Pinned public repository snapshot; inspect nested licenses, dependencies,
+    data/model terms, security and tests before adoption.
+- id: vllm
+  repository: https://github.com/vllm-project/vllm
+  role: high-throughput GPU model inference server
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: compare with SGLang; optional GPU server only
+  notes: Do not assume compatible laptop hardware. Models and tokenizers have independent
+    licensing.
+- id: sglang
+  repository: https://github.com/sgl-project/sglang
+  role: high-performance LLM and multimodal inference server
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: alternative GPU inference server to vLLM; benchmark before selection
+  notes: Avoid enabling both as competing production serving layers. Review third-party
+    kernels and model artifacts.
+- id: promptfoo
+  repository: https://github.com/promptfoo/promptfoo
+  role: LLM prompt, agent and RAG evaluation plus red-team tests
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: recommended evaluation/CI proof of concept
+  notes: Run only against owned or explicitly authorized targets; protect test datasets
+    and trace outputs.
+- id: haystack
+  repository: https://github.com/deepset-ai/haystack
+  role: modular retrieval, RAG and agent pipelines
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: alternative RAG pipeline candidate; compare with LlamaIndex
+  notes: ORBIT retains source ACL, data provenance and deletion control.
+- id: duckdb
+  repository: https://github.com/duckdb/duckdb
+  role: embedded local analytics database
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: optional local analytics and benchmark data engine
+  notes: Not a transactional system of record; review extensions and concurrent access.
+- id: garak
+  repository: https://github.com/NVIDIA/garak
+  role: LLM security and robustness probe toolkit
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: recommended pre-release red-team candidate
+  notes: Probe owned or explicitly authorized systems only; use isolated test keys
+    and non-production data.
+- id: graphrag
+  repository: https://github.com/microsoft/graphrag
+  role: graph-based RAG and knowledge graph extraction
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: experimental graph RAG adapter; evaluate after baseline document retrieval
+  notes: Keep ORBIT source ACL, provenance, consent and deletion authoritative.
+- id: guardrails
+  repository: https://github.com/guardrails-ai/guardrails
+  role: structured output validation and guardrail pipeline
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: optional output validation adapter; test false positives and bypasses
+  notes: Framework validation is not authorization; ORBIT policy and approvals remain
+    authoritative.
+- id: milvus
+  repository: https://github.com/milvus-io/milvus
+  role: distributed vector database and approximate nearest-neighbour search
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: scale-out alternative to Qdrant/Chroma; not a default local dependency
+  notes: Select one vector backend after benchmarks; retain PostgreSQL metadata and
+    ACL authority.
+- id: google-adk
+  repository: https://github.com/google/adk-python
+  role: typed Python agent development framework
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Compare with Pydantic AI and Microsoft Agent Framework; avoid a second global
+    orchestrator.
+- id: openai-codex
+  repository: https://github.com/openai/codex
+  role: terminal coding agent runtime and SDK
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Study CLI, patch and worktree patterns; execute only in disposable workspaces.
+- id: gemini-cli
+  repository: https://github.com/google-gemini/gemini-cli
+  role: terminal agent CLI and extension patterns
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Optional specialist backend; review package boundaries and third-party notices.
+- id: opensearch
+  repository: https://github.com/opensearch-project/OpenSearch
+  role: distributed lexical and hybrid search
+  observed_license: Apache-2.0
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Alternative to a custom search layer; use only when simpler Postgres/vector
+    search fails benchmarks.
+- id: swe-agent
+  repository: https://github.com/SWE-agent/SWE-agent
+  role: issue-to-code-patch agent
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Useful coding worker benchmark; pinned revision is older and requires a fresh
+    maintenance/security review.
+- id: faiss
+  repository: https://github.com/facebookresearch/faiss
+  role: vector similarity search library
+  observed_license: MIT
+  status: pinned_for_inspection_only
+  decision: candidate_only_no_production_approval
+  notes: Alternative ANN library; benchmark before selecting over Qdrant/Chroma/Milvus.

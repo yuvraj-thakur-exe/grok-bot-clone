@@ -1,0 +1,52 @@
+{
+  "ORBIT_HOME": "E:\\ORBIT-Storage",
+  "capacity_gb": 500,
+  "target_allocated_gb": 440,
+  "free_reserve_gb": 60,
+  "folders": [
+    {
+      "path": "00-control",
+      "target_gb": 10
+    },
+    {
+      "path": "01-upstream-checkouts",
+      "target_gb": 90
+    },
+    {
+      "path": "02-workspaces",
+      "target_gb": 100
+    },
+    {
+      "path": "03-models",
+      "target_gb": 100
+    },
+    {
+      "path": "04-data-memory",
+      "target_gb": 40
+    },
+    {
+      "path": "05-artifacts",
+      "target_gb": 30
+    },
+    {
+      "path": "06-evaluations",
+      "target_gb": 20
+    },
+    {
+      "path": "07-logs-cache",
+      "target_gb": 5
+    },
+    {
+      "path": "08-backups",
+      "target_gb": 25
+    },
+    {
+      "path": "09-quarantine",
+      "target_gb": 10
+    },
+    {
+      "path": "10-source-intake",
+      "target_gb": 10
+    }
+  ]
+}

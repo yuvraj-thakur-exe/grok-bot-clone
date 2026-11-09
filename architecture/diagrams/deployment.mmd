@@ -1,0 +1,38 @@
+flowchart TB
+ subgraph Client
+ WEB[Next.js Workspace]
+ MOBILE[Desktop / Mobile]
+ end
+ subgraph ControlPlane
+ API[FastAPI API]
+ POLICY[Auth + Policy]
+ ROUTER[Model Router]
+ GATE[Tool Gateway]
+ end
+ subgraph Durable
+ PG[(PostgreSQL + pgvector)]
+ REDIS[(Redis cache)]
+ OBJ[(S3 / MinIO)]
+ TEMP[Temporal]
+ end
+ subgraph Workers
+ WF[Workflow Worker]
+ BR[Playwright Browser Worker]
+ CODE[Code / Git Sandbox]
+ DOC[Document Worker]
+ end
+ WEB --> API
+ MOBILE --> API
+ API --> POLICY
+ API --> PG
+ API --> REDIS
+ API --> OBJ
+ API --> TEMP
+ TEMP --> WF
+ WF --> ROUTER
+ WF --> GATE
+ GATE --> BR
+ GATE --> CODE
+ GATE --> DOC
+ ROUTER --> LLM[LLM Providers]
+ GATE --> WEBSEARCH[Search / Web / MCP]

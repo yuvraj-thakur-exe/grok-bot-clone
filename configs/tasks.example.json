@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "description": "Example independent checks plus a dependent follow-up. Review before execution.",
+  "tasks": [
+    {
+      "id": "host-doctor",
+      "argv": ["@python", "-m", "orbit_cli", "doctor"],
+      "cwd": ".",
+      "depends_on": [],
+      "timeout_seconds": 30,
+      "platforms": ["windows", "linux", "macos"],
+      "mode": "inspect"
+    },
+    {
+      "id": "config-parse",
+      "argv": ["@python", "-m", "json.tool", "configs/tasks.example.json"],
+      "cwd": ".",
+      "depends_on": [],
+      "timeout_seconds": 30,
+      "platforms": ["windows", "linux", "macos"],
+      "mode": "inspect"
+    },
+    {
+      "id": "unit-tests",
+      "argv": ["@python", "-m", "unittest", "discover", "-s", "tests", "-v"],
+      "cwd": ".",
+      "depends_on": [],
+      "timeout_seconds": 180,
+      "platforms": ["windows", "linux", "macos"],
+      "mode": "workspace-write"
+    },
+    {
+      "id": "post-check",
+      "argv": ["@python", "-c", "print('Independent checks completed; inspect each run log.')"],
+      "cwd": ".",
+      "depends_on": ["host-doctor", "config-parse"],
+      "timeout_seconds": 30,
+      "platforms": ["windows", "linux", "macos"],
+      "mode": "inspect"
+    }
+  ]
+}

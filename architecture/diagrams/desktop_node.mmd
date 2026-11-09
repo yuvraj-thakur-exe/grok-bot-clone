@@ -1,0 +1,12 @@
+flowchart TB
+  CP[ORBIT Control Plane] --> BR[Desktop Session Broker]
+  BR <-->|Outbound authenticated WSS / short task leases| NODE[Local Desktop Node]
+  NODE --> POLICY[Local Allowlist and Permission Check]
+  POLICY --> RUN[Fixed argv subprocess runner]
+  RUN --> AD[agent-desktop CLI / optional C FFI]
+  AD --> AX[AX API / UI Automation / AT-SPI]
+  AX --> APP[Native Desktop Applications]
+  BR --> DB[(Device Registry / Leases / Audit)]
+  CP --> TG[Central Policy Tool Gateway]
+  TG --> AG[Agent Runtime]
+  AG --> WF[Durable Workflow Runtime]

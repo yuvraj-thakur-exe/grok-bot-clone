@@ -1,0 +1,32 @@
+policy_version: "1.0"
+release_gate:
+  require_sbom: true
+  require_lockfiles: true
+  require_immutable_artifact_digests: true
+  require_license_review: true
+  require_notice_validation: true
+  fail_on_unknown_license: true
+  fail_on_unverified_binary: true
+  fail_on_critical_vulnerability: true
+  require_human_release_approval: true
+approved_license_classes:
+  class_a:
+    - "Apache-2.0"
+    - "MIT"
+    - "BSD-2-Clause"
+    - "BSD-3-Clause"
+    - "ISC"
+  class_b_review_required: []
+  class_c_reference_or_service_only: []
+  class_d_prohibited: []
+third_party_rules:
+  preserve_upstream_notices: true
+  preserve_required_change_notices: true
+  allow_removing_trademark_notices: false
+  allow_removing_copyright_notices: false
+  require_exact_source_revision: true
+  require_per_file_license_review_when_repo_license_missing: true
+telemetry:
+  third_party_cli_telemetry_requires_review: true
+  opt_out_behavior_must_be_documented: true
+  telemetry_must_not_contain_secrets_or_user_content: true

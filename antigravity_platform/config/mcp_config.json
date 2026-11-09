@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "notebooks": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\YUVRAJ\\.antigravity-ide\\extensions\\googlecloudtools.datacloud-1.2.0-universal\\mcp_servers\\cli\\mcp_proxy_bundle.js",
+        "notebooks-antigravityide"
+      ]
+    },
+    "data-agent-kit": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\YUVRAJ\\.antigravity-ide\\extensions\\googlecloudtools.datacloud-1.2.0-universal\\mcp_servers\\cli\\mcp_proxy_bundle.js",
+        "dataAgentKit-antigravityide"
+      ]
+    },
+    "rea": {
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "D:\\rea\\scripts\\rea.mjs",
+        "mcp"
+      ],
+      "env": {
+        "GHIDRA_INSTALL_DIR": "D:\\tools\\ghidra_12.1.4_PUBLIC",
+        "JAVA_HOME": "C:\\Program Files\\Microsoft\\jdk-21.0.11.10-hotspot\\"
+      }
+    }
+  }
+}

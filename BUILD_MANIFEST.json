@@ -1,0 +1,182 @@
+{
+  "product": "ORBIT Cross-Platform Developer Toolkit",
+  "version": "1.1.0",
+  "build_date_utc": "2026-11-08T06:28:20.209167+00:00",
+  "python_requires": ">=3.11",
+  "third_party_python_runtime_dependencies": [],
+  "file_count_excluding_manifests": 33,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "size_bytes": 561,
+      "sha256": "4c2e5b8765f7002b73482756060dc0f7432acec218b97fb9499021af7c4471c0"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 149,
+      "sha256": "b22cf69a141d8aaf840e79e0d4b7a232adc1af6b0cd9877afd3415d2701d1656"
+    },
+    {
+      "path": ".python-version",
+      "size_bytes": 5,
+      "sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 855,
+      "sha256": "bd57a7c49619bcf278d3a2e488cb733855543a550f5b2be7e8454b42427f3d41"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1075,
+      "sha256": "a2301dd02c4f02194d2eac28eee4089ac6f4b424e23a46b9d3b22f218686316e"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 6961,
+      "sha256": "462676f5eb52d28f54dbf2abc6611ffabfedf4f38fd2275592354835288cba08"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size_bytes": 1288,
+      "sha256": "17e5455a902bdd2a394b6d905e17c42b20cd6d8a0168c31431ea5844decbd597"
+    },
+    {
+      "path": "configs/storage-layout.json",
+      "size_bytes": 473,
+      "sha256": "d97851becfdaae30e6d5d06a7f6815f1c20707c366d0f1c04d714f0dcd2cf6f0"
+    },
+    {
+      "path": "configs/tasks.example.json",
+      "size_bytes": 1227,
+      "sha256": "d98efa2bd2be9c8317f5b91f35d54845572e577da483c96038df1036f120f441"
+    },
+    {
+      "path": "configs/upstream-candidates.lock.json",
+      "size_bytes": 8221,
+      "sha256": "5dea9ca3de6c01ccfe0a2e672bd13cc857b7f38378e291f06c3f55587e2799e6"
+    },
+    {
+      "path": "docs/500GB_OPERATIONS.md",
+      "size_bytes": 1598,
+      "sha256": "0c96f1efd5bd6afd8b075ff0ce1e0bd3b911506213c9b123fb19ede86757e240"
+    },
+    {
+      "path": "docs/CROSS_PLATFORM_RUNTIME.md",
+      "size_bytes": 3996,
+      "sha256": "99ff95fae9c56bb21d1fa1cd7bbef7dc1b27c358a04b609ddb8d9c1610908796"
+    },
+    {
+      "path": "docs/EXECUTION_AND_PARALLELISM.md",
+      "size_bytes": 2488,
+      "sha256": "55b8a7c38a9166112ab3c77e569530c40ff03b9966315b62e3f756c4937c637c"
+    },
+    {
+      "path": "docs/SECURITY_BOUNDARIES.md",
+      "size_bytes": 1920,
+      "sha256": "8f57fe4e2fad958c88d83d568f023718848ed6bafba30cdaf50e6f9723971df7"
+    },
+    {
+      "path": "docs/TOKEN_AND_CONTEXT_EFFICIENCY.md",
+      "size_bytes": 2484,
+      "sha256": "3895f06f2705fdfcf86480f441e3489b5827d0e3da266bb1c3e521362b5fda89"
+    },
+    {
+      "path": "docs/V11_EXECUTIVE_DECISIONS.md",
+      "size_bytes": 2659,
+      "sha256": "2ca681d3375210e9a36dbc96e6946ce9f9270c7c5e78c678877cf5c84fbc33a5"
+    },
+    {
+      "path": "docs/V11_NEXT_EXECUTION_PLAN.md",
+      "size_bytes": 7133,
+      "sha256": "fadd5f8cb604d751661c6011686d07a1d88108eee34f7582ed81432cb9bc5eee"
+    },
+    {
+      "path": "docs/V11_UPSTREAM_PIN_AUDIT.md",
+      "size_bytes": 3032,
+      "sha256": "6974b6099f9960ce3b1fc6059fe3d4dde6109a853cc18a7264a75e697c37823a"
+    },
+    {
+      "path": "docs/V11_VALIDATION_REPORT.md",
+      "size_bytes": 3424,
+      "sha256": "eb6eb67964aba8a379712f4d42548385a55b20a2a0fc1da7b2e57f6a9abcda8c"
+    },
+    {
+      "path": "orbit.bat",
+      "size_bytes": 398,
+      "sha256": "f1491169947b3910a7bffbd298ed438f6d864c604d3d0b3038c6a02e3fec1c35"
+    },
+    {
+      "path": "orbit.ps1",
+      "size_bytes": 545,
+      "sha256": "3cdf1292f6e3cf3ed89b073f9b8ce1482f844321f1c81aa41d189160a57c8724"
+    },
+    {
+      "path": "orbit.sh",
+      "size_bytes": 472,
+      "sha256": "22a9e5a87f90da314ef8270671a922fb8cbf4a4c2759267bc20fc2656cd03586"
+    },
+    {
+      "path": "pyproject.toml",
+      "size_bytes": 192,
+      "sha256": "d8fb7fe3c6df608c74a598e85654f80cd30538c09b941edf4cb3324689cc4117"
+    },
+    {
+      "path": "src/orbit_cli/__init__.py",
+      "size_bytes": 69,
+      "sha256": "58df8e719d00d21d2eaaee8c3a7dee2b39e094b0cd241a3a68afb00064d525cb"
+    },
+    {
+      "path": "src/orbit_cli/__main__.py",
+      "size_bytes": 79,
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "src/orbit_cli/cli.py",
+      "size_bytes": 4688,
+      "sha256": "774b8aa6e9ffec10be1032fba21cb70847986df68390161174234a06ebc892fe"
+    },
+    {
+      "path": "src/orbit_cli/context.py",
+      "size_bytes": 8725,
+      "sha256": "2f662f519f64c80cd6e74421ce42fe0e1004a1b4dc5b2acea3ea9e85c66200fd"
+    },
+    {
+      "path": "src/orbit_cli/platforms.py",
+      "size_bytes": 883,
+      "sha256": "e47892c2604a63d657ee581d7cf6f91c5973b412715e0d7406c4b6889daaeaa1"
+    },
+    {
+      "path": "src/orbit_cli/storage.py",
+      "size_bytes": 6692,
+      "sha256": "22655207291f51068460e6bd76397b4767615ae92c82475d2245d690de520641"
+    },
+    {
+      "path": "src/orbit_cli/task_runner.py",
+      "size_bytes": 14486,
+      "sha256": "b1966e93c113dc55ea68576160da5674f234963f018ba744f9c0b33d9f969518"
+    },
+    {
+      "path": "tests/test_context.py",
+      "size_bytes": 2777,
+      "sha256": "d2af7a28071f6924a4d48229b560513311a508273e7d1b33953c0f091b6ab70e"
+    },
+    {
+      "path": "tests/test_storage.py",
+      "size_bytes": 2362,
+      "sha256": "74765821e3dfb9bc03423a52dcbd152bb69719deb469097e27700544a37cfc98"
+    },
+    {
+      "path": "tests/test_task_runner.py",
+      "size_bytes": 5367,
+      "sha256": "8d6ff0f24e809ff2a4ffcb8aa5bf629b356a49c9f540a2194f1e64105a213321"
+    }
+  ],
+  "validation": {
+    "unit_tests": "17 passed on Linux x86_64 with Python 3.13.5",
+    "example_task_dag": "4 of 4 tasks passed",
+    "compileall": "passed",
+    "json_manifests": "passed",
+    "windows_macos_remote_ci": "configured, not run in this build session"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "capacity_gb_decimal": 500,
+  "reserve_gb_decimal": 60,
+  "soft_targets_gb_decimal": {
+    "00-control": 10,
+    "01-upstream-checkouts": 100,
+    "02-workspaces": 100,
+    "03-models": 90,
+    "04-data-memory": 35,
+    "05-artifacts": 25,
+    "06-evaluations": 20,
+    "07-logs-cache": 5,
+    "08-backups": 25,
+    "09-quarantine": 10,
+    "10-source-intake": 20
+  },
+  "free_reserve_is_not_an_allocation": true,
+  "units": "decimal GB (1 GB = 1,000,000,000 bytes)"
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "lock_kind": "research-candidates-not-adopted-dependencies",
+  "observed_on": "2026-11-08",
+  "policy": {
+    "clone_only_when_selected": true,
+    "sparse_checkout": true,
+    "never_execute_upstream_setup_scripts_during_intake": true,
+    "root_license_is_not_file_level_clearance": true,
+    "require_human_license_security_and_qa_review_before_source_adoption": true
+  },
+  "repositories": [
+    {
+      "id": "openmausbot",
+      "full_name": "milind-soni/OpenMausBot",
+      "clone_url": "https://github.com/milind-soni/OpenMausBot.git",
+      "default_branch": "main",
+      "commit_sha": "bcad12dfbf4da4cdb19af162caaf64666af6235f",
+      "commit_author_date_utc": "2026-11-08T06:17:39Z",
+      "root_license": "Apache-2.0",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/milind-soni/OpenMausBot/bcad12dfbf4da4cdb19af162caaf64666af6235f/LICENSE",
+      "intended_role": "product-shell-and-approval-flow-reference",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "NOTICE",
+        "README.md",
+        "server/agent-tool-policy.ts",
+        "server/agents-turn.ts",
+        "server/app-events.ts",
+        "shared/approval-mode.ts",
+        "shared/live-approval.ts",
+        "shared/outside-write.ts",
+        "shared/routines.ts",
+        "shared/skill-import.ts",
+        "shared/connector-scopes.ts",
+        "shared/team-setup.ts"
+      ],
+      "restrictions": [
+        "Do not clone or import enterprise/.",
+        "Do not reuse project name, logo, mascot, illustrations or trade dress.",
+        "Preserve Apache-2.0 license, NOTICE and all nested dependency notices.",
+        "Compare its architecture with the real ORBIT application before choosing a product shell."
+      ],
+      "commit_url": "https://github.com/milind-soni/OpenMausBot/commit/bcad12dfbf4da4cdb19af162caaf64666af6235f"
+    },
+    {
+      "id": "openhands-sdk",
+      "full_name": "OpenHands/software-agent-sdk",
+      "clone_url": "https://github.com/OpenHands/software-agent-sdk.git",
+      "default_branch": "main",
+      "commit_sha": "51ad22388a154d48353fac7a82cfd5255dbeefc1",
+      "commit_author_date_utc": "2026-11-08T00:01:28Z",
+      "root_license": "MIT",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/OpenHands/software-agent-sdk/51ad22388a154d48353fac7a82cfd5255dbeefc1/LICENSE",
+      "intended_role": "isolated-coding-worker-sdk-evaluation",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "openhands/",
+        "examples/",
+        "tests/",
+        "pyproject.toml"
+      ],
+      "restrictions": [
+        "Run only in disposable workspaces with no host credentials or unrestricted mounts.",
+        "Preserve MIT copyright and permission notices.",
+        "Do not make this SDK the ORBIT task or policy authority."
+      ],
+      "commit_url": "https://github.com/OpenHands/software-agent-sdk/commit/51ad22388a154d48353fac7a82cfd5255dbeefc1"
+    },
+    {
+      "id": "playwright",
+      "full_name": "microsoft/playwright",
+      "clone_url": "https://github.com/microsoft/playwright.git",
+      "default_branch": "main",
+      "commit_sha": "07c7069cdbb1f5c7331d3f4d2abd864dcfde745a",
+      "commit_author_date_utc": "2026-11-07T01:02:36Z",
+      "root_license": "Apache-2.0",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/microsoft/playwright/07c7069cdbb1f5c7331d3f4d2abd864dcfde745a/LICENSE",
+      "intended_role": "baseline-browser-driver-reference",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "packages/",
+        "tests/",
+        "docs/"
+      ],
+      "restrictions": [
+        "Pin the package and matching browser binaries together.",
+        "Use isolated browser contexts and domain/network policy.",
+        "Do not treat browser page text as trusted agent instructions."
+      ],
+      "commit_url": "https://github.com/microsoft/playwright/commit/07c7069cdbb1f5c7331d3f4d2abd864dcfde745a"
+    },
+    {
+      "id": "opensandbox",
+      "full_name": "opensandbox-group/OpenSandbox",
+      "clone_url": "https://github.com/opensandbox-group/OpenSandbox.git",
+      "default_branch": "main",
+      "commit_sha": "a8d44ecf7338cb810565b299a0ec2d407f36007f",
+      "commit_author_date_utc": "2026-11-08T06:16:18Z",
+      "root_license": "Apache-2.0",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/opensandbox-group/OpenSandbox/a8d44ecf7338cb810565b299a0ec2d407f36007f/LICENSE",
+      "intended_role": "sandbox-provider-evaluation",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "docs/",
+        "examples/",
+        "server/",
+        "sdk/",
+        "tests/"
+      ],
+      "restrictions": [
+        "Compare against a simpler Docker-based development provider before adoption.",
+        "Deny network egress by default and enforce CPU, memory, disk and time limits.",
+        "Do not expose Docker sockets or broad host mounts to code jobs."
+      ],
+      "commit_url": "https://github.com/opensandbox-group/OpenSandbox/commit/a8d44ecf7338cb810565b299a0ec2d407f36007f"
+    },
+    {
+      "id": "openclaw",
+      "full_name": "openclaw/openclaw",
+      "clone_url": "https://github.com/openclaw/openclaw.git",
+      "default_branch": "main",
+      "commit_sha": "f4976c968539eda937ce3ffdaaa5146c55bcb1bd",
+      "commit_author_date_utc": "2026-11-08T06:23:03Z",
+      "root_license": "MIT",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/openclaw/openclaw/f4976c968539eda937ce3ffdaaa5146c55bcb1bd/LICENSE",
+      "intended_role": "optional-agent-gateway-and-plugin-architecture-reference",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "NOTICE",
+        "packages/plugin-sdk/",
+        "packages/gateway-protocol/",
+        "packages/agent-core/",
+        "packages/net-policy/",
+        "extensions/browser/",
+        "extensions/deep-research/",
+        "extensions/document-extract/",
+        "extensions/github/"
+      ],
+      "restrictions": [
+        "Treat in-process native plugins as trusted code, not sandboxed plugins.",
+        "Do not create a second global task authority or scheduler beside ORBIT.",
+        "Use the ORBIT adapter and policy gateway for every tool action."
+      ],
+      "commit_url": "https://github.com/openclaw/openclaw/commit/f4976c968539eda937ce3ffdaaa5146c55bcb1bd"
+    },
+    {
+      "id": "agent-desktop",
+      "full_name": "vercel-labs/agent-desktop",
+      "clone_url": "https://github.com/vercel-labs/agent-desktop.git",
+      "default_branch": "main",
+      "commit_sha": "b43ac4f6e892ef608f8851428613c4009f0e84c7",
+      "commit_author_date_utc": "2026-11-05T06:30:44Z",
+      "root_license": "Apache-2.0",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/vercel-labs/agent-desktop/b43ac4f6e892ef608f8851428613c4009f0e84c7/LICENSE",
+      "intended_role": "native-desktop-accessibility-driver-reference",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "AGENTS.md",
+        "CONCEPTS.md",
+        "docs/",
+        "src/",
+        "crates/core/src/adapter/",
+        "skills/agent-desktop/",
+        "skills/agent-desktop-macos/",
+        "skills/agent-desktop-windows/",
+        "skills/agent-desktop-linux/"
+      ],
+      "restrictions": [
+        "Run only in a paired local node inside the logged-in interactive desktop session.",
+        "Use an outbound authenticated connection and short-lived leases; never expose a public inbound listener.",
+        "Start with read-only commands and re-observe after every permitted mutation.",
+        "Browser pages remain under the Playwright browser driver, not this native desktop adapter."
+      ],
+      "commit_url": "https://github.com/vercel-labs/agent-desktop/commit/b43ac4f6e892ef608f8851428613c4009f0e84c7"
+    },
+    {
+      "id": "opengrokbot",
+      "full_name": "Z4YT0N/OpenGrokBot",
+      "clone_url": "https://github.com/Z4YT0N/OpenGrokBot.git",
+      "default_branch": "main",
+      "commit_sha": "86e45d2023e6921a79ad9bfcdc5d25ac0a593bdc",
+      "commit_author_date_utc": "2026-11-09T00:00:00Z",
+      "root_license": "MIT",
+      "root_license_file": "LICENSE",
+      "root_license_url": "https://raw.githubusercontent.com/Z4YT0N/OpenGrokBot/86e45d2023e6921a79ad9bfcdc5d25ac0a593bdc/LICENSE",
+      "intended_role": "grok-bot-persona-group-chat-and-electron-shell",
+      "status": "candidate-only",
+      "sparse_paths": [
+        "LICENSE",
+        "README.md",
+        "team.example.json",
+        "client/src",
+        "server/index.ts",
+        "desktop/main.cjs"
+      ],
+      "restrictions": [
+        "Preserve MIT license and author notice (Copyright 2026 Mahmoud Amr).",
+        "Integrate persona routing behind ORBIT workspace policies."
+      ],
+      "commit_url": "https://github.com/Z4YT0N/OpenGrokBot/commit/86e45d2023e6921a79ad9bfcdc5d25ac0a593bdc"
+    }
+  ]
+}

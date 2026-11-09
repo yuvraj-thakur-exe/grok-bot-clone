@@ -1,0 +1,34 @@
+version: 1
+status: proposed
+brand: ORBIT
+trademark_status: not_cleared
+assets:
+  - id: orbit-wordmark
+    path: "assets/brand/orbit-wordmark.svg"
+    status: not_created
+    creator: "ORBIT design team"
+    source: "original artwork required"
+    license: "to_be_decided"
+    sha256: null
+    approval: "founder_and_brand_owner"
+  - id: orbit-app-icon
+    path: "assets/brand/orbit-app-icon.svg"
+    status: not_created
+    creator: "ORBIT design team"
+    source: "original artwork required"
+    license: "to_be_decided"
+    sha256: null
+    approval: "founder_and_brand_owner"
+  - id: orbit-color-tokens
+    path: "examples/brand/orbit-brand-tokens.json"
+    status: proposed
+    creator: "ORBIT project"
+    source: "first-party token proposal"
+    license: "project_license_when_adopted"
+    sha256: null
+    approval: "design_review"
+policy:
+  third_party_logos_in_product_branding: prohibited
+  third_party_legal_notices: must_preserve
+  upstream_screenshots: require_permission_and_attribution
+  generated_assets: record_model_provider_and_prompt_provenance

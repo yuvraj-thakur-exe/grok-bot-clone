@@ -1,0 +1,13 @@
+flowchart TD
+  Task[Research task] --> Plan[Query planning]
+  Plan --> Search[Search adapters]
+  Search --> Normalize[Normalize and deduplicate]
+  Normalize --> Guard[URL / SSRF policy]
+  Guard --> Fetch[Fetch and extract]
+  Fetch --> Provenance[Store source metadata and locators]
+  Provenance --> Claims[Extract claims and evidence]
+  Claims --> Verify[Cross-check / conflict detection]
+  Verify --> Report[Report with claim-level citations]
+  Report --> Review{Evidence sufficient?}
+  Review -->|No| Plan
+  Review -->|Yes| Done[Complete with limitations]

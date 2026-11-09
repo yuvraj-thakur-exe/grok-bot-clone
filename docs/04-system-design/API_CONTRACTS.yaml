@@ -1,0 +1,1037 @@
+openapi: 3.1.0
+info:
+  title: ORBIT API
+  version: 0.7.0-draft
+  description: Draft ORBIT v0.7 contract. Paths are design contracts, not proof of implemented endpoints.
+servers:
+- url: http://localhost:8000/api/v1
+paths:
+  /workspaces/{workspace_id}/tasks:
+    post:
+      summary: Create an idempotent agent task
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          minLength: 8
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - objective
+              properties:
+                objective:
+                  type: string
+                  minLength: 1
+                  maxLength: 20000
+                agent_id:
+                  type: string
+                  format: uuid
+                mode:
+                  type: string
+                  enum:
+                  - fast
+                  - balanced
+                  - deep
+                  default: balanced
+                attachment_ids:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+      responses:
+        '202':
+          description: Task accepted for durable execution
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - task_id
+                - status
+                - events_url
+                properties:
+                  task_id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                    enum:
+                    - queued
+                  events_url:
+                    type: string
+                    format: uri
+        '401':
+          description: Unauthenticated
+        '403':
+          description: Workspace access denied
+        '409':
+          description: Idempotency conflict
+        '422':
+          description: Invalid request
+  /tasks/{task_id}/events:
+    get:
+      summary: Subscribe to durable task event stream
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: header
+        name: Last-Event-ID
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Server-sent events
+          content:
+            text/event-stream:
+              schema:
+                type: string
+        '403':
+          description: Task access denied
+  /workspaces/{workspace_id}/desktop-devices:
+    get:
+      summary: List paired desktop devices visible to the workspace
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Authorized device list
+        '401':
+          description: Unauthenticated
+        '403':
+          description: Workspace access denied
+  /workspaces/{workspace_id}/desktop-devices/pairing-sessions:
+    post:
+      summary: Create a short-lived, single-use desktop pairing challenge
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '201':
+          description: Pairing challenge created; secret is returned once
+        '401':
+          description: Unauthenticated
+        '403':
+          description: Workspace access denied
+        '429':
+          description: Pairing rate limit reached
+  /desktop-devices/{device_id}:
+    delete:
+      summary: Revoke a paired desktop device and invalidate its leases
+      parameters:
+      - in: path
+        name: device_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: Device revoked
+        '401':
+          description: Unauthenticated
+        '403':
+          description: Device access denied
+        '404':
+          description: Device not found
+  /desktop-devices/{device_id}/capability-reports:
+    post:
+      summary: Submit a bounded runtime capability and OS permission report
+      parameters:
+      - in: path
+        name: device_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - driver_version
+              - contract_version
+              - platform
+              - capabilities
+              - permissions
+              properties:
+                driver_version:
+                  type: string
+                  maxLength: 64
+                contract_version:
+                  type: string
+                  maxLength: 32
+                platform:
+                  type: string
+                  enum:
+                  - macos
+                  - windows
+                  - linux
+                platform_version:
+                  type: string
+                  maxLength: 64
+                architecture:
+                  type: string
+                  enum:
+                  - x64
+                  - arm64
+                capabilities:
+                  type: object
+                  additionalProperties:
+                    type: boolean
+                permissions:
+                  type: object
+                  additionalProperties:
+                    type: string
+                    enum:
+                    - granted
+                    - denied
+                    - not_required
+                    - unknown
+      responses:
+        '201':
+          description: Capability report accepted
+        '400':
+          description: Invalid or oversized capability report
+        '403':
+          description: Device access denied
+  /tasks/{task_id}/desktop-leases:
+    post:
+      summary: Request a short-lived desktop execution lease for a task
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '201':
+          description: Lease created with bounded capability scope
+        '403':
+          description: Task or device access denied
+        '409':
+          description: Conflicting active mutating lease
+  /desktop-leases/{lease_id}/observations:
+    post:
+      summary: Request a fresh bounded native desktop observation
+      parameters:
+      - in: path
+        name: lease_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - scope
+              properties:
+                scope:
+                  type: object
+                  description: App/window scope; no arbitrary executable path
+                max_nodes:
+                  type: integer
+                  minimum: 1
+                  maximum: 2000
+                  default: 500
+                max_text_chars:
+                  type: integer
+                  minimum: 0
+                  maximum: 12000
+                  default: 4000
+      responses:
+        '200':
+          description: Observation with snapshot id and completeness flag
+        '409':
+          description: Lease expired or session not interactive
+        '422':
+          description: Invalid scope or capability unavailable
+  /desktop-leases/{lease_id}/actions:
+    post:
+      summary: Execute one allowlisted desktop action against a fresh snapshot ref
+      parameters:
+      - in: path
+        name: lease_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          minLength: 8
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - snapshot_id
+              - target_ref
+              - operation
+              - arguments
+              additionalProperties: false
+              properties:
+                snapshot_id:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                target_ref:
+                  type: string
+                  minLength: 1
+                  maxLength: 128
+                operation:
+                  type: string
+                  enum:
+                  - click
+                  - set-value
+                  - check
+                  - uncheck
+                  - scroll
+                arguments:
+                  type: object
+                expected_postcondition:
+                  type: object
+      responses:
+        '202':
+          description: Action accepted for policy evaluation/execution; may require approval
+        '403':
+          description: Policy or lease denied
+        '409':
+          description: Stale ref
+          ambiguous target: null
+          active mutation or idempotency conflict: null
+        '422':
+          description: Invalid arguments
+          incomplete observation or unsupported capability: null
+  /desktop-leases/{lease_id}:
+    delete:
+      summary: Release a lease and stop accepting new desktop actions
+      parameters:
+      - in: path
+        name: lease_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: Lease released
+        '404':
+          description: Lease not found
+  /tasks/{task_id}/desktop-events:
+    get:
+      summary: Subscribe to desktop task events with reconnect cursor
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: header
+        name: Last-Event-ID
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Server-sent event stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+        '403':
+          description: Task access denied
+  /workspaces/{workspace_id}/agent-backends:
+    get:
+      summary: List approved external agent backends and their capabilities
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      responses:
+        '200':
+          description: Workspace-scoped backend inventory
+        '403':
+          description: Workspace access denied
+    post:
+      summary: Register an external agent backend after admin approval
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - adapter_type
+              - endpoint_ref
+              properties:
+                name:
+                  type: string
+                  maxLength: 120
+                adapter_type:
+                  type: string
+                  enum:
+                  - local_cli
+                  - local_server
+                  - remote_server
+                  - acp
+                  - managed_provider
+                endpoint_ref:
+                  type: string
+                  maxLength: 500
+                secret_ref:
+                  type: string
+                  description: Vault reference only; never a secret value
+                enabled:
+                  type: boolean
+                  default: false
+      responses:
+        '201':
+          description: Backend registered disabled pending capability/security review
+        '403':
+          description: Admin permission required
+        '422':
+          description: Invalid backend manifest
+  /workspaces/{workspace_id}/skills:
+    get:
+      summary: List installed and available ORBIT skills
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      responses:
+        '200':
+          description: Skill list with version
+          license and trust status: null
+    post:
+      summary: Submit a skill package for validation and quarantine
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - source_uri
+              - immutable_revision
+              - sha256
+              properties:
+                source_uri:
+                  type: string
+                  format: uri
+                immutable_revision:
+                  type: string
+                sha256:
+                  type: string
+                  pattern: ^[a-fA-F0-9]{64}$
+                requested_permissions:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '202':
+          description: Skill queued for malware
+          manifest: null
+          license and permission review: null
+        '403':
+          description: Workspace admin required
+        '422':
+          description: Invalid skill source or digest
+  /workspaces/{workspace_id}/skills/{skill_id}/install:
+    post:
+      summary: Activate a validated skill after permissions and human review
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      - name: skill_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Skill activation state
+        '403':
+          description: Skill activation not authorized
+        '409':
+          description: License
+          digest: null
+          scan or review gate unresolved: null
+  /workspaces/{workspace_id}/sandbox-sessions:
+    post:
+      summary: Create a disposable sandbox session under a named runtime profile
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - profile
+              - image_digest
+              - network_policy
+              properties:
+                profile:
+                  type: string
+                  enum:
+                  - local_dev
+                  - isolated_container
+                  - remote_container
+                  - microvm
+                image_digest:
+                  type: string
+                  pattern: ^sha256:[a-fA-F0-9]{64}$
+                network_policy:
+                  type: object
+                  required:
+                  - default_action
+                  - allow
+                  properties:
+                    default_action:
+                      type: string
+                      enum:
+                      - deny
+                    allow:
+                      type: array
+                      items:
+                        type: string
+                cpu_limit_millis:
+                  type: integer
+                  minimum: 100
+                  maximum: 64000
+                memory_limit_mib:
+                  type: integer
+                  minimum: 128
+                  maximum: 131072
+                ttl_seconds:
+                  type: integer
+                  minimum: 60
+                  maximum: 86400
+      responses:
+        '201':
+          description: Sandbox created; task-scoped metadata returned
+        '403':
+          description: Sandbox policy denied
+        '422':
+          description: Invalid runtime profile or resource policy
+  /sandbox-sessions/{sandbox_id}:
+    get:
+      summary: Inspect sandbox state and runtime capabilities
+      parameters:
+      - name: sandbox_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Sandbox status
+        '404':
+          description: Sandbox not found
+    delete:
+      summary: Destroy sandbox and revoke ephemeral credentials
+      parameters:
+      - name: sandbox_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: Sandbox destroyed
+        '404':
+          description: Sandbox not found
+  /workspaces/{workspace_id}/generative-ui/specs:
+    post:
+      summary: Validate and store a declarative generated UI spec
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - catalog_version
+              - spec
+              properties:
+                catalog_version:
+                  type: string
+                spec:
+                  type: object
+                source_task_id:
+                  type: string
+                  format: uuid
+      responses:
+        '201':
+          description: Spec validated and stored
+        '422':
+          description: Unknown component/action
+          unsafe binding or schema limit exceeded: null
+  /workspaces/{workspace_id}/compliance/components:
+    get:
+      summary: List third-party components and license approval status
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      responses:
+        '200':
+          description: Component inventory with SPDX expression
+          digest: null
+          notice status and approval state: null
+  /workspaces/{workspace_id}/compliance/sbom:
+    post:
+      summary: Upload generated SBOM for release candidate validation
+      parameters:
+      - $ref: '#/components/parameters/WorkspaceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - format
+              - version
+              - components
+              properties:
+                format:
+                  type: string
+                  enum:
+                  - SPDX-2.3
+                  - CycloneDX-1.6
+                version:
+                  type: string
+                components:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                    - name
+                    - version
+                    - purl
+                    - license_expression
+                    - digest
+                    properties:
+                      name:
+                        type: string
+                      version:
+                        type: string
+                      purl:
+                        type: string
+                      license_expression:
+                        type: string
+                      digest:
+                        type: string
+      responses:
+        '202':
+          description: SBOM queued for license and vulnerability gates
+        '409':
+          description: Release candidate blocked by compliance finding
+  /workspaces/{workspace_id}/skills/imports:
+    post:
+      summary: Stage an immutable skill source for security and license review
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          minLength: 8
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - source_url
+              - revision
+              properties:
+                source_url:
+                  type: string
+                  format: uri
+                revision:
+                  type: string
+                  minLength: 7
+                  maxLength: 128
+                requested_agent_ids:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
+                requested_capabilities:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '202':
+          description: Skill staged in quarantine; not executable
+        '400':
+          description: Invalid source or revision
+        '403':
+          description: Workspace access denied
+        '409':
+          description: Conflicting import
+        '422':
+          description: Unsupported source
+  /skills/imports/{import_id}:
+    get:
+      summary: Get skill import, digest, review state and scan evidence
+      parameters:
+      - in: path
+        name: import_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Import status and review evidence
+        '403':
+          description: Import access denied
+        '404':
+          description: Import not found
+  /skills/imports/{import_id}/decision:
+    post:
+      summary: Record reviewer decision for a quarantined skill version
+      parameters:
+      - in: path
+        name: import_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - decision
+              - reviewer_id
+              properties:
+                decision:
+                  type: string
+                  enum:
+                  - approve
+                  - reject
+                  - request_changes
+                reviewer_id:
+                  type: string
+                  format: uuid
+                reason:
+                  type: string
+                  maxLength: 4000
+                approved_capabilities:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Review decision recorded
+        '403':
+          description: Reviewer is not authorized
+        '409':
+          description: Import is not reviewable
+  /workspaces/{workspace_id}/agents/{agent_id}/skills/{skill_id}/activation:
+    post:
+      summary: Enable a reviewed immutable skill version for an agent
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: agent_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        name: skill_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - version
+              - enabled
+              properties:
+                version:
+                  type: string
+                enabled:
+                  type: boolean
+      responses:
+        '200':
+          description: Skill activation state updated
+        '403':
+          description: Workspace or skill permission denied
+        '409':
+          description: Skill version is not approved
+  /tasks/{task_id}/artifacts:
+    get:
+      summary: List task artifacts and verification evidence
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Artifact metadata, hashes and evidence references
+        '403':
+          description: Task access denied
+        '404':
+          description: Task not found
+  /workspaces/{workspace_id}/upstreams:
+    get:
+      summary: List upstream repositories approved for inspection in a workspace
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Pinned upstream repository metadata; no source contents returned
+        '403':
+          description: Workspace access denied
+  /workspaces/{workspace_id}/source-imports:
+    post:
+      summary: Create a quarantined source import review request
+      parameters:
+      - in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - upstream_id
+              - commit_sha
+              - source_path
+              - sha256
+              properties:
+                upstream_id:
+                  type: string
+                commit_sha:
+                  type: string
+                  pattern: ^[0-9a-f]{40}$
+                source_path:
+                  type: string
+                  maxLength: 1024
+                sha256:
+                  type: string
+                  pattern: ^[0-9a-f]{64}$
+                review_ticket:
+                  type: string
+                  maxLength: 128
+      responses:
+        '202':
+          description: Import is quarantined pending legal/security/build review
+        '403':
+          description: Workspace access denied
+        '409':
+          description: Commit or digest mismatch
+  /source-imports/{import_id}/review:
+    post:
+      summary: Record independent source import reviews and decision
+      parameters:
+      - in: path
+        name: import_id
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - license_review
+              - security_review
+              - test_review
+              - decision
+              properties:
+                license_review:
+                  type: string
+                  enum:
+                  - approved
+                  - blocked
+                  - needs_counsel
+                security_review:
+                  type: string
+                  enum:
+                  - approved
+                  - blocked
+                  - needs_changes
+                test_review:
+                  type: string
+                  enum:
+                  - passed
+                  - failed
+                  - not_run
+                decision:
+                  type: string
+                  enum:
+                  - stage_only
+                  - approved_for_pr
+                  - rejected
+                evidence_refs:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Review recorded; production merge remains a separate human-approved action
+        '403':
+          description: Reviewer is not authorized
+        '409':
+          description: Review state conflict
+components:
+  schemas:
+    DesktopDelivery:
+      type: string
+      enum:
+      - not_delivered
+      - delivery_uncertain
+      - delivered_unverified
+      - delivered_verified
+      - unknown
+    DesktopDeviceStatus:
+      type: object
+      required:
+      - id
+      - status
+      - platform
+      - last_seen_at
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum:
+          - pairing
+          - online
+          - offline
+          - paused
+          - revoked
+        platform:
+          type: string
+          enum:
+          - macos
+          - windows
+          - linux
+        driver_version:
+          type: string
+        contract_version:
+          type: string
+        last_seen_at:
+          type: string
+          format: date-time
+    DesktopActionReceipt:
+      type: object
+      required:
+      - action_id
+      - operation
+      - delivery
+      - retry
+      properties:
+        action_id:
+          type: string
+          format: uuid
+        operation:
+          type: string
+        delivery:
+          $ref: '#/components/schemas/DesktopDelivery'
+        retry:
+          type: string
+          enum:
+          - safe
+          - unsafe
+          - unknown
+        verification_scope:
+          type: string
+          nullable: true
+  parameters:
+    WorkspaceId:
+      name: workspace_id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid

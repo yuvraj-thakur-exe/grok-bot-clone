@@ -1,0 +1,33 @@
+{
+  "brand": "ORBIT",
+  "version": "0.3-draft",
+  "tagline": "An AI workspace that turns intent into verified work.",
+  "trademarkStatus": "NOT_CLEARED",
+  "productModules": [
+    "ORBIT Workspace",
+    "ORBIT Core",
+    "ORBIT Agent Runtime",
+    "ORBIT Web Node",
+    "ORBIT Desktop Node",
+    "ORBIT Sandbox",
+    "ORBIT Skills",
+    "ORBIT UI Runtime",
+    "ORBIT Connect",
+    "ORBIT Insights"
+  ],
+  "vendorBrandingInFirstPartyUI": false,
+  "preserveLegalNotices": true,
+  "discloseThirdPartyComponentsInAbout": true,
+  "colors": {
+    "surface": "#0D1117",
+    "surfaceRaised": "#151B23",
+    "surfaceSubtle": "#1B2430",
+    "textPrimary": "#F2F5F8",
+    "textMuted": "#A6B0BE",
+    "border": "#303B49",
+    "accent": "#7C9CFF",
+    "success": "#35B68A",
+    "warning": "#E9B44C",
+    "danger": "#E36B75"
+  }
+}

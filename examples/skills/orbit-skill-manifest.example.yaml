@@ -1,0 +1,29 @@
+# Illustrative only. Not an approved executable skill.
+name: orbit-example-researcher
+version: "1.0.0"
+description: Research a bounded question and return cited evidence.
+source: "https://github.com/example-org/example-skill"
+canonical_source: "https://github.com/example-org/example-skill"
+immutable_revision: "0123456789abcdef0123456789abcdef01234567"
+content_sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+license_expression: MIT
+owner: Example Maintainer
+attribution:
+  - Example Maintainer, source repository LICENSE
+declared_tools:
+  - web.search
+  - web.open
+network_hosts:
+  - example.org
+permissions:
+  tools: [web.search, web.open]
+  filesystem: [workspace:/artifacts/write]
+  network: [https://example.org]
+  secrets: []
+required_secrets: []
+dependencies: []
+supported_runtimes: [orbit-sandboxed-skill-runner]
+supported_harnesses: [orbit]
+tests:
+  - tests/basic-research.yaml
+review_status: discovered

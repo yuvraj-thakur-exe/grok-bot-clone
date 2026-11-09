@@ -1,0 +1,11 @@
+flowchart LR
+  SRC[Source / Package / Model / Skill] --> PIN[Pin Revision + Digest]
+  PIN --> LICENSE[License + NOTICE Review]
+  PIN --> SECURITY[Secrets + Vulnerability Scan]
+  PIN --> PROVENANCE[Provenance + Build Verification]
+  LICENSE --> APPROVAL[Human Approval Register]
+  SECURITY --> APPROVAL
+  PROVENANCE --> APPROVAL
+  APPROVAL --> SBOM[SPDX / CycloneDX SBOM]
+  SBOM --> RELEASE[Release Artifact + Notices]
+  RELEASE --> AUDIT[Archive Evidence + Exceptions]

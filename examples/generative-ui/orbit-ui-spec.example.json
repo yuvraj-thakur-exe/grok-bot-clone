@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "orbit-ui-catalog/1",
+  "root": "task-summary",
+  "elements": {
+    "task-summary": {
+      "type": "Card",
+      "props": {"title": "Task summary", "description": "Read-only result generated from an approved task."},
+      "children": ["task-status", "task-progress"]
+    },
+    "task-status": {
+      "type": "Status",
+      "props": {"label": "Verification", "value": "Pending", "tone": "warning"}
+    },
+    "task-progress": {
+      "type": "Progress",
+      "props": {"label": "Steps complete", "value": 3, "max": 5}
+    }
+  },
+  "actions": [],
+  "state": {},
+  "security": {
+    "allow_html": false,
+    "allow_eval": false,
+    "allow_remote_components": false,
+    "allow_arbitrary_urls": false
+  }
+}

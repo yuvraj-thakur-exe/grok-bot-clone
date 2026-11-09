@@ -1,0 +1,59 @@
+version: 1
+baseline: ORBIT 1.0.0-draft
+capacity_gb_decimal: 500
+allocation_mode: soft_targets_not_hard_quotas
+free_reserve_gb: 60
+folders:
+- id: control
+  path: 00-control
+  target_gb: 10
+  purpose: source_blueprints_manifests_repo_audits_and_runbooks
+- id: upstream_checkouts
+  path: 01-upstream-checkouts
+  target_gb: 100
+  purpose: 50_pinned_git_sources_and_selected_sparse_or_partial_checkouts
+- id: workspaces
+  path: 02-workspaces
+  target_gb: 100
+  purpose: orbit_application_worktrees_ephemeral_coding_tasks_and_builds
+- id: models
+  path: 03-models
+  target_gb: 90
+  purpose: approved_model_weights_tokenizers_and_inference_cache
+- id: data_memory
+  path: 04-data-memory
+  target_gb: 35
+  purpose: user_authorized_documents_memory_indexes_and_metadata
+- id: artifacts
+  path: 05-artifacts
+  target_gb: 25
+  purpose: generated_documents_exports_media_and_user_deliverables
+- id: evaluations
+  path: 06-evaluations
+  target_gb: 20
+  purpose: golden_datasets_agent_benchmarks_security_reports_and_traces
+- id: logs_cache
+  path: 07-logs-cache
+  target_gb: 5
+  purpose: redacted_rotated_logs_and_rebuildable_cache
+- id: backups
+  path: 08-backups
+  target_gb: 25
+  purpose: encrypted_local_snapshots_and_restore_test_material
+- id: quarantine
+  path: 09-quarantine
+  target_gb: 10
+  purpose: untrusted_repositories_skills_and_artifacts_no_execution
+- id: source_intake
+  path: 10-source-intake
+  target_gb: 20
+  purpose: manually_reviewed_upstream_code_import_staging
+notes:
+- allocation_targets_sum_to_440_gb_keep_60_gb_free_for_growth_and_safe_operations
+- upstream_checkouts_are_selective_and_pinned_not_a_reason_to_clone_all_repositories
+- models_have_separate_model_card_license_checksum_and_quantization_manifests
+- script_does_not_partition_format_encrypt_or_enforce_hard_quotas
+- 500gb_disk_capacity_does_not_increase_ram_vram_or_inference_speed
+- critical_backup_must_be_on_a_separate_physical_or_approved_remote_target
+- v1.0 upstream catalogue has 50 pinned sources; clone selected projects only.
+- Keep 60 GB free reserve and stop model/build jobs at defined disk thresholds.

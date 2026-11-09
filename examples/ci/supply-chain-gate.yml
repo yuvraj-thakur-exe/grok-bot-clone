@@ -1,0 +1,29 @@
+# Illustrative template. Pin every tool/action to an approved immutable version or digest
+# before use in a production repository. Do not copy this workflow blindly.
+name: ORBIT supply-chain gate
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  dependency-and-license-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@<PINNED_COMMIT_SHA>
+      - name: Validate lockfiles and dependency metadata
+        run: python scripts/validate_dependency_inventory.py
+      - name: Generate source SBOM
+        run: syft dir:. -o cyclonedx-json=artifacts/source.cdx.json -o spdx-json=artifacts/source.spdx.json
+      - name: Scan dependency vulnerabilities
+        run: osv-scanner scan --recursive .
+      - name: Check license register
+        run: python scripts/check_license_register.py --policy config/legal/license-policy.yaml
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@<PINNED_COMMIT_SHA>
+        with:
+          name: orbit-sbom
+          path: artifacts/*

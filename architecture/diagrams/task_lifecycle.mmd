@@ -1,0 +1,21 @@
+stateDiagram-v2
+ [*] --> queued
+ queued --> planning
+ planning --> running
+ running --> waiting_for_approval
+ running --> waiting_for_human
+ running --> retrying
+ retrying --> running
+ waiting_for_approval --> running: exact payload approved
+ waiting_for_approval --> failed: denied or expired
+ waiting_for_human --> running: human resumes
+ running --> succeeded
+ running --> failed
+ queued --> cancelled
+ planning --> cancelled
+ running --> cancelled
+ running --> timed_out
+ succeeded --> [*]
+ failed --> [*]
+ cancelled --> [*]
+ timed_out --> [*]

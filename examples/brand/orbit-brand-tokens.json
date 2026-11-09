@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "brand": "ORBIT",
+  "version": "0.3-draft",
+  "identity": {
+    "productName": "ORBIT",
+    "tagline": "An AI workspace that turns intent into verified work.",
+    "logoAsset": "to-be-created/orbit-mark.svg",
+    "trademarkStatus": "NOT_CLEARED"
+  },
+  "tokens": {
+    "color": {
+      "surface": "#0D1117",
+      "surfaceRaised": "#151B23",
+      "surfaceSubtle": "#1B2430",
+      "textPrimary": "#F2F5F8",
+      "textMuted": "#A6B0BE",
+      "border": "#303B49",
+      "accent": "#7C9CFF",
+      "success": "#35B68A",
+      "warning": "#E9B44C",
+      "danger": "#E36B75"
+    },
+    "radius": {"sm": 6, "md": 10, "lg": 16},
+    "spacingBase": 4
+  }
+}

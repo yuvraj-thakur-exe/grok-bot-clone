@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "generated_at": "REPLACE_AT_LOCK_TIME",
+  "skills": [
+    {
+      "name": "orbit-repository-audit",
+      "version": "0.3.0-draft",
+      "source": "local://skills/orbit-repository-audit",
+      "immutable_revision": "local-project-commit-required",
+      "content_sha256": "REPLACE_WITH_REAL_SHA256",
+      "license_expression": "SEE_PROJECT_LICENSE_AFTER_ADOPTION",
+      "declared_tools": ["repo.read", "git.status", "test.run_readonly"],
+      "network_hosts": [],
+      "review_status": "first_party_pending_review",
+      "installed_by": "human_approved_project_config"
+    }
+  ]
+}

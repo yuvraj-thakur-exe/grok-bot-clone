@@ -1,0 +1,18 @@
+flowchart TD
+  A[Upstream URL] --> B[Exact commit pin]
+  B --> C[Clone / partial fetch]
+  C --> D[Static repo audit]
+  D --> E[License + security + dependency review]
+  E --> F{Reuse mode?}
+  F -->|SDK/service| G[Adapter integration]
+  F -->|Selective source| H[Stage exact path + SHA-256]
+  F -->|Fork| I[Dedicated fork/worktree]
+  F -->|Rewrite| J[Written rationale and ADR]
+  H --> K[Carry tests + notices]
+  I --> K
+  G --> L[ORBIT conformance/security tests]
+  K --> L
+  J --> L
+  L --> M{Independent QA + security + legal gates}
+  M -->|Pass| N[Human-approved PR / release]
+  M -->|Fail| O[Fix / reject / rollback]

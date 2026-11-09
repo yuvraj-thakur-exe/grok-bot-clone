@@ -1,0 +1,17 @@
+flowchart TD
+  U[User] --> C[Context selector]
+  C --> P[Personal]
+  C --> S[Study]
+  C --> W[Work or employer]
+  C --> PR[Project]
+  P --> MP[Scoped memory and files]
+  S --> MS[Scoped memory and files]
+  W --> MW[Scoped memory and files]
+  PR --> MR[Scoped memory and files]
+  MP --> G[Policy gateway]
+  MS --> G
+  MW --> G
+  MR --> G
+  G --> A[Agent and tool execution]
+  A --> E[Evidence and artifact]
+  E --> U
